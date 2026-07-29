@@ -1,0 +1,24 @@
+{
+  "name": "animal-island-demo-uni",
+  "version": "0.2.0",
+  "private": true,
+  "description": "animal-island uni_modules 包的全组件验证脚手架。@dcloudio/* 依赖请按你本地 HBuilderX / uni-app 发行版填入（详见 README）。",
+  "scripts": {
+    "dev:h5": "uni",
+    "dev:mp-weixin": "uni -p mp-weixin",
+    "build:h5": "uni build",
+    "build:mp-weixin": "uni build -p mp-weixin"
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",
+    "less": "^4.2.0",
+    "typescript": "^5.7.3",
+    "@dcloudio/uni-app": "^3.0.0",
+    "@dcloudio/uni-h5": "^3.0.0",
+    "@dcloudio/uni-mp-weixin": "^3.0.0",
+    "@dcloudio/vite-plugin-uni": "^3.0.0"
+  }
+}

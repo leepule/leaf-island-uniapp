@@ -1,0 +1,62 @@
+{
+  "pages": [
+    { "path": "pages/demo/demo", "style": { "navigationBarTitleText": "Animal Island UI" } },
+    { "path": "pages/demos/button", "style": { "navigationBarTitleText": "Button 按钮" } },
+    { "path": "pages/demos/title", "style": { "navigationBarTitleText": "Title 标题" } },
+    { "path": "pages/demos/input", "style": { "navigationBarTitleText": "Input 输入框" } },
+    { "path": "pages/demos/switch", "style": { "navigationBarTitleText": "Switch 开关" } },
+    { "path": "pages/demos/card", "style": { "navigationBarTitleText": "Card 卡片" } },
+    { "path": "pages/demos/collapse", "style": { "navigationBarTitleText": "Collapse 折叠" } },
+    { "path": "pages/demos/cursor", "style": { "navigationBarTitleText": "Cursor 光标" } },
+    { "path": "pages/demos/modal", "style": { "navigationBarTitleText": "Modal 弹窗" } },
+    { "path": "pages/demos/typewriter", "style": { "navigationBarTitleText": "Typewriter 打字机" } },
+    { "path": "pages/demos/divider", "style": { "navigationBarTitleText": "Divider 分割线" } },
+    { "path": "pages/demos/icon", "style": { "navigationBarTitleText": "Icon 图标" } },
+    { "path": "pages/demos/select", "style": { "navigationBarTitleText": "Select 选择器" } },
+    { "path": "pages/demos/checkbox", "style": { "navigationBarTitleText": "Checkbox 多选" } },
+    { "path": "pages/demos/radio", "style": { "navigationBarTitleText": "Radio 单选" } },
+    { "path": "pages/demos/tooltip", "style": { "navigationBarTitleText": "Tooltip 气泡" } },
+    { "path": "pages/demos/tabs", "style": { "navigationBarTitleText": "Tabs 标签页" } },
+    { "path": "pages/demos/footer", "style": { "navigationBarTitleText": "Footer 装饰" } },
+    { "path": "pages/demos/codeblock", "style": { "navigationBarTitleText": "CodeBlock 代码" } },
+    { "path": "pages/demos/loading", "style": { "navigationBarTitleText": "Loading 加载" } },
+    { "path": "pages/demos/table", "style": { "navigationBarTitleText": "Table 表格" } },
+    { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } },
+    { "path": "pages/demos/phone", "style": { "navigationBarTitleText": "Phone 手机" } }
+  ],
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^ApiTable$": "@/components/ApiTable.vue",
+      "^DemoHeader$": "@/components/DemoHeader.vue",
+      "^AppLayout$": "@/components/AppLayout/AppLayout.vue",
+      "^AiButton$": "@/../uni_modules/animal-island/components/ai-button/ai-button.vue",
+      "^AiTitle$": "@/../uni_modules/animal-island/components/ai-title/ai-title.vue",
+      "^AiInput$": "@/../uni_modules/animal-island/components/ai-input/ai-input.vue",
+      "^AiSwitch$": "@/../uni_modules/animal-island/components/ai-switch/ai-switch.vue",
+      "^AiCard$": "@/../uni_modules/animal-island/components/ai-card/ai-card.vue",
+      "^AiCollapse$": "@/../uni_modules/animal-island/components/ai-collapse/ai-collapse.vue",
+      "^AiCursor$": "@/../uni_modules/animal-island/components/ai-cursor/ai-cursor.vue",
+      "^AiModal$": "@/../uni_modules/animal-island/components/ai-modal/ai-modal.vue",
+      "^AiTypewriter$": "@/../uni_modules/animal-island/components/ai-typewriter/ai-typewriter.vue",
+      "^AiDivider$": "@/../uni_modules/animal-island/components/ai-divider/ai-divider.vue",
+      "^AiIcon$": "@/../uni_modules/animal-island/components/ai-icon/ai-icon.vue",
+      "^AiSelect$": "@/../uni_modules/animal-island/components/ai-select/ai-select.vue",
+      "^AiCheckbox$": "@/../uni_modules/animal-island/components/ai-checkbox/ai-checkbox.vue",
+      "^AiRadio$": "@/../uni_modules/animal-island/components/ai-radio/ai-radio.vue",
+      "^AiTooltip$": "@/../uni_modules/animal-island/components/ai-tooltip/ai-tooltip.vue",
+      "^AiTabs$": "@/../uni_modules/animal-island/components/ai-tabs/ai-tabs.vue",
+      "^AiFooter$": "@/../uni_modules/animal-island/components/ai-footer/ai-footer.vue",
+      "^AiCodeBlock$": "@/../uni_modules/animal-island/components/ai-code-block/ai-code-block.vue",
+      "^AiLoading$": "@/../uni_modules/animal-island/components/ai-loading/ai-loading.vue",
+      "^AiTable$": "@/../uni_modules/animal-island/components/ai-table/ai-table.vue",
+      "^AiTime$": "@/../uni_modules/animal-island/components/ai-time/ai-time.vue",
+      "^AiPhone$": "@/../uni_modules/animal-island/components/ai-phone/ai-phone.vue"
+    }
+  },
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#f6f3e8",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}

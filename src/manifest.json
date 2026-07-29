@@ -1,0 +1,8 @@
+{
+  "name": "animal-island-demo-uni",
+  "appid": "",
+  "vueVersion": "3",
+  "h5": {
+    "router": { "base": "/" }
+  }
+}

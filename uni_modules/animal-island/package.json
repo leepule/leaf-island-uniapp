@@ -1,0 +1,53 @@
+{
+    "id": "animal-island",
+    "displayName": "Animal Island UI",
+    "version": "0.2.0",
+    "description": "自然治愈系 uni-app 组件库（Vue 3），由 animal-island-vue 改造而来，支持 H5 / 小程序 / App 全平台。",
+    "repository": "https://github.com/guokaigdg/animal-island-vue",
+    "keywords": [
+        "uni-app",
+        "ui",
+        "components",
+        "vue3",
+        "animal-island",
+        "nature"
+    ],
+    "dcloudext": {
+        "type": "component-vue",
+        "sale": {
+            "regular": {
+                "price": "0"
+            }
+        }
+    },
+    "uni_modules": {
+        "dependencies": [],
+        "encrypt": false,
+        "platforms": {
+            "cloud": true,
+            "spa": true,
+            "app": true,
+            "web": true,
+            "ios": true,
+            "android": true,
+            "mp-weixin": true,
+            "mp-alipay": true,
+            "mp-baidu": true,
+            "mp-toutiao": true,
+            "mp-qq": true,
+            "mp-kuaishou": true,
+            "mp-lark": true,
+            "mp-jd": true,
+            "quickapp": true
+        }
+    },
+    "easycom": {
+        "autoscan": false,
+        "custom": {
+            "^ai-(.*)": "uni_modules/animal-island/components/ai-$1/ai-$1.vue"
+        }
+    },
+    "peerDependencies": {
+        "vue": ">=3.4.0"
+    }
+}
