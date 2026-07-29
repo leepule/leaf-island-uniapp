@@ -910,7 +910,7 @@
     "@babel/helper-string-parser" "^7.29.7"
     "@babel/helper-validator-identifier" "^7.29.7"
 
-"@dcloudio/uni-app@^3.0.0":
+"@dcloudio/uni-app@3.0.0-alpha-5020220260725001":
   version "3.0.0-alpha-5020220260725001"
   resolved "https://registry.npmjs.org/@dcloudio/uni-app/-/uni-app-3.0.0-alpha-5020220260725001.tgz#7df77aacd9bb3b2422ec8fc8796444ec5fe20082"
   integrity sha512-jEAbTtfrcAZOfQEJqDEGfM6AVlxRpd4j4kJVHO8+HX3l7NY0vCfgNshM4U8fKB7Ppf27GI7fifoOrN9jJtxscg==
@@ -1035,7 +1035,7 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-5020220260725001"
     "@vue/server-renderer" "3.4.21"
 
-"@dcloudio/uni-h5@3.0.0-alpha-5020220260725001", "@dcloudio/uni-h5@^3.0.0":
+"@dcloudio/uni-h5@3.0.0-alpha-5020220260725001":
   version "3.0.0-alpha-5020220260725001"
   resolved "https://registry.npmjs.org/@dcloudio/uni-h5/-/uni-h5-3.0.0-alpha-5020220260725001.tgz#187115ae57023cac777f6f8b224b5d40b6e0e30e"
   integrity sha512-BA8LGHfe4nSYNmA9TZEXwxUl0HcJpjcvoPnQG6+4tmp0mtB6i162semklUhYhEeDv0Qn4ayq8g1EugICfL7A5Q==
@@ -1096,7 +1096,7 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-5020220260725001"
     "@vue/shared" "3.4.21"
 
-"@dcloudio/uni-mp-weixin@^3.0.0":
+"@dcloudio/uni-mp-weixin@3.0.0-alpha-5020220260725001":
   version "3.0.0-alpha-5020220260725001"
   resolved "https://registry.npmjs.org/@dcloudio/uni-mp-weixin/-/uni-mp-weixin-3.0.0-alpha-5020220260725001.tgz#e3a895037c18e82f7989bd2eb35e489238aa49c0"
   integrity sha512-xQyfI7/t9yaLueAh9APmZnTs+2WvN0dbAAq+FHe7ySIkcKtoqkvNz7yyJKHH1Qz0DdzuRXRKHX4Db2CK+Z9Zww==
@@ -1146,7 +1146,7 @@
     "@dcloudio/uni-shared" "3.0.0-alpha-5020220260725001"
     debug "4.3.7"
 
-"@dcloudio/vite-plugin-uni@^3.0.0":
+"@dcloudio/vite-plugin-uni@3.0.0-alpha-5020220260725001":
   version "3.0.0-alpha-5020220260725001"
   resolved "https://registry.npmjs.org/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-5020220260725001.tgz#9d1c21c8d1b8e045a08adb271e8de46144ba3c11"
   integrity sha512-iY5T1CWfEpJBi4B+7fY9oDhGNkWd+vM0KJWS7e5ozbME/EROddVzikRxQ8Ioaj/YmLHGzmR6rA93Z6t90H0Qfw==
@@ -2818,11 +2818,6 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.11"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
-
-gsap@^3.12.5:
-  version "3.15.0"
-  resolved "https://registry.npmjs.org/gsap/-/gsap-3.15.0.tgz#7851baaffc77642f2db3b1749d3634f9b5a19d14"
-  integrity sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==
 
 has-flag@^3.0.0:
   version "3.0.0"
