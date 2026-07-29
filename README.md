@@ -10,7 +10,7 @@
 <div align="center">
     <a href="https://github.com/guokaigdg/animal-island-ui"><img src="https://img.shields.io/badge/inspired%20by-animal--island--ui-brightgreen?style=flat-square" alt="Inspired by Animal-Island-UI"></a>
     <a href="https://github.com/guokaigdg/animal-island-vue"><img src="https://img.shields.io/badge/ported%20from-animal--island--vue-blue?style=flat-square" alt="Ported from Animal-Island-Vue"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square" alt="License"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey?style=flat-square" alt="License"></a>
     <img src="https://img.shields.io/badge/components-20%20(2%20excluded)-blue?style=flat-square" alt="Components">
     <img src="https://img.shields.io/badge/platform-H5%20%7C%20小程序%20%7C%20App-brightgreen?style=flat-square" alt="Platform Support">
 </div>
