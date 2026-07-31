@@ -38,28 +38,30 @@ const active = ref('tab1');
 </script>
 
 <template>
-  <view class="demo-page">
-    <DemoHeader name="tabs" />
+  <AppLayout>
+    <view class="demo-page">
+      <DemoHeader name="tabs" />
 
-    <view class="demo-label">基础用法（受控）</view>
-    <view class="demo-box">
-      <ai-tabs v-model="activeKey" :items="items">
-        <template #tab1><text>岛上有 10 位居民，今天天气晴朗，适合钓鱼。</text></template>
-        <template #tab2><text>Nook 商店今日特惠：大头菜 99 铃钱。</text></template>
-        <template #tab3><text>服务台可以办理居民登记与素材领取。</text></template>
-      </ai-tabs>
+      <view class="demo-label">基础用法（受控）</view>
+      <view class="demo-box">
+        <ai-tabs v-model="activeKey" :items="items">
+          <template #tab1><text>岛上有 10 位居民，今天天气晴朗，适合钓鱼。</text></template>
+          <template #tab2><text>Nook 商店今日特惠：大头菜 99 铃钱。</text></template>
+          <template #tab3><text>服务台可以办理居民登记与素材领取。</text></template>
+        </ai-tabs>
+      </view>
+
+      <view class="demo-label">关闭叶子动画</view>
+      <view class="demo-box">
+        <ai-tabs v-model="activeKey" :items="items" :leaf-animation="false">
+          <template #tab1><text>关闭动画后的标签切换。</text></template>
+          <template #tab2><text>关闭动画后的标签切换。</text></template>
+          <template #tab3><text>关闭动画后的标签切换。</text></template>
+        </ai-tabs>
+      </view>
+
+      <ai-code-block title="使用示例" :code="code" />
+      <ApiTable :rows="TABS_API" />
     </view>
-
-    <view class="demo-label">关闭叶子动画</view>
-    <view class="demo-box">
-      <ai-tabs v-model="activeKey" :items="items" :leaf-animation="false">
-        <template #tab1><text>关闭动画后的标签切换。</text></template>
-        <template #tab2><text>关闭动画后的标签切换。</text></template>
-        <template #tab3><text>关闭动画后的标签切换。</text></template>
-      </ai-tabs>
-    </view>
-
-    <ai-code-block title="使用示例" :code="code" />
-    <ApiTable :rows="TABS_API" />
-  </view>
+  </AppLayout>
 </template>

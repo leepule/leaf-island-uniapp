@@ -42,25 +42,27 @@ const value = ref('option1');
 </script>
 
 <template>
-  <view class="demo-page">
-    <DemoHeader name="select" />
+  <AppLayout>
+    <view class="demo-page">
+      <DemoHeader name="select" />
 
-    <view class="demo-label">受控（默认选中第一项）</view>
-    <view class="demo-box" style="max-width: 100%">
-      <ai-select v-model="value1" :options="fishOptions" />
+      <view class="demo-label">受控（默认选中第一项）</view>
+      <view class="demo-box" style="max-width: 100%">
+        <ai-select v-model="value1" :options="fishOptions" />
+      </view>
+
+      <view class="demo-label">占位文本</view>
+      <view class="demo-box" style="max-width: 100%">
+        <ai-select v-model="value2" :options="fishOptions" placeholder="请选择一条鱼" />
+      </view>
+
+      <view class="demo-label">固定选中项</view>
+      <view class="demo-box" style="max-width: 100%">
+        <ai-select v-model="value3" :options="flowerOptions" />
+      </view>
+
+      <ai-code-block title="使用示例" :code="code" />
+      <ApiTable :rows="SELECT_API" />
     </view>
-
-    <view class="demo-label">占位文本</view>
-    <view class="demo-box" style="max-width: 100%">
-      <ai-select v-model="value2" :options="fishOptions" placeholder="请选择一条鱼" />
-    </view>
-
-    <view class="demo-label">固定选中项</view>
-    <view class="demo-box" style="max-width: 100%">
-      <ai-select v-model="value3" :options="flowerOptions" />
-    </view>
-
-    <ai-code-block title="使用示例" :code="code" />
-    <ApiTable :rows="SELECT_API" />
-  </view>
+  </AppLayout>
 </template>

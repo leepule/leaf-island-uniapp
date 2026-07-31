@@ -49,31 +49,33 @@ const data = [
 </script>
 
 <template>
-  <view class="demo-page">
-    <DemoHeader name="table" />
+  <AppLayout>
+    <view class="demo-page">
+      <DemoHeader name="table" />
 
-    <view class="demo-note">小程序端不支持原生 table 标签，本组件内部已用 view + flex 重写，全平台表现一致。</view>
+      <view class="demo-note">小程序端不支持原生 table 标签，本组件内部已用 view + flex 重写，全平台表现一致。</view>
 
-    <view class="demo-label">基础表格</view>
-    <view class="demo-box" style="padding: 0; overflow: hidden">
-      <ai-table :columns="columns" :data-source="data" />
+      <view class="demo-label">基础表格</view>
+      <view class="demo-box" style="padding: 0; overflow: hidden">
+        <ai-table :columns="columns" :data-source="data" />
+      </view>
+
+      <view class="demo-label">关闭斑马纹 + 自定义单元格</view>
+      <view class="demo-box" style="padding: 0; overflow: hidden">
+        <ai-table :columns="columns" :data-source="data" :striped="false">
+          <template #cell-price="{ value }">
+            <text style="color: #e0792b; font-weight: 700">{{ value }} 铃钱</text>
+          </template>
+        </ai-table>
+      </view>
+
+      <view class="demo-label">加载态 / 空态</view>
+      <view class="demo-box" style="padding: 0; overflow: hidden">
+        <ai-table :columns="columns" :data-source="[]" loading />
+      </view>
+
+      <ai-code-block title="使用示例" :code="code" />
+      <ApiTable :rows="TABLE_API" />
     </view>
-
-    <view class="demo-label">关闭斑马纹 + 自定义单元格</view>
-    <view class="demo-box" style="padding: 0; overflow: hidden">
-      <ai-table :columns="columns" :data-source="data" :striped="false">
-        <template #cell-price="{ value }">
-          <text style="color: #e0792b; font-weight: 700">{{ value }} 铃钱</text>
-        </template>
-      </ai-table>
-    </view>
-
-    <view class="demo-label">加载态 / 空态</view>
-    <view class="demo-box" style="padding: 0; overflow: hidden">
-      <ai-table :columns="columns" :data-source="[]" loading />
-    </view>
-
-    <ai-code-block title="使用示例" :code="code" />
-    <ApiTable :rows="TABLE_API" />
-  </view>
+  </AppLayout>
 </template>
