@@ -1,80 +1,85 @@
 <script setup lang="ts">
 const BUTTON_API = [
-    { prop: 'type', desc: '按钮类型', type: `'primary' | 'default' | 'dashed' | 'text' | 'link'`, defaultVal: "'default'" },
-    { prop: 'size', desc: '按钮尺寸', type: `'small' | 'middle' | 'large'`, defaultVal: "'middle'" },
-    { prop: 'danger', desc: '是否危险按钮', type: 'boolean', defaultVal: 'false' },
-    { prop: 'ghost', desc: '是否幽灵按钮（透明背景）', type: 'boolean', defaultVal: 'false' },
-    { prop: 'block', desc: '是否块级按钮', type: 'boolean', defaultVal: 'false' },
-    { prop: 'loading', desc: '加载状态', type: 'boolean', defaultVal: 'false' },
-    { prop: 'disabled', desc: '禁用状态', type: 'boolean', defaultVal: 'false' },
-    { prop: '#icon', desc: '图标插槽', type: 'slot', defaultVal: '-' },
+  {
+    prop: 'type',
+    desc: '按钮类型',
+    type: `'primary' | 'default' | 'dashed' | 'text' | 'link'`,
+    defaultVal: "'default'",
+  },
+  { prop: 'size', desc: '按钮尺寸', type: `'small' | 'middle' | 'large'`, defaultVal: "'middle'" },
+  { prop: 'danger', desc: '是否危险按钮', type: 'boolean', defaultVal: 'false' },
+  { prop: 'ghost', desc: '是否幽灵按钮（透明背景）', type: 'boolean', defaultVal: 'false' },
+  { prop: 'block', desc: '是否块级按钮', type: 'boolean', defaultVal: 'false' },
+  { prop: 'loading', desc: '加载状态', type: 'boolean', defaultVal: 'false' },
+  { prop: 'disabled', desc: '禁用状态', type: 'boolean', defaultVal: 'false' },
+  { prop: '#icon', desc: '图标插槽', type: 'slot', defaultVal: '-' },
 ];
 
-const code = `<AiButton type="primary">Primary</AiButton>
-<AiButton>Default</AiButton>
-<AiButton type="dashed">Dashed</AiButton>
-<AiButton type="text">Text</AiButton>
-<AiButton type="link">Link</AiButton>
-<AiButton type="primary" danger>Danger</AiButton>
-<AiButton type="primary" ghost>Ghost</AiButton>
-<AiButton type="primary" loading>Loading</AiButton>
-<AiButton type="primary" size="large">Large</AiButton>
-<AiButton type="primary" block>Block</AiButton>`;
+const code = `<ai-button type="primary">Primary</ai-button>
+<ai-button>Default</ai-button>
+<ai-button type="dashed">Dashed</ai-button>
+<ai-button type="text">Text</ai-button>
+<ai-button type="link">Link</ai-button>
+<ai-button type="primary" danger>Danger</ai-button>
+<ai-button type="primary" ghost>Ghost</ai-button>
+<ai-button type="primary" loading>Loading</ai-button>
+<ai-button type="primary" size="large">Large</ai-button>
+<ai-button type="primary" block>Block</ai-button>`;
 </script>
 
 <template>
-    <AppLayout>
+  <AppLayout>
     <view class="demo-page">
-        <DemoHeader name="button" />
+      <DemoHeader name="button" />
 
-        <view class="demo-label">type 按钮类型</view>
-        <view class="demo-box">
-            <view class="demo-row">
-                <AiButton type="primary">Primary</AiButton>
-                <AiButton>Default</AiButton>
-                <AiButton type="dashed">Dashed</AiButton>
-                <AiButton type="text">Text</AiButton>
-                <AiButton type="link">Link</AiButton>
-            </view>
+      <view class="demo-label">type 按钮类型</view>
+      <view class="demo-box">
+        <view class="demo-row">
+          <ai-button type="primary">Primary</ai-button>
+          <ai-button>Default</ai-button>
+          <ai-button type="dashed">Dashed</ai-button>
+          <ai-button type="text">Text</ai-button>
+          <ai-button type="link">Link</ai-button>
         </view>
+      </view>
 
-        <view class="demo-label">danger / ghost / loading / disabled 状态</view>
-        <view class="demo-box">
-            <view class="demo-row">
-                <AiButton type="primary" danger>Danger</AiButton>
-                <AiButton type="primary" ghost>Ghost</AiButton>
-                <AiButton type="primary" loading>Loading</AiButton>
-                <AiButton type="primary" disabled>Disabled</AiButton>
-            </view>
+      <view class="demo-label">danger / ghost / loading / disabled 状态</view>
+      <view class="demo-box">
+        <view class="demo-row">
+          <ai-button type="primary" danger>Danger</ai-button>
+          <ai-button type="primary" ghost>Ghost</ai-button>
+          <ai-button type="primary" loading>Loading</ai-button>
+          <ai-button type="primary" disabled>Disabled</ai-button>
         </view>
+      </view>
 
-        <view class="demo-label">size 尺寸</view>
-        <view class="demo-box">
-            <view class="demo-row">
-                <AiButton type="primary" size="small">Small</AiButton>
-                <AiButton type="primary" size="middle">Middle</AiButton>
-                <AiButton type="primary" size="large">Large</AiButton>
-            </view>
+      <view class="demo-label">size 尺寸</view>
+      <view class="demo-box">
+        <view class="demo-row">
+          <ai-button type="primary" size="small">Small</ai-button>
+          <ai-button type="primary" size="middle">Middle</ai-button>
+          <ai-button type="primary" size="large">Large</ai-button>
         </view>
+      </view>
 
-        <view class="demo-label">icon 图标按钮</view>
-        <view class="demo-box">
-            <view class="demo-row">
-                <AiButton type="primary"><template #icon>🔍</template>搜索</AiButton>
-                <AiButton><template #icon>⭐</template>收藏</AiButton>
-                <AiButton type="dashed"><template #icon>＋</template>新增</AiButton>
-            </view>
+      <view class="demo-label">icon 图标按钮</view>
+      <view class="demo-box">
+        <view class="demo-row">
+          <ai-button type="primary"><template #icon>🔍</template>搜索</ai-button>
+          <ai-button><template #icon>⭐</template>收藏</ai-button>
+          <ai-button type="dashed"><template #icon>＋</template>新增</ai-button>
         </view>
+      </view>
 
-        <view class="demo-label">block 块级按钮</view>
-        <view class="demo-box">
-            <view style="max-width: 100%">
-                <AiButton type="primary" block>Block Button</AiButton>
-            </view>
+      <view class="demo-label">block 块级按钮</view>
+      <view class="demo-box">
+        <view style="max-width: 100%">
+          <ai-button type="primary" block>Block Button</ai-button>
         </view>
+      </view>
 
-        <AiCodeBlock :code="code" />
-        <ApiTable :rows="BUTTON_API" />
+      <ai-code-block title="使用示例" :code="code" />
+      <ApiTable :rows="BUTTON_API" />
     </view>
-    </AppLayout>
+  </AppLayout>
 </template>

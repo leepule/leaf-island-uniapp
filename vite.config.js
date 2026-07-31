@@ -6,6 +6,6 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/animal-island-uniapp/' : '/',
   server: {
     host: true,
-    port: 5173
+    port: 5173,
   },
 });

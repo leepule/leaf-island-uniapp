@@ -11,15 +11,15 @@
     <a href="https://github.com/guokaigdg/animal-island-ui"><img src="https://img.shields.io/badge/inspired%20by-animal--island--ui-brightgreen?style=flat-square" alt="Inspired by Animal-Island-UI"></a>
     <a href="https://github.com/guokaigdg/animal-island-vue"><img src="https://img.shields.io/badge/ported%20from-animal--island--vue-blue?style=flat-square" alt="Ported from Animal-Island-Vue"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey?style=flat-square" alt="License"></a>
-    <img src="https://img.shields.io/badge/components-20%20(2%20excluded)-blue?style=flat-square" alt="Components">
-    <img src="https://img.shields.io/badge/platform-H5%20%7C%20小程序%20%7C%20App-brightgreen?style=flat-square" alt="Platform Support">
+    <img src="https://img.shields.io/badge/components-22-blue?style=flat-square" alt="Components">
+    <img src="https://img.shields.io/badge/platform-H5%20%7C%20%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%EF%BC%88App%20%26%20%E5%85%B6%E4%BB%96%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A7%BB%E6%A4%8D%E4%B8%AD%EF%BC%89-yellow?style=flat-square" alt="Platform Support: H5 & 微信小程序 verified; App & others WIP">
 </div>
 
 <br/>
 
 ## 介绍
 
-本项目是基于 **Vue 3 + TypeScript + Less** 实现的轻量 UI 组件库演示工程，是 [animal-island-vue](https://github.com/guokaigdg/animal-island-vue)（Vue 3 版）的 **uni-app 移植版本**。它为 `uni_modules/animal-island` 本地包提供了**全组件演示**（包括首页卡片索引以及 20 个已移植组件的独立 demo 页，包含用法示例、代码片段与 API 说明表）。
+本项目是基于 **Vue 3 + TypeScript + Less** 实现的轻量 UI 组件库演示工程，是 [animal-island-vue](https://github.com/guokaigdg/animal-island-vue)（Vue 3 版）的 **uni-app 移植版本**。它为 `uni_modules/animal-island` 本地包提供了**全组件演示**（包括首页卡片索引以及 22 个组件的独立 demo 页，包含用法示例、代码片段与 API 说明表）。
 
 其设计风格灵感来源于任天堂《集合啦！动物森友会》游戏界面，适用于 uni-app 跨端开发的技术练习和趣味跨端应用开发。
 
@@ -29,13 +29,13 @@
 
 ## 🎨 平台支持与自动降级
 
-由于跨端平台限制，部分高级动效或平台特有特性在小程序/App 端会进行自动降级：
+由于跨端平台限制，部分高级动效或平台特有特性在小程序/App 端会进行自动降级。下表为各平台**实测状态**（H5 与微信小程序均已通过 `npm run build:*` 实测，App 端尚未验证）：
 
-| 平台 | 特性表现 | 降级机制说明 |
+| 平台 | 状态 | 说明 |
 | :--- | :--- | :--- |
-| **H5 (Web)** | 完整体验 | 动效流畅、ESC 键模态关闭、自定义鼠标光标（Cursor）效果完整生效。 |
-| **微信小程序** | 兼容运行 | 自定义光标自动失效；Modal 不支持 ESC 键关闭，改为点击遮罩层关闭。 |
-| **App (手机端)** | 兼容运行 | 原理同微信小程序，确保基本展示与核心逻辑的跨端一致性。 |
+| **H5 (Web)** | ✅ 已验证 | 动效流畅、ESC 键模态关闭、自定义鼠标光标（Cursor）效果完整生效。 |
+| **微信小程序** | ✅ 已验证（兼容运行） | 自定义光标自动失效；Modal 不支持 ESC 键关闭，改为点击遮罩层关闭。`build:mp-weixin` 已通过实测。 |
+| **App (手机端)** | ⚠️ 未验证 | 设计目标同微信小程序（自动降级、跨端一致），但 App 端**尚未构建/实测**，暂不可依赖。 |
 
 ---
 
@@ -77,42 +77,22 @@ const open = ref(false);
 </template>
 ```
 
-### 3. 配置 easycom 自动引入
+### 3. easycom 自动引入
 
-如果您的 uni-app 项目采用了 `src` 源码目录与 `uni_modules` 同级的 cli 结构，或者组件没有被自动扫描到，请在您的 `pages.json` 中显式配置 `easycom` 的 `custom` 规则：
+`uni_modules/animal-island` 在自己的 `package.json` 中已经声明了 easycom 规则：
 
 ```json
-{
-  "easycom": {
-    "autoscan": true,
-    "custom": {
-      "^AiButton$": "@/../uni_modules/animal-island/components/ai-button/ai-button.vue",
-      "^AiTitle$": "@/../uni_modules/animal-island/components/ai-title/ai-title.vue",
-      "^AiInput$": "@/../uni_modules/animal-island/components/ai-input/ai-input.vue",
-      "^AiSwitch$": "@/../uni_modules/animal-island/components/ai-switch/ai-switch.vue",
-      "^AiCard$": "@/../uni_modules/animal-island/components/ai-card/ai-card.vue",
-      "^AiCollapse$": "@/../uni_modules/animal-island/components/ai-collapse/ai-collapse.vue",
-      "^AiCursor$": "@/../uni_modules/animal-island/components/ai-cursor/ai-cursor.vue",
-      "^AiModal$": "@/../uni_modules/animal-island/components/ai-modal/ai-modal.vue",
-      "^AiTypewriter$": "@/../uni_modules/animal-island/components/ai-typewriter/ai-typewriter.vue",
-      "^AiDivider$": "@/../uni_modules/animal-island/components/ai-divider/ai-divider.vue",
-      "^AiIcon$": "@/../uni_modules/animal-island/components/ai-icon/ai-icon.vue",
-      "^AiSelect$": "@/../uni_modules/animal-island/components/ai-select/ai-select.vue",
-      "^AiCheckbox$": "@/../uni_modules/animal-island/components/ai-checkbox/ai-checkbox.vue",
-      "^AiRadio$": "@/../uni_modules/animal-island/components/ai-radio/ai-radio.vue",
-      "^AiTooltip$": "@/../uni_modules/animal-island/components/ai-tooltip/ai-tooltip.vue",
-      "^AiTabs$": "@/../uni_modules/animal-island/components/ai-tabs/ai-tabs.vue",
-      "^AiFooter$": "@/../uni_modules/animal-island/components/ai-footer/ai-footer.vue",
-      "^AiCodeBlock$": "@/../uni_modules/animal-island/components/ai-code-block/ai-code-block.vue",
-      "^AiLoading$": "@/../uni_modules/animal-island/components/ai-loading/ai-loading.vue",
-      "^AiTable$": "@/../uni_modules/animal-island/components/ai-table/ai-table.vue",
-      "^AiTime$": "@/../uni_modules/animal-island/components/ai-time/ai-time.vue",
-      "^AiPhone$": "@/../uni_modules/animal-island/components/ai-phone/ai-phone.vue"
-    }
+"easycom": {
+  "autoscan": false,
+  "custom": {
+    "^ai-(.*)": "uni_modules/animal-island/components/ai-$1/ai-$1.vue"
   }
 }
 ```
-*(注：如果您的项目未采用 `src/` 结构，将路径中的 `../` 去掉，改为 `@/uni_modules/...` 即可。)*
+
+因此 **安装即生效**：所有 `ai-*` 组件（如 `ai-button`、`ai-title`）在模板里直接以 kebab-case 使用即可（见上方示例），无需在你的 `pages.json` 中逐条声明；新增 `ai-*` 组件也会被这条规则自动覆盖，不会产生“未注册组件”。
+
+> 仅当你在项目中自研了非 `ai-` 前缀的本地组件（例如本仓库的 `ApiTable`、`DemoHeader`、`AppLayout`）时，才需要为它们在 `pages.json` 的 `easycom.custom` 里补一条对应规则。
 
 ---
 
@@ -129,8 +109,8 @@ demo-uni/
 │   │   └── DemoHeader.vue    # 各 demo 页头部组件
 │   ├── pages/
 │   │   ├── demo/demo.vue     # 首页：组件索引列表
-│   │   └── demos/            # 21 个组件 demo 页面（button/title/input/...）
-│   ├── pages.json            # uni-app 页面路由配置（首页 + 21 个 demo 页）
+│   │   └── demos/            # 22 个组件 demo 页面（button/title/input/...）
+│   ├── pages.json            # uni-app 页面路由配置（首页 + 22 个 demo 页）
 │   └── manifest.json         # 跨端配置文件
 ├── uni_modules/
 │   └── animal-island/        # 移植至 uni-app 的 animal-island 核心组件库包
@@ -175,7 +155,9 @@ npm run dev:mp-weixin
 
 ## 🧩 组件覆盖与兼容性说明
 
-除了 `WeddingInvitation`（婚礼邀请函页）和 `Loading`（加载动画，由于原版依赖复杂的 Canvas 物理落叶计算，现仅为简易纯 CSS 加载占位）未真正移植外，其余 20 个组件已全部完成移植，并在首页提供独立 demo 演示：
+本包共包含 **22 个组件**。`WeddingInvitation`（婚礼邀请函页）因依赖 `modern-screenshot` 网页截图与 `@fontsource` 字体注入，未纳入本次移植（故不计入 22 个）；`Loading`（加载动画）已移植，但为简化纯 CSS 旋转占位（非原版 Canvas 物理落叶动效）。其余 **21 个**组件完整移植，并在首页提供独立 demo 演示：
+
+> ℹ️ **跨端说明**：下表「跨端降级 / 差异说明」中针对**微信小程序**的描述已通过 `build:mp-weixin` 实测验证；针对 **App** 的描述为设计目标，App 端尚未构建/实测，仅供参考。
 
 | 分类 | 组件 | 组件标签 | 跨端降级 / 差异说明 |
 | :--- | :--- | :--- | :--- |
@@ -187,14 +169,14 @@ npm run dev:mp-weixin
 | | Switch (开关) | `ai-switch` | 无平台差异 |
 | | Checkbox (多选) | `ai-checkbox` | 无平台差异 |
 | | Radio (单选) | `ai-radio` | 无平台差异 |
-| | Select (下拉选择) | `ai-select` | 跨端使用 uni-app 原生 picker 交互，确保小程序/App可用性 |
+| | Select (下拉选择) | `ai-select` | 手写下拉层（`position: absolute` + 全屏透明遮罩关闭），未使用原生 `<picker>`，小程序/App 可用 |
 | **数据展示** | Card (卡片) | `ai-card` | 无平台差异 |
 | | Table (表格) | `ai-table` | 移动端自动横向滚动适配 |
 | | Collapse (折叠面板) | `ai-collapse` | 无平台差异 |
 | | Tabs (标签页) | `ai-tabs` | 无平台差异 |
 | | Tooltip (文字提示) | `ai-tooltip` | 依赖定位，在小程序上建议使用 click 触发以提升体验 |
 | | Footer (页脚) | `ai-footer` | 无平台差异 |
-| | CodeBlock (代码块) | `ai-code-block` | 支持一键复制 |
+| | CodeBlock (代码块) | `ai-code-block` | 语法高亮展示，未内置复制功能 |
 | | Time (时间) | `ai-time` | 无平台差异 |
 | **反馈 / 动效** | Modal (模态框) | `ai-modal` | H5 支持 ESC 键关闭/滚动锁定；小程序/App 自动降级为点击遮罩关闭 |
 | | Typewriter (打字机) | `ai-typewriter` | 无平台差异 |

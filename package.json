@@ -2,6 +2,7 @@
   "name": "animal-island-demo-uni",
   "version": "0.2.0",
   "private": true,
+  "license": "CC-BY-NC-4.0",
   "description": "animal-island uni_modules 包的全组件验证脚手架。@dcloudio/* 依赖请按你本地 HBuilderX / uni-app 发行版填入（详见 README）。",
   "scripts": {
     "dev:h5": "uni",

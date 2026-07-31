@@ -1,0 +1,17 @@
+export type CheckboxSize = 'small' | 'middle' | 'large';
+export type CheckboxValue = string | number;
+
+export interface CheckboxOption {
+  label: string;
+  value: CheckboxValue;
+  disabled?: boolean;
+}
+
+export interface CheckboxProps {
+  /** 受控选中值列表；未传时组件维护内部状态 */
+  modelValue?: CheckboxValue[];
+  options: CheckboxOption[];
+  size?: CheckboxSize;
+  disabled?: boolean;
+  direction?: 'horizontal' | 'vertical';
+}

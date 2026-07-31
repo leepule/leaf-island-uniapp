@@ -1,33 +1,38 @@
 <script setup lang="ts">
-
 const CODE_API = [
-    { prop: 'code', desc: '需要高亮显示的代码字符串', type: 'string', defaultVal: '-', required: true },
+  {
+    prop: 'code',
+    desc: '代码字符串；超过 20,000 字符时展示原文但跳过高亮',
+    type: 'string',
+    defaultVal: '-',
+    required: true,
+  },
+  { prop: 'title', desc: '代码块标题（如「使用示例」），为空则不显示标题条', type: 'string', defaultVal: "''" },
 ];
 
-const sample = `// 引入组件库
-import { Button, Title } from 'animal-island-vue';
-
-// 渲染一个动森风按钮
-createApp(App)
-  .use(Button)
-  .mount('#app');`;
+const sample = `<!-- easycom 自动引入，无需 import -->
+<ai-button type="primary">上岛</ai-button>
+<ai-title color="green">欢迎来到无人岛</ai-title>`;
 </script>
 
 <template>
-    <AppLayout>
+  <AppLayout>
     <view class="demo-page">
-        <DemoHeader name="codeblock" />
+      <DemoHeader name="codeblock" />
 
-        <view class="demo-label">基础代码高亮</view>
-        <AiCodeBlock :code="sample" />
+      <view class="demo-label">基础代码高亮</view>
+      <ai-code-block title="使用示例" :code="sample" />
 
-        <view class="demo-label">HTML / Vue 片段</view>
-        <AiCodeBlock code="<template>
-    <Button type=&quot;primary&quot;>上岛</Button>
-</template>" />
+      <view class="demo-label">HTML / Vue 片段</view>
+      <ai-code-block
+        title="使用示例"
+        code='<template>
+    <ai-button type="primary">上岛</ai-button>
+</template>'
+      />
 
-        <AiCodeBlock :code="`<AiCodeBlock :code=&quot;const a = 1&quot; />`" />
-        <ApiTable :rows="CODE_API" />
+      <ai-code-block title="使用示例" :code="`<ai-code-block :code=&quot;const a = 1&quot; />`" />
+      <ApiTable :rows="CODE_API" />
     </view>
-    </AppLayout>
+  </AppLayout>
 </template>

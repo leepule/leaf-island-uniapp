@@ -29,29 +29,7 @@
     "custom": {
       "^ApiTable$": "@/components/ApiTable.vue",
       "^DemoHeader$": "@/components/DemoHeader.vue",
-      "^AppLayout$": "@/components/AppLayout/AppLayout.vue",
-      "^AiButton$": "@/../uni_modules/animal-island/components/ai-button/ai-button.vue",
-      "^AiTitle$": "@/../uni_modules/animal-island/components/ai-title/ai-title.vue",
-      "^AiInput$": "@/../uni_modules/animal-island/components/ai-input/ai-input.vue",
-      "^AiSwitch$": "@/../uni_modules/animal-island/components/ai-switch/ai-switch.vue",
-      "^AiCard$": "@/../uni_modules/animal-island/components/ai-card/ai-card.vue",
-      "^AiCollapse$": "@/../uni_modules/animal-island/components/ai-collapse/ai-collapse.vue",
-      "^AiCursor$": "@/../uni_modules/animal-island/components/ai-cursor/ai-cursor.vue",
-      "^AiModal$": "@/../uni_modules/animal-island/components/ai-modal/ai-modal.vue",
-      "^AiTypewriter$": "@/../uni_modules/animal-island/components/ai-typewriter/ai-typewriter.vue",
-      "^AiDivider$": "@/../uni_modules/animal-island/components/ai-divider/ai-divider.vue",
-      "^AiIcon$": "@/../uni_modules/animal-island/components/ai-icon/ai-icon.vue",
-      "^AiSelect$": "@/../uni_modules/animal-island/components/ai-select/ai-select.vue",
-      "^AiCheckbox$": "@/../uni_modules/animal-island/components/ai-checkbox/ai-checkbox.vue",
-      "^AiRadio$": "@/../uni_modules/animal-island/components/ai-radio/ai-radio.vue",
-      "^AiTooltip$": "@/../uni_modules/animal-island/components/ai-tooltip/ai-tooltip.vue",
-      "^AiTabs$": "@/../uni_modules/animal-island/components/ai-tabs/ai-tabs.vue",
-      "^AiFooter$": "@/../uni_modules/animal-island/components/ai-footer/ai-footer.vue",
-      "^AiCodeBlock$": "@/../uni_modules/animal-island/components/ai-code-block/ai-code-block.vue",
-      "^AiLoading$": "@/../uni_modules/animal-island/components/ai-loading/ai-loading.vue",
-      "^AiTable$": "@/../uni_modules/animal-island/components/ai-table/ai-table.vue",
-      "^AiTime$": "@/../uni_modules/animal-island/components/ai-time/ai-time.vue",
-      "^AiPhone$": "@/../uni_modules/animal-island/components/ai-phone/ai-phone.vue"
+      "^AppLayout$": "@/components/AppLayout/AppLayout.vue"
     }
   },
   "globalStyle": {

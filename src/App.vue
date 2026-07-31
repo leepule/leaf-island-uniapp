@@ -3,7 +3,7 @@
 </script>
 
 <style lang="less">
-@import '../uni_modules/animal-island/index.less';
+@import './uni_modules/animal-island/index.less';
 
 page,
 .app-root {
@@ -12,7 +12,6 @@ page,
   font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   color: #5f5238;
 }
-
 
 /* ---------- 各 demo 页共享样式（对齐 demo 参考站） ---------- */
 /* 组件 demo 页整体作为一张白底卡片，内嵌奶油色 demo-box，形成 demo 的层叠质感 */
@@ -97,19 +96,5 @@ page,
   margin: 16rpx 0 4rpx;
 }
 
-/* 代码块：对齐 demo 的「使用示例」深色标签条（AiCodeBlock 自身已是深色底） */
-.animal-code-block {
-  margin-top: 40rpx;
-}
-.animal-code-block::before {
-  content: '使用示例';
-  display: block;
-  background: #3d3028;
-  color: #e7e4e0;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 12px 24px;
-  margin: -20px -24px 20px;
-  border-radius: 20px 20px 0 0;
-}
+/* 代码块：「使用示例」标签已内置于 AiCodeBlock 的 title prop（见 ai-code-block.vue），此处不再引用库内部 class */
 </style>
