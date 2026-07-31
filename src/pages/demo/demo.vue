@@ -62,7 +62,7 @@ function go(key: string) {
     <view class="home">
       <!-- Hero -->
       <view class="hero">
-        <view class="hero-title">动物之岛<br />组件库</view>
+        <view class="hero-title">Animal Island<br />UI</view>
         <view class="hero-subtitle">
           Animal 风格的 uni-app 组件库，基于 TypeScript + Vue 3 + Less 构建，让跨端应用充满温暖质感
         </view>
