@@ -2,11 +2,34 @@
 // animal-island-vue Base Reset
 // ============================================
 
+// #ifdef H5
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+// #endif
+
+// #ifndef H5
+// 小程序 / App 的 WXSS 不支持 `*` 通用选择器，改用显式元素列表
+page,
+view,
+text,
+button,
+input,
+textarea,
+image,
+scroll-view,
+navigator,
+swiper,
+swiper-item,
+cover-view,
+cover-image,
+picker,
+picker-view {
+  box-sizing: border-box;
+}
+// #endif
 
 [class^='animal-'],
 .animal-root,

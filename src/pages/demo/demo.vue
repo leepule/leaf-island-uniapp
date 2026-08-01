@@ -19,7 +19,7 @@ const features = [
 const cols = ref(1);
 
 function calcCols() {
-  const w = uni.getSystemInfoSync().windowWidth || 375;
+  const w = uni.getWindowInfo().windowWidth || 375;
   cols.value = colsForWidth(w);
 }
 

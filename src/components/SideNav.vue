@@ -7,6 +7,11 @@ const emit = defineEmits<{ (e: 'nav', key: string): void }>();
 const drawerOpen = ref(false);
 const current = ref('home');
 
+// #ifndef H5
+// 小程序 / App 端状态栏高度，用于移动端顶部栏内边距
+const statusBarHeight = ref(0);
+// #endif
+
 // 导航项：首页 + 所有组件（顺序与 PAGE_INFO 一致）
 const navItems = computed(() => {
   const list: { key: string; title: string; sub: string }[] = [{ key: 'home', title: '首页', sub: 'Home' }];
@@ -60,8 +65,8 @@ function checkMobile() {
   // #endif
   // #ifndef H5
   try {
-    const sys = uni.getSystemInfoSync();
-    isMobile.value = (sys.windowWidth || sys.screenWidth || 375) <= 767;
+    const win = uni.getWindowInfo();
+    isMobile.value = (win.windowWidth || win.screenWidth || 375) <= 767;
   } catch (error) {
     console.error('[SideNav] 视口检测失败，回退为桌面布局', error);
     isMobile.value = false;
@@ -75,6 +80,10 @@ onMounted(() => {
   checkMobile();
   syncCurrent();
   uni.$on('demo-nav', onNav);
+  // #ifndef H5
+  const winInfo = uni.getWindowInfo();
+  statusBarHeight.value = winInfo.statusBarHeight || 0;
+  // #endif
   // #ifdef H5
   popHandler = () => syncCurrent();
   window.addEventListener('popstate', popHandler);
@@ -107,7 +116,16 @@ onUnmounted(() => {
 
 <template>
   <!-- 移动端顶部栏（含汉堡按钮），桌面端隐藏 -->
+  <!-- #ifndef H5 -->
+  <view
+    class="mobile-bar"
+    :class="{ show: isMobile }"
+    :style="{ paddingTop: statusBarHeight + 'px', height: (52 + statusBarHeight) + 'px' }"
+  >
+  <!-- #endif -->
+  <!-- #ifdef H5 -->
   <view class="mobile-bar" :class="{ show: isMobile }">
+  <!-- #endif -->
     <view class="hamburger" @click="toggleDrawer" aria-label="菜单">
       <view class="hamburger-line" />
       <view class="hamburger-line" />
@@ -321,17 +339,22 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 12px;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 52px;
   padding: 0 14px;
+  /* #ifdef H5 */
   padding-top: env(safe-area-inset-top);
   height: calc(52px + env(safe-area-inset-top));
+  /* #endif */
+  /* #ifndef H5 */
+  /* paddingTop / height 由内联 style 动态设置（不依赖跨组件 CSS 变量） */
+  height: 52px;
+  /* #endif */
   background: #fffaf2;
   border-bottom: 1px solid #e8e2d6;
-  z-index: 60;
+  z-index: 99997;
 }
 
 .backdrop.mobile {
@@ -339,7 +362,7 @@ onUnmounted(() => {
   position: fixed;
   inset: 0;
   background: rgba(60, 48, 30, 0.35);
-  z-index: 90;
+  z-index: 99998;
 }
 
 @media (max-width: 767px) {
@@ -353,7 +376,7 @@ onUnmounted(() => {
     max-width: 300px;
     transform: translateX(-100%);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-    z-index: 100;
+    z-index: 99999;
   }
   .side-nav.open {
     transform: translateX(0);
@@ -363,7 +386,7 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     gap: 12px;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -373,7 +396,7 @@ onUnmounted(() => {
     height: calc(52px + env(safe-area-inset-top));
     background: #fffaf2;
     border-bottom: 1px solid #e8e2d6;
-    z-index: 60;
+    z-index: 99997;
   }
 }
 </style>

@@ -24,6 +24,13 @@
     { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } },
     { "path": "pages/demos/phone", "style": { "navigationBarTitleText": "Phone 手机" } }
   ],
+  "leftWindow": {
+    "path": "components/SideNav/LeftWindowNav.vue",
+    "style": {
+      "width": "260px"
+    },
+    "matchMedia": "(min-width: 768px)"
+  },
   "easycom": {
     "autoscan": true,
     "custom": {

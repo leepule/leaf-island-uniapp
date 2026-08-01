@@ -32,6 +32,12 @@ const segments = computed(() => highlightCode(props.code));
   padding: 12px 24px;
   margin: -20px -24px 20px;
   border-radius: 20px 20px 0 0;
+  position: sticky;
+  left: -24px;
+  top: -20px;
+  width: calc(100% + 48px);
+  box-sizing: border-box;
+  z-index: 2;
 }
 .animal-code-block {
   margin-top: 40rpx;

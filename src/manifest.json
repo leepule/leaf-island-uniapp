@@ -1,8 +1,21 @@
 {
-  "name": "animal-island-demo-uni",
-  "appid": "",
-  "vueVersion": "3",
-  "h5": {
-    "router": { "base": "/" }
-  }
+    "name" : "animal-island-demo-uni",
+    "appid" : "__UNI__0A08CEC",
+    "vueVersion" : "3",
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "h5" : {
+        "router" : {
+            "base" : "/"
+        }
+    },
+    "mp-weixin" : {
+        "appid" : "",
+        "setting" : {
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        }
+    }
 }

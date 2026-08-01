@@ -10,9 +10,181 @@
       }
     </script>
     <title>animal-island-demo-uni</title>
+    <!-- H5 小屏修复（写入 index.html 确保 100% 生效，不受 scoped/Vite HMR 缓存影响） -->
+    <style>
+      @media (max-width: 767px) {
+        /* 根字号比例：与 uni-app 默认 23.4375 对齐，使用 clamp 限制 14px~18px 保持小屏舒适协调 */
+        html { font-size: clamp(14px, calc(100vw / 23.4375), 18px) !important; }
+
+        /* 布局：纵向堆叠 + 防止截断 fixed 子元素 */
+        .app-root {
+          flex-direction: column !important;
+          overflow: visible !important;
+        }
+        .app-status-bar { display: none !important; }
+        .app-sidebar-outer {
+          flex: 0 0 auto !important;
+          width: 100% !important;
+          position: static !important;
+          overflow: visible !important;
+        }
+        .app-sidebar {
+          position: static !important;
+          max-height: none !important;
+          overflow: visible !important;
+        }
+        .app-main {
+          flex: 0 0 auto !important;
+          width: 100% !important;
+          padding-top: calc(52px + var(--status-bar-height, 0px) + env(safe-area-inset-top, 0px)) !important;
+          box-sizing: border-box !important;
+        }
+
+        /* ====== 抽屉导航（完整定位，替代 SideNav.vue 的 scoped CSS）====== */
+        /* 默认隐藏在屏幕左侧外 */
+        .side-nav.mobile {
+          position: fixed !important;
+          top: 0 !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          height: 100vh !important;
+          width: 80% !important;
+          max-width: 300px !important;
+          transform: translateX(-100%) !important;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18) !important;
+          z-index: 99999 !important;
+          transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        /* 打开时滑入 */
+        .side-nav.mobile.open {
+          transform: translateX(0) !important;
+        }
+
+        /* 遮罩层 */
+        .backdrop.mobile {
+          display: block !important;
+          position: fixed !important;
+          inset: 0 !important;
+          background: rgba(60, 48, 30, 0.35) !important;
+          z-index: 99998 !important;
+        }
+
+        /* 顶栏（汉堡菜单栏） */
+        .mobile-bar.show {
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 99997 !important;
+          padding: 0 14px !important;
+          padding-top: env(safe-area-inset-top) !important;
+          height: calc(52px + env(safe-area-inset-top)) !important;
+          background: #fffaf2 !important;
+          border-bottom: 1px solid #e8e2d6 !important;
+        }
+
+        /* 桌面端 side-nav 样式重置（确保小屏下不残留桌面布局） */
+        .side-nav:not(.mobile) {
+          display: none !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <!-- H5 小屏修复：监听 + 持续覆盖，绕过 uni-app useRem() 和 scoped CSS -->
+    <script>
+      function applyMobileFix() {
+        if (window.innerWidth > 767) return;
+        // 1. 强制根字号（限制 14px ~ 18px 范围）
+        var calculatedFs = Math.min(Math.max(window.innerWidth / 23.4375, 14), 18);
+        document.documentElement.style.setProperty('font-size', calculatedFs + 'px', 'important');
+        // 2. 抽屉定位 + 动画
+        var nav = document.querySelector('.side-nav.mobile');
+        if (nav) {
+          var isOpen = nav.classList.contains('open');
+          nav.style.setProperty('position', 'fixed', 'important');
+          nav.style.setProperty('top', '0', 'important');
+          nav.style.setProperty('bottom', '0', 'important');
+          nav.style.setProperty('left', '0', 'important');
+          nav.style.setProperty('height', '100vh', 'important');
+          nav.style.setProperty('width', '80%', 'important');
+          nav.style.setProperty('max-width', '300px', 'important');
+          nav.style.setProperty('box-shadow', '0 12px 40px rgba(0,0,0,.18)', 'important');
+          nav.style.setProperty('z-index', '99999', 'important');
+          nav.style.setProperty('transform', isOpen ? 'translateX(0)' : 'translateX(-100%)', 'important');
+          nav.style.setProperty('transition', 'transform .28s cubic-bezier(.16,1,.3,1)', 'important');
+        }
+        // 3. 遮罩
+        var bd = document.querySelector('.backdrop.mobile');
+        if (bd) {
+          bd.style.setProperty('display', 'block', 'important');
+          bd.style.setProperty('position', 'fixed', 'important');
+          bd.style.setProperty('inset', '0', 'important');
+          bd.style.setProperty('background', 'rgba(60,48,30,.35)', 'important');
+          bd.style.setProperty('z-index', '99998', 'important');
+        }
+        // 4. 顶栏
+        var bar = document.querySelector('.mobile-bar.show');
+        if (bar) {
+          bar.style.setProperty('display', 'flex', 'important');
+          bar.style.setProperty('align-items', 'center', 'important');
+          bar.style.setProperty('position', 'fixed', 'important');
+          bar.style.setProperty('top', '0', 'important');
+          bar.style.setProperty('left', '0', 'important');
+          bar.style.setProperty('right', '0', 'important');
+          bar.style.setProperty('z-index', '99997', 'important');
+        }
+        // 5. 布局
+        var root = document.querySelector('.app-root');
+        if (root) root.style.setProperty('flex-direction', 'column', 'important');
+        var sbo = document.querySelector('.app-sidebar-outer');
+        if (sbo) {
+          sbo.style.setProperty('width', '100%', 'important');
+          sbo.style.setProperty('flex', '0 0 auto', 'important');
+          sbo.style.setProperty('position', 'static', 'important');
+          sbo.style.setProperty('overflow', 'visible', 'important');
+        }
+        var sb = document.querySelector('.app-sidebar');
+        if (sb) {
+          sb.style.setProperty('position', 'static', 'important');
+          sb.style.setProperty('max-height', 'none', 'important');
+          sb.style.setProperty('overflow', 'visible', 'important');
+        }
+        var statusBar = document.querySelector('.app-status-bar');
+        if (statusBar) statusBar.style.setProperty('display', 'none', 'important');
+        var main = document.querySelector('.app-main');
+        if (main) {
+          main.style.setProperty('width', '100%', 'important');
+          main.style.setProperty('padding-top', 'calc(52px + env(safe-area-inset-top))', 'important');
+          main.style.setProperty('box-sizing', 'border-box', 'important');
+        }
+      }
+      if (window.innerWidth <= 767) {
+        // 立即执行一次
+        applyMobileFix();
+        // 监听 html style 变化（uni-app useRem 会改它），立刻覆盖
+        new MutationObserver(function() { applyMobileFix(); })
+          .observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
+        // 持续轮询 5 秒（覆盖 Vue mount 期间的所有修改）
+        var n = 0;
+        var iv = setInterval(function() {
+          applyMobileFix();
+          if (++n > 50) clearInterval(iv);
+        }, 100);
+        // 监听抽屉 open 类切换
+        function watchDrawer() {
+          var nav = document.querySelector('.side-nav.mobile');
+          if (!nav) { setTimeout(watchDrawer, 300); return; }
+          new MutationObserver(function() { applyMobileFix(); })
+            .observe(nav, { attributes: true, attributeFilter: ['class'] });
+        }
+        setTimeout(watchDrawer, 500);
+      }
+    </script>
   </body>
 </html>
