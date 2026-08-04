@@ -1,10 +1,10 @@
 {
   "id": "animal-island",
   "displayName": "Animal Island UI",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "CC-BY-NC-4.0",
   "description": "自然治愈系 uni-app 组件库（Vue 3），由 animal-island-vue 改造而来。已验证平台：H5、微信小程序；App 及其他小程序端尚未验证（详见 README 平台支持表）。",
-  "repository": "https://github.com/guokaigdg/animal-island-vue",
+  "repository": "https://github.com/leepule/animal-island-uniapp",
   "keywords": [
     "uni-app",
     "ui",

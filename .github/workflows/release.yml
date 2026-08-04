@@ -1,0 +1,38 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Verify release version
+        run: node scripts/release.mjs check "$GITHUB_REF_NAME"
+
+      - name: Package uni_modules component
+        working-directory: src/uni_modules
+        run: zip -r "$GITHUB_WORKSPACE/animal-island-$GITHUB_REF_NAME.zip" animal-island
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "$GITHUB_REF_NAME"
+          "animal-island-$GITHUB_REF_NAME.zip"
+          --verify-tag
+          --generate-notes
+          --title "Animal Island UI $GITHUB_REF_NAME"

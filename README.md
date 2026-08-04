@@ -11,6 +11,7 @@
     <a href="https://github.com/guokaigdg/animal-island-ui"><img src="https://img.shields.io/badge/inspired%20by-animal--island--ui-brightgreen?style=flat-square" alt="Inspired by Animal-Island-UI"></a>
     <a href="https://github.com/guokaigdg/animal-island-vue"><img src="https://img.shields.io/badge/ported%20from-animal--island--vue-blue?style=flat-square" alt="Ported from Animal-Island-Vue"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey?style=flat-square" alt="License"></a>
+    <a href="https://github.com/leepule/animal-island-uniapp/releases"><img src="https://img.shields.io/github/v/release/leepule/animal-island-uniapp?style=flat-square&label=release" alt="GitHub Release"></a>
     <img src="https://img.shields.io/badge/components-22-blue?style=flat-square" alt="Components">
     <img src="https://img.shields.io/badge/platform-H5%20%7C%20%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%EF%BC%88App%20%26%20%E5%85%B6%E4%BB%96%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A7%BB%E6%A4%8D%E4%B8%AD%EF%BC%89-yellow?style=flat-square" alt="Platform Support: H5 & 微信小程序 verified; App & others WIP">
 </div>
@@ -192,6 +193,12 @@ npm run dev:mp-weixin
 
 - 🏝 **[animal-island-ui](https://github.com/guokaigdg/animal-island-ui)** (React 原版组件库) 以及 **[animal-island-vue](https://github.com/guokaigdg/animal-island-vue)** (Vue 3 移植版) —— 感谢原作者 **[guokaigdg](https://github.com/guokaigdg)** 卓越的创意设计与开源工作。
 - 🎮 **《集合啦！动物森友会》(Animal Crossing: New Horizons)** —— 感谢任天堂带来如此温馨治愈的游戏世界与视觉交互灵感。
+
+## 📦 Releases
+
+正式版本通过 [GitHub Releases](https://github.com/leepule/animal-island-uniapp/releases) 发布，并提供可直接放入项目 `uni_modules` 目录的组件包。版本号遵循 SemVer，Git 标签格式为 `vX.Y.Z`。
+
+维护者的版本选择、更新命令和发版步骤见 [RELEASING.md](RELEASING.md)。
 
 ---
 
