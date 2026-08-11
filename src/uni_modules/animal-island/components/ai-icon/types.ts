@@ -8,7 +8,9 @@ export type IconName =
   | 'icon-helicopter'
   | 'icon-map'
   | 'icon-shopping'
-  | 'icon-variant';
+  | 'icon-variant'
+  | 'icon-home'
+  | 'icon-my';
 
 export interface IconProps {
   name: IconName;
@@ -27,4 +29,6 @@ export const ICON_LIST: { name: IconName; label: string }[] = [
   { name: 'icon-map', label: 'Map' },
   { name: 'icon-shopping', label: 'Shopping' },
   { name: 'icon-variant', label: 'Variant' },
+  { name: 'icon-home', label: 'Home' },
+  { name: 'icon-my', label: 'My' },
 ];

@@ -65,6 +65,12 @@ const sizeStyle = computed<CSSProperties>(() => ({
   &--icon-variant {
     background-image: url('../../assets/img/icons/icon-variant.svg');
   }
+  &--icon-home {
+    background-image: url('../../assets/img/icons/icon-home.svg');
+  }
+  &--icon-my {
+    background-image: url('../../assets/img/icons/icon-my.svg');
+  }
 }
 
 @keyframes animal-icon-bounce {
