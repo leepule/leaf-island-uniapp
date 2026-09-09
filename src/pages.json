@@ -21,8 +21,7 @@
     { "path": "pages/demos/codeblock", "style": { "navigationBarTitleText": "CodeBlock 代码" } },
     { "path": "pages/demos/loading", "style": { "navigationBarTitleText": "Loading 加载" } },
     { "path": "pages/demos/table", "style": { "navigationBarTitleText": "Table 表格" } },
-    { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } },
-    { "path": "pages/demos/phone", "style": { "navigationBarTitleText": "Phone 手机" } }
+    { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } }
   ],
   "leftWindow": {
     "path": "components/SideNav/LeftWindowNav.vue",

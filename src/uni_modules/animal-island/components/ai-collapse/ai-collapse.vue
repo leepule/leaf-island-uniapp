@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Icon from '../ai-icon/ai-icon.vue';
 import { useControlled } from '../../composables/useControlled';
 
 interface Props {
@@ -57,7 +58,7 @@ function toggle() {
       <text class="animal-collapse__title">
         <slot name="question">{{ question }}</slot>
       </text>
-      <view class="animal-collapse__arrow" aria-hidden="true" />
+      <Icon name="icon-chevron-down" size="20px" class="animal-collapse__arrow" aria-hidden="true" />
     </view>
     <view class="animal-collapse__panel" :style="{ gridTemplateRows: expandedState ? '1fr' : '0fr' }">
       <view class="animal-collapse__content">
@@ -129,10 +130,8 @@ function toggle() {
   }
 
   &__arrow {
-    width: 20px;
-    height: 20px;
     flex-shrink: 0;
-    background: url('../../assets/img/icons/collapse-leaf.svg') no-repeat center / contain;
+    color: @text-color-secondary;
     opacity: 0.5;
     transition:
       opacity @motion-duration-base @motion-ease,

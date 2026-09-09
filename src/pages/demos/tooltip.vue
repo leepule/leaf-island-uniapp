@@ -12,7 +12,7 @@ const code = `<!-- 基础用法 -->
     <ai-button>Hover 我</ai-button>
 </ai-tooltip>
 
-<!-- 动森 island 风格 -->
+<!-- island 有机圆角风格 -->
 <ai-tooltip variant="island" bordered title="有边框有机气泡">
     <ai-button>Island</ai-button>
 </ai-tooltip>
@@ -42,7 +42,7 @@ const code = `<!-- 基础用法 -->
         </view>
       </view>
 
-      <view class="demo-label">风格 — island 动森不规则气泡</view>
+      <view class="demo-label">风格 — island 有机圆角气泡</view>
       <view class="demo-box">
         <view style="display: flex; gap: 20rpx; align-items: center; flex-wrap: wrap">
           <ai-tooltip title="标准矩形气泡" placement="top">

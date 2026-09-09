@@ -23,7 +23,7 @@ const CARD_API = [
 ];
 
 const code = `<ai-card color="app-pink">
-    这是一张动森风格的卡片内容。
+    这是一张自然治愈风格的卡片内容。
 </ai-card>`;
 </script>
 

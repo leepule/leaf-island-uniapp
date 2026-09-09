@@ -2,8 +2,8 @@
   "id": "animal-island",
   "displayName": "Animal Island UI",
   "version": "1.0.0",
-  "license": "CC-BY-NC-4.0",
-  "description": "自然治愈系 uni-app 组件库（Vue 3），由 animal-island-vue 改造而来。已验证平台：H5、微信小程序；App 及其他小程序端尚未验证（详见 README 平台支持表）。",
+  "license": "MIT",
+  "description": "一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。所有组件及素材均为原创或采用合法开源协议，与任何商业游戏作品无关。",
   "repository": "https://github.com/leepule/animal-island-uniapp",
   "keywords": [
     "uni-app",
@@ -49,6 +49,8 @@
     }
   },
   "peerDependencies": {
+    "@lucide/vue": ">=1.43.0",
+    "lucide-static": ">=1.43.0",
     "vue": ">=3.4.0"
   }
 }

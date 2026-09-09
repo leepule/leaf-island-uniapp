@@ -152,23 +152,17 @@ onBeforeUnmount(() => {
   &__body {
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
     padding: 48px 48px 32px;
-    background: rgb(247, 243, 223);
+    background: #f7f3df;
+    border: 4px solid #c4b89e;
     border-radius: 32px 28px 36px 30px;
+    box-shadow: 0 16px 48px rgba(76, 60, 51, 0.18);
     color: rgb(128, 115, 89);
     font-family: @font-family;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
-    /* #ifdef H5 */
-    background-color: transparent;
-    background-image: url('../../assets/img/decor/island-panel.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    border-radius: 0;
-    /* #endif */
   }
 
   &__header {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue';
-import leafIcon from '../../assets/img/icons/icon-leaf.png';
+import Icon from '../ai-icon/ai-icon.vue';
 import { useControlled } from '../../composables/useControlled';
 import type { TabItem } from './types';
 
@@ -74,9 +74,11 @@ function handleClick(key: string) {
           {{ item.key === activeKey ? '●' : '○' }}
         </text>
         <text class="animal-tabs__label">{{ item.label }}</text>
-        <image
+        <Icon
           v-if="item.key === activeKey"
-          :src="leafIcon"
+          name="icon-leaf"
+          size="18px"
+          variant="light"
           class="animal-tabs__leaf"
           :class="{ 'animal-tabs__leaf--static': !leafAnimation }"
         />

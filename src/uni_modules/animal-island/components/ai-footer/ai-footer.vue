@@ -19,10 +19,10 @@ withDefaults(defineProps<Props>(), { type: 'tree' });
   background-repeat: no-repeat;
 
   &--sea {
-    background: url('../../assets/img/footer/footer-sea.svg') center / contain no-repeat;
+    background: url('../../assets/img/footer/wave.svg') center / contain no-repeat;
   }
   &--tree {
-    background: url('../../assets/img/footer/footer-tree.webp') bottom center / cover no-repeat;
+    background: url('../../assets/img/footer/tree.svg') bottom center / cover no-repeat;
   }
 }
 </style>

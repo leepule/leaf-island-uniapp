@@ -50,7 +50,7 @@ export const PAGE_INFO: Record<string, PageInfo> = {
   icon: {
     title: 'Icon 图标',
     tag: '10 icons',
-    desc: '图标组件 — 动森风格图标集，包含 10 个可爱图标，支持自定义尺寸与弹跳动画。',
+    desc: '图标组件 — 全量 Lucide 图标，支持自定义尺寸、颜色与弹跳动画。',
   },
   select: {
     title: 'Select 选择器',
@@ -82,9 +82,8 @@ export const PAGE_INFO: Record<string, PageInfo> = {
   loading: {
     title: 'Loading 加载',
     tag: 'island',
-    desc: '动森风格小岛 Loading 动画组件；纯 CSS 旋转 + opacity/scale 显隐，全平台一致。',
+    desc: '自然风小岛 Loading 动画组件；纯 CSS 旋转 + opacity/scale 显隐，全平台一致。',
   },
   table: { title: 'Table 表格', tag: 'data', desc: '表格组件 — 支持泛型、列定义、悬浮动画、加载、空态。' },
   time: { title: 'Time 时间', tag: 'hud', desc: '经典 HUD 风格的时间显示组件，实时更新时间。' },
-  phone: { title: 'Phone 手机', tag: 'ui', desc: '动森风格手机界面，包含对话框和背包功能。' },
 };

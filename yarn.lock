@@ -1803,6 +1803,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lucide/vue@^1.43.0":
+  version "1.43.0"
+  resolved "https://registry.npmjs.org/@lucide/vue/-/vue-1.43.0.tgz#9531124e9408e0d40a64f364fdece079b2a05878"
+  integrity sha512-Asq2HozXp4s7JxQVTVVeMo6WINVsJr477uNOafM3Qft1K1aDbbgkVuCP3X37UZXcVB4rEGXaIM//04Ndi2GJfQ==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -3064,6 +3069,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lucide-static@^1.43.0:
+  version "1.43.0"
+  resolved "https://registry.npmjs.org/lucide-static/-/lucide-static-1.43.0.tgz#efc55edcd4f055121aa0a9e38b683041d66b156d"
+  integrity sha512-w7vdVFqh4vv7RxWHN4sSeylA0s3GHV5vpyGqZI0q22MINKJyhMNWSMd90RyTUYWBRNYqdZVZzrMmijVxU3Cl9A==
 
 magic-string@0.30.11, magic-string@^0.30.7:
   version "0.30.11"

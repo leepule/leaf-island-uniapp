@@ -46,8 +46,8 @@ const active = ref('tab1');
       <view class="demo-box">
         <ai-tabs v-model="activeKey" :items="items">
           <template #tab1><text>岛上有 10 位居民，今天天气晴朗，适合钓鱼。</text></template>
-          <template #tab2><text>Nook 商店今日特惠：大头菜 99 铃钱。</text></template>
-          <template #tab3><text>服务台可以办理居民登记与素材领取。</text></template>
+          <template #tab2><text>今日市集特惠：手工果篮 99 元。</text></template>
+          <template #tab3><text>服务中心可以办理活动登记与物料领取。</text></template>
         </ai-tabs>
       </view>
 

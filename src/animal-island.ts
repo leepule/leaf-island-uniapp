@@ -10,7 +10,7 @@ export type { CheckboxOption, CheckboxSize } from './uni_modules/animal-island/c
 export type { RadioOption, RadioSize } from './uni_modules/animal-island/components/ai-radio/types';
 export type { TabItem } from './uni_modules/animal-island/components/ai-tabs/types';
 export type { IconName } from './uni_modules/animal-island/components/ai-icon/types';
-export { ICON_LIST } from './uni_modules/animal-island/components/ai-icon/types';
+export { ICON_LIST, ICON_NAMES } from './uni_modules/animal-island/components/ai-icon/icon-catalog';
 export type {
   TooltipPlacement,
   TooltipVariant,

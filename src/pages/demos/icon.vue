@@ -2,13 +2,16 @@
 import { ICON_LIST } from '../../animal-island';
 
 const ICON_API = [
-  { prop: 'name', desc: '图标名称', type: 'IconName', defaultVal: '-', required: true },
+  { prop: 'name', desc: 'Lucide 图标名，支持 icon- 前缀', type: 'IconName', defaultVal: '-', required: true },
   { prop: 'size', desc: '图标尺寸', type: 'number | string', defaultVal: '24' },
   { prop: 'bounce', desc: '弹跳动画', type: 'boolean', defaultVal: 'false' },
+  { prop: 'variant', desc: '图标颜色变体', type: "'dark' | 'light'", defaultVal: "'dark'" },
+  { prop: 'color', desc: '图标颜色', type: 'string', defaultVal: 'currentColor' },
+  { prop: 'strokeWidth', desc: '线条宽度', type: 'number | string', defaultVal: '2' },
 ];
 
-const code = `<ai-icon name="icon-miles" :size="32" />
-<ai-icon name="icon-camera" :size="48" bounce />`;
+const code = `<ai-icon name="icon-ticket" :size="32" />
+<ai-icon name="icon-camera" :size="48" color="#0cc0b5" :stroke-width="1.5" bounce />`;
 </script>
 
 <template>
@@ -18,26 +21,26 @@ const code = `<ai-icon name="icon-miles" :size="32" />
 
       <view class="demo-label">基础用法</view>
       <view class="demo-row">
-        <ai-icon name="icon-miles" :size="32" />
+        <ai-icon name="icon-ticket" :size="32" />
         <ai-icon name="icon-camera" :size="32" />
-        <ai-icon name="icon-chat" :size="32" />
-        <ai-icon name="icon-design" :size="32" />
+        <ai-icon name="icon-message-circle" :size="32" />
+        <ai-icon name="icon-palette" :size="32" />
         <ai-icon name="icon-map" :size="32" />
       </view>
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-row">
-        <ai-icon name="icon-miles" :size="16" />
-        <ai-icon name="icon-miles" :size="24" />
-        <ai-icon name="icon-miles" :size="32" />
-        <ai-icon name="icon-miles" :size="48" />
+        <ai-icon name="icon-ticket" :size="16" />
+        <ai-icon name="icon-ticket" :size="24" />
+        <ai-icon name="icon-ticket" :size="32" />
+        <ai-icon name="icon-ticket" :size="48" />
       </view>
 
       <view class="demo-label">bounce 弹跳动画（H5 悬停查看效果）</view>
       <view class="demo-row">
-        <ai-icon name="icon-miles" :size="32" bounce />
+        <ai-icon name="icon-ticket" :size="32" bounce />
         <ai-icon name="icon-camera" :size="32" bounce />
-        <ai-icon name="icon-chat" :size="32" bounce />
+        <ai-icon name="icon-message-circle" :size="32" bounce />
       </view>
 
       <view class="demo-label">图标列表</view>

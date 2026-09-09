@@ -1,34 +1,17 @@
-export type IconName =
-  | 'icon-miles'
-  | 'icon-camera'
-  | 'icon-chat'
-  | 'icon-critterpedia'
-  | 'icon-design'
-  | 'icon-diy'
-  | 'icon-helicopter'
-  | 'icon-map'
-  | 'icon-shopping'
-  | 'icon-variant'
-  | 'icon-home'
-  | 'icon-my';
+/** Lucide icon name, such as `leaf`, `icon-leaf`, or `MessageCircle`. */
+export type IconName = string;
 
 export interface IconProps {
   name: IconName;
+  width?: number | string;
+  height?: number | string;
+  color?: string;
+  strokeWidth?: number | string;
+  strokeLinecap?: string;
+  strokeLinejoin?: string;
+  class?: string;
+  /** H5 传给 Lucide；其他端用于设置 image 尺寸。 */
   size?: number | string;
   bounce?: boolean;
+  variant?: 'dark' | 'light';
 }
-
-export const ICON_LIST: { name: IconName; label: string }[] = [
-  { name: 'icon-miles', label: 'NookMiles' },
-  { name: 'icon-camera', label: 'Camera' },
-  { name: 'icon-chat', label: 'Chat' },
-  { name: 'icon-critterpedia', label: 'Critterpedia' },
-  { name: 'icon-design', label: 'Design' },
-  { name: 'icon-diy', label: 'DIY' },
-  { name: 'icon-helicopter', label: 'Helicopter' },
-  { name: 'icon-map', label: 'Map' },
-  { name: 'icon-shopping', label: 'Shopping' },
-  { name: 'icon-variant', label: 'Variant' },
-  { name: 'icon-home', label: 'Home' },
-  { name: 'icon-my', label: 'My' },
-];

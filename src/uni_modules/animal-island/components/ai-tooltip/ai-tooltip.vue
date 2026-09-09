@@ -171,9 +171,13 @@ const isIsland = computed(() => props.variant === 'island');
 
 .animal-tooltip__island-body {
   position: relative;
+  box-sizing: border-box;
   width: max-content;
   max-width: 560rpx;
+  background: @tooltip-bg;
+  border: @border-width solid @tooltip-border;
   border-radius: 44rpx 36rpx 48rpx 40rpx;
+  box-shadow: 0 8rpx 28rpx rgba(121, 79, 39, 0.14);
 }
 .animal-tooltip__island-content {
   position: relative;
@@ -190,20 +194,16 @@ const isIsland = computed(() => props.variant === 'island');
 }
 
 .animal-tooltip__bubble--island.animal-tooltip__bubble--bordered .animal-tooltip__island-body {
-  border: @border-width solid @tooltip-border;
-  filter: drop-shadow(0 8rpx 28rpx rgba(121, 79, 39, 0.14));
-
-  /* #ifdef H5 */
-  border-color: transparent;
-  border-radius: 0;
-  background: url('../../assets/img/decor/island-panel.svg') no-repeat center / 100% 100%;
-  /* #endif */
+  border-color: @tooltip-border;
 }
 .animal-tooltip__bubble--island.animal-tooltip__bubble--bordered .animal-tooltip__island-content {
-  /* #ifdef H5 */
   background: transparent;
   border-radius: 0;
-  /* #endif */
+}
+.animal-tooltip__bubble--island.animal-tooltip__bubble--borderless .animal-tooltip__island-body {
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 .animal-tooltip__bubble--island.animal-tooltip__bubble--borderless .animal-tooltip__island-content {
   background: @tooltip-bg;

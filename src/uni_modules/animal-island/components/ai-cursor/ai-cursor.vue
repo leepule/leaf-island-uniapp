@@ -22,7 +22,7 @@ const modeClass = computed(() => (props.forceAll ? 'animal-cursor--force' : 'ani
 /* 光标只在 H5 有意义，:deep() 用于覆盖组件 slot 中的后代元素。 */
 .animal-cursor {
   cursor:
-    url('../../assets/img/cursor/cursor-icon.png') 4 0,
+    url('../../assets/img/cursor/cursor-pointer.svg') 4 4,
     default;
 }
 

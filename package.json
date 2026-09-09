@@ -2,8 +2,8 @@
   "name": "animal-island-demo-uni",
   "version": "1.0.0",
   "private": true,
-  "license": "CC-BY-NC-4.0",
-  "description": "animal-island uni_modules 包的全组件验证脚手架。@dcloudio/* 依赖请按你本地 HBuilderX / uni-app 发行版填入（详见 README）。",
+  "license": "MIT",
+  "description": "Animal Island UI 的 UniApp 组件验证脚手架。组件库定位：一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。",
   "scripts": {
     "dev:h5": "uni",
     "dev:mp-weixin": "uni -p mp-weixin",
@@ -16,15 +16,17 @@
     "release:check": "node scripts/release.mjs check"
   },
   "dependencies": {
+    "@lucide/vue": "^1.43.0",
+    "lucide-static": "^1.43.0",
     "vue": "^3.4.0"
   },
   "devDependencies": {
-    "vite": "^4.0.0",
-    "less": "^4.2.0",
-    "typescript": "^5.7.3",
     "@dcloudio/uni-app": "3.0.0-alpha-5020220260725001",
     "@dcloudio/uni-h5": "3.0.0-alpha-5020220260725001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-5020220260725001",
-    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5020220260725001"
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5020220260725001",
+    "less": "^4.2.0",
+    "typescript": "^5.7.3",
+    "vite": "^4.0.0"
   }
 }

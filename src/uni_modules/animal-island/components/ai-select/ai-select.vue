@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import Icon from '../ai-icon/ai-icon.vue';
 import type { SelectOption } from './types';
 
 interface Props {
@@ -70,6 +71,12 @@ function handleSelect(key: string) {
         <text class="animal-select__spacer" />
         {{ option.label }}
         <view v-if="modelValue === option.key" class="animal-select__highlight" />
+        <Icon
+          v-if="hoveredKey === option.key"
+          name="icon-leaf"
+          size="24px"
+          class="animal-select__cursor"
+        />
       </view>
     </view>
   </view>
@@ -186,24 +193,21 @@ function handleSelect(key: string) {
 
     &--hovered {
       font-weight: 700;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: -12px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 35px;
-        height: 35px;
-        background: url('../../assets/img/cursor/select-cursor.svg') no-repeat center / contain;
-        animation: animal-select-cursor-in 0.5s ease-out forwards;
-      }
     }
   }
 
   &__spacer {
     width: 16px;
     font-size: 12px;
+  }
+
+  &__cursor {
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    color: @primary-color;
+    transform: translateY(-50%);
+    animation: animal-select-cursor-in 0.5s ease-out forwards;
   }
 
   &__highlight {

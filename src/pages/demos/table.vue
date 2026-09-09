@@ -11,7 +11,7 @@ interface Critter extends Record<string, unknown> {
 const columns: TableColumn<Critter>[] = [
   { title: '名称', dataIndex: 'name', key: 'name', width: '40%' },
   { title: '类别', dataIndex: 'kind', key: 'kind' },
-  { title: '售价(铃钱)', dataIndex: 'price', key: 'price', align: 'right' },
+  { title: '售价(元)', dataIndex: 'price', key: 'price', align: 'right' },
 ];
 
 const data: Critter[] = [
@@ -64,7 +64,7 @@ const data = [
       <view class="demo-box" style="padding: 0; overflow: hidden">
         <ai-table :columns="columns" :data-source="data" :striped="false">
           <template #cell-price="{ value }">
-            <text style="color: #e0792b; font-weight: 700">{{ value }} 铃钱</text>
+            <text style="color: #e0792b; font-weight: 700">{{ value }} 元</text>
           </template>
         </ai-table>
       </view>
