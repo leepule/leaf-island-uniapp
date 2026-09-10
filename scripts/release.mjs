@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const packagePaths = [
   path.join(projectRoot, 'package.json'),
-  path.join(projectRoot, 'src/uni_modules/animal-island/package.json'),
+  path.join(projectRoot, 'src/uni_modules/leaf-island/package.json'),
 ];
 const semverPattern = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/;
 

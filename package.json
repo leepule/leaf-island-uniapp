@@ -1,9 +1,9 @@
 {
-  "name": "animal-island-demo-uni",
+  "name": "leaf-island-demo-uni",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
-  "description": "Animal Island UI 的 UniApp 组件验证脚手架。组件库定位：一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。",
+  "description": "Leaf Island UI 的 UniApp 组件验证脚手架。组件库定位：一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。",
   "scripts": {
     "dev:h5": "uni",
     "dev:mp-weixin": "uni -p mp-weixin",

@@ -21,10 +21,10 @@ const TITLE_API = [
   { prop: 'color', desc: '配色', type: '13 种配色', defaultVal: "'default'" },
 ];
 
-const code = `<ai-title>斯普拉遁</ai-title>
-<ai-title size="small">小标题</ai-title>
-<ai-title size="large" color="app-pink">大号粉色</ai-title>
-<ai-title color="purple">紫色标题</ai-title>`;
+const code = `<li-title>斯普拉遁</li-title>
+<li-title size="small">小标题</li-title>
+<li-title size="large" color="app-pink">大号粉色</li-title>
+<li-title color="purple">紫色标题</li-title>`;
 </script>
 
 <template>
@@ -33,38 +33,38 @@ const code = `<ai-title>斯普拉遁</ai-title>
       <DemoHeader name="title" />
 
       <view class="demo-label">飘带标题</view>
-      <view :style="bgGreen"><ai-title>斯普拉遁</ai-title></view>
+      <view :style="bgGreen"><li-title>斯普拉遁</li-title></view>
 
       <view class="demo-label">配色变体</view>
       <view :style="{ ...bgSand, display: 'flex', flexWrap: 'wrap', gap: '20rpx' }">
-        <ai-title color="default">默认绿</ai-title>
-        <ai-title color="app-pink">粉色</ai-title>
-        <ai-title color="purple">紫色</ai-title>
-        <ai-title color="app-blue">蓝色</ai-title>
-        <ai-title color="app-yellow">黄色</ai-title>
-        <ai-title color="app-orange">橙色</ai-title>
-        <ai-title color="app-teal">青色</ai-title>
-        <ai-title color="app-green">绿色</ai-title>
-        <ai-title color="app-red">红色</ai-title>
-        <ai-title color="lime-green">青柠</ai-title>
-        <ai-title color="yellow-green">黄绿</ai-title>
-        <ai-title color="brown">棕色</ai-title>
-        <ai-title color="warm-peach-pink">暖桃粉</ai-title>
+        <li-title color="default">默认绿</li-title>
+        <li-title color="app-pink">粉色</li-title>
+        <li-title color="purple">紫色</li-title>
+        <li-title color="app-blue">蓝色</li-title>
+        <li-title color="app-yellow">黄色</li-title>
+        <li-title color="app-orange">橙色</li-title>
+        <li-title color="app-teal">青色</li-title>
+        <li-title color="app-green">绿色</li-title>
+        <li-title color="app-red">红色</li-title>
+        <li-title color="lime-green">青柠</li-title>
+        <li-title color="yellow-green">黄绿</li-title>
+        <li-title color="brown">棕色</li-title>
+        <li-title color="warm-peach-pink">暖桃粉</li-title>
       </view>
 
       <view class="demo-label">小尺寸</view>
-      <view :style="bgCoral"><ai-title size="small">小标题</ai-title></view>
+      <view :style="bgCoral"><li-title size="small">小标题</li-title></view>
 
       <view class="demo-label">中尺寸（默认）</view>
-      <view :style="bgMint"><ai-title size="middle">中等标题</ai-title></view>
+      <view :style="bgMint"><li-title size="middle">中等标题</li-title></view>
 
       <view class="demo-label">大尺寸</view>
-      <view :style="bgLavender"><ai-title size="large">大号标题</ai-title></view>
+      <view :style="bgLavender"><li-title size="large">大号标题</li-title></view>
 
       <view class="demo-label">支持英文与表情</view>
-      <view :style="bgSky"><ai-title>🎮 LET'S PLAY!</ai-title></view>
+      <view :style="bgSky"><li-title>🎮 LET'S PLAY!</li-title></view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="TITLE_API" />
     </view>
   </AppLayout>

@@ -34,9 +34,9 @@ const CHECKBOX_API = [
   { prop: 'direction', desc: '排列方向', type: `'horizontal' | 'vertical'`, defaultVal: "'horizontal'" },
 ];
 
-const code = `<ai-checkbox v-model="value" :options="options" />
-<ai-checkbox :options="options" direction="vertical" />
-<ai-checkbox :options="options" disabled />`;
+const code = `<li-checkbox v-model="value" :options="options" />
+<li-checkbox :options="options" direction="vertical" />
+<li-checkbox :options="options" disabled />`;
 </script>
 
 <template>
@@ -55,22 +55,22 @@ const code = `<ai-checkbox v-model="value" :options="options" />
             : '无'
         }}</text></view
       >
-      <view class="demo-box"><ai-checkbox v-model="selected1" :options="islandOptions" /></view>
+      <view class="demo-box"><li-checkbox v-model="selected1" :options="islandOptions" /></view>
 
       <view class="demo-label">垂直排列 + 含禁用选项</view>
-      <view class="demo-box"><ai-checkbox v-model="selected2" :options="critterOptions" direction="vertical" /></view>
+      <view class="demo-box"><li-checkbox v-model="selected2" :options="critterOptions" direction="vertical" /></view>
 
       <view class="demo-label">小尺寸 / 中尺寸 / 大尺寸</view>
-      <view class="demo-box"><ai-checkbox v-model="selected3" :options="islandOptions" size="small" /></view>
-      <view class="demo-box"><ai-checkbox v-model="selected4" :options="islandOptions" size="middle" /></view>
+      <view class="demo-box"><li-checkbox v-model="selected3" :options="islandOptions" size="small" /></view>
+      <view class="demo-box"><li-checkbox v-model="selected4" :options="islandOptions" size="middle" /></view>
       <view class="demo-box"
-        ><ai-checkbox v-model="selected5" :options="islandOptions.slice(0, 3)" size="large"
+        ><li-checkbox v-model="selected5" :options="islandOptions.slice(0, 3)" size="large"
       /></view>
 
       <view class="demo-label">全部禁用</view>
-      <view class="demo-box"><ai-checkbox v-model="selected6" :options="islandOptions" disabled /></view>
+      <view class="demo-box"><li-checkbox v-model="selected6" :options="islandOptions" disabled /></view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="CHECKBOX_API" />
     </view>
   </AppLayout>

@@ -25,14 +25,14 @@ jobs:
 
       - name: Package uni_modules component
         working-directory: src/uni_modules
-        run: zip -r "$GITHUB_WORKSPACE/animal-island-$GITHUB_REF_NAME.zip" animal-island
+        run: zip -r "$GITHUB_WORKSPACE/leaf-island-$GITHUB_REF_NAME.zip" leaf-island
 
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
           gh release create "$GITHUB_REF_NAME"
-          "animal-island-$GITHUB_REF_NAME.zip"
+          "leaf-island-$GITHUB_REF_NAME.zip"
           --verify-tag
           --generate-notes
-          --title "Animal Island UI $GITHUB_REF_NAME"
+          --title "Leaf Island UI $GITHUB_REF_NAME"

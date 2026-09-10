@@ -6,7 +6,7 @@ import { colsForWidth } from './breakpoints';
 const items = Object.entries(PAGE_INFO).map(([key, info]) => ({ key, ...info }));
 
 const features = [
-  { icon: '🎨', title: 'Animal 风格', desc: 'SVG 有机形状裁切，3D 按压按钮，温暖质朴的自然 UI 质感' },
+  { icon: '🎨', title: '自然风格', desc: 'SVG 有机形状裁切，3D 按压按钮，温暖质朴的自然 UI 质感' },
   {
     icon: '🧩',
     title: '22 个组件',
@@ -62,19 +62,19 @@ function go(key: string) {
     <view class="home">
       <!-- Hero -->
       <view class="hero">
-        <view class="hero-title">Animal Island<br />UI</view>
+        <view class="hero-title">Leaf Island<br />UI</view>
         <view class="hero-subtitle">
-          Animal 风格的 uni-app 组件库，基于 TypeScript + Vue 3 + Less 构建，让跨端应用充满温暖质感
+          自然治愈风格的 uni-app 组件库，基于 TypeScript + Vue 3 + Less 构建，让跨端应用充满温暖质感
         </view>
         <view class="hero-actions">
-          <ai-button type="primary" size="large" @click="go('button')">开始使用 →</ai-button>
+          <li-button type="primary" size="large" @click="go('button')">开始使用 →</li-button>
         </view>
       </view>
 
       <!-- 特性 -->
       <view class="section">
         <view class="section-title">特性</view>
-        <view class="section-desc">为什么选择 animal-island</view>
+        <view class="section-desc">为什么选择 leaf-island</view>
         <view class="features">
           <view v-for="f in features" :key="f.title" class="feature-card">
             <view class="feature-icon">{{ f.icon }}</view>

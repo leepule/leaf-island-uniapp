@@ -1,106 +1,97 @@
-# 🏝 Animal Island UI for UniApp
+# Leaf Island UI for UniApp
 
-一款专为 **UniApp** 打造的自然治愈系 / 卡通扁平风格轻量 UI 组件库。面向 H5、微信小程序、支付宝小程序、抖音小程序以及 App 等全平台。
+Leaf Island UI for UniApp 是一套面向 **Vue 3 / UniApp** 的自然治愈系轻量组件库，采用卡通扁平视觉、柔和色彩与温和微交互，适合移动端 H5、微信小程序以及各类需要轻松氛围的产品界面。
 
-> **免责声明**：本项目所有组件、代码及素材均为原创或采用合规开源协议（MIT / ISC），与任何商业游戏作品无关。
+本项目的视觉与组件体验灵感来自 [animal-island-ui](https://github.com/guokaigdg/animal-island-ui)。该项目启发了 Leaf Island 的自然岛屿氛围、组件命名与部分交互设计方向；本仓库是基于 UniApp 生态的重新实现，并非直接复制或官方衍生版本。
 
----
+## 特性
 
-## ✨ 特性亮点
+- **UniApp 优先**：组件按 `uni_modules` 规范组织，通过 EasyCom 使用，无需逐个手动导入。
+- **Vue 3 + TypeScript**：组件 Props 与 Events 均提供类型定义，开发体验更清晰。
+- **治愈系视觉语言**：内置自然主题变量、圆润形态、低饱和暖色与轻量动效。
+- **跨端适配**：使用条件编译处理平台差异；`li-cursor` 等 Web 专属能力会自动降级。
+- **Lucide 图标**：`li-icon` 基于 Lucide 官方图标库，多端渲染策略自动切换。
+- **MIT 协议**：可免费用于个人与商业项目。
 
-- 🍃 **自然治愈风格**：柔和温润的色彩搭配与生动的微交互，打造轻松愉悦的视觉体验。
-- 📱 **多端全平台适配**：针对 H5、微信小程序、多端小程序及 App 做深度适配，无缝跨端。
-- ⚡ **开箱即用 EasyCom**：遵循 `uni_modules` 规范，组件自动按需扫描与注册，无需手动 `import`。
-- 🎨 **主题与设计 Token**：基于 Less 变量体系，`:root` 与小程序 `page` 节点自动注入，自由定制主题。
-- 🗂 **全量 Lucide 图标**：内置合规开源的 Lucide 图标库（`@lucide/vue` / `lucide-static`），支持海量矢量图标。
-- 📜 **MIT 开源许可**：完全自主、协议清晰，允许个人与商业项目免费使用。
+## 灵感与致谢
 
----
+- 灵感来源：<https://github.com/guokaigdg/animal-island-ui>
+- 图标来源：[Lucide Icons](https://lucide.dev)，ISC License
 
-## 平台支持情况
+感谢原项目带来的设计灵感。Leaf Island UI for UniApp 是独立维护的 UniApp 组件实现，若你在 Web 项目中需要原风格组件，也可以直接关注上述灵感项目。
 
-| 平台 | 支持情况 | 说明 |
-| :--- | :---: | :--- |
-| **H5 / Web** | ✅ 完全支持 | 支持全部组件、动画与 `ai-cursor` 光标交互 |
-| **微信小程序** | ✅ 完全支持 | 动效降级为 CSS，数据与功能完全等价 |
-| **支付宝 / 抖音 / 百度小程序** | ✅ 完全支持 | 行为表现与微信小程序一致 |
-| **App (iOS / Android)** | ✅ 完全支持 | 具备完整的移动端体验 |
+## 平台支持
 
----
+当前仓库主要验证并声明支持以下平台：
 
-## 📦 快速安装与使用
+| 平台 | 支持状态 | 说明 |
+| --- | --- | --- |
+| H5 / Web | 支持 | 完整视觉与交互，包含 `li-cursor` |
+| 微信小程序 | 支持 | Web 专属能力自动降级，功能保持等价 |
 
-### 1. 引入组件库
+其他小程序平台与 App 尚未纳入当前验证范围，实际可用性可能取决于项目编译配置与平台差异。
 
-本项目基于 `uni_modules` 规范，将 `src/uni_modules/animal-island` 目录复制到你的 UniApp 项目根目录的 `uni_modules/` 下即可：
+## 安装
+
+### 1. 复制组件库
+
+将 `src/uni_modules/leaf-island` 复制到你的 UniApp 项目中：
 
 ```text
 your-uni-app-project/
-├── uni_modules/
-│   └── animal-island/        <-- 复制至此
-│       ├── components/
-│       ├── styles/
-│       ├── assets/
-│       ├── index.less
-│       ├── package.json
-│       └── readme.md
+├── src/
+│   └── uni_modules/
+│       └── leaf-island/
+│           ├── components/
+│           ├── composables/
+│           ├── styles/
+│           ├── assets/
+│           ├── index.less
+│           └── package.json
 ├── pages.json
 ├── App.vue
 └── main.js
 ```
 
-### 2. 安装图标依赖
+如果你的项目没有 `src` 目录，也可以将 `leaf-island` 放在项目根目录的 `uni_modules/` 下，并同步调整样式引用路径。
 
-图标组件基于官方开源 Lucide 图标库，请在项目根目录安装依赖：
+### 2. 安装依赖
 
 ```bash
-# npm
-npm install @lucide/vue lucide-static
-
-# yarn
-yarn add @lucide/vue lucide-static
-
-# pnpm
-pnpm add @lucide/vue lucide-static
+npm install vue@^3.4.0 @lucide/vue@^1.43.0 lucide-static@^1.43.0
 ```
 
 ### 3. 引入全局样式
 
-在 `App.vue` 中引入一次组件库的基础变量与样式：
+在 `App.vue` 中引入一次基础样式与主题变量：
 
 ```vue
-<!-- App.vue -->
 <style lang="less">
-@import '@/uni_modules/animal-island/index.less';
+@import '@/uni_modules/leaf-island/index.less';
 </style>
 ```
 
----
+## 快速开始
 
-## 🚀 示例代码
-
-得益于 `easycom` 自动扫描机制，你可以直接在任意 Vue 页面中使用 `ai-` 前缀组件：
+组件遵循 `li-` 前缀与 EasyCom 规则，可在页面中直接使用：
 
 ```vue
 <template>
   <view class="demo-page">
-    <ai-title level="1">自然小岛</ai-title>
-    <ai-divider />
+    <li-title level="1">自然小岛</li-title>
+    <li-divider />
 
-    <ai-card title="今日小记">
-      <ai-typewriter text="微风和煦，适合观察大自然与享受慢生活～" />
-    </ai-card>
+    <li-card title="今日小记">
+      <li-typewriter text="微风和煦，适合观察大自然与享受慢生活。" />
+    </li-card>
 
-    <view class="btn-group">
-      <ai-button type="primary" @click="handleOpen">开启探险</ai-button>
-      <ai-button type="secondary">查看地图</ai-button>
-    </view>
+    <li-button type="primary" @click="visible = true">开启探险</li-button>
 
-    <ai-modal :open="visible" title="欢迎上岛" @close="visible = false">
+    <li-modal :open="visible" title="欢迎上岛" @close="visible = false">
       <view class="modal-body">
-        <text>欢迎来到自然治愈小岛，开启你的奇妙旅程！</text>
+        <text>欢迎来到自然治愈小岛。</text>
       </view>
-    </ai-modal>
+    </li-modal>
   </view>
 </template>
 
@@ -108,21 +99,13 @@ pnpm add @lucide/vue lucide-static
 import { ref } from 'vue';
 
 const visible = ref(false);
-
-function handleOpen() {
-  visible.value = true;
-}
 </script>
 
 <style scoped>
 .demo-page {
   padding: 32rpx;
 }
-.btn-group {
-  display: flex;
-  gap: 16rpx;
-  margin-top: 24rpx;
-}
+
 .modal-body {
   padding: 16rpx 0;
   color: #4c3c33;
@@ -130,56 +113,66 @@ function handleOpen() {
 </style>
 ```
 
----
+如遇 IDE 无法自动识别组件，可显式导入：
 
-## 🧩 组件清单（21 个组件）
-
-| 分类 | 组件名 | 说明 |
-| :--- | :--- | :--- |
-| **基础通用** | `ai-button` | 胶囊圆润按钮，支持多种主题色与点击反馈 |
-| | `ai-icon` | 全量 Lucide 图标组件（自适应多端渲染） |
-| | `ai-title` | 自然风各级标题排版 |
-| | `ai-divider` | 装饰性波浪与几何风格分割线 |
-| **表单录入** | `ai-input` | 拟物暖色输入框 |
-| | `ai-select` | 卡通下拉选择器 |
-| | `ai-switch` | 弹性动效开关 |
-| | `ai-checkbox` | 复选框与多选组 |
-| | `ai-radio` | 单选框与单选组 |
-| **展示与排版** | `ai-card` | 圆角阴影卡片容器 |
-| | `ai-tabs` | 标签页导航栏 |
-| | `ai-collapse` | 手风琴折叠面板 |
-| | `ai-table` | 响应式轻量表格 |
-| | `ai-typewriter` | 打字机逐字展现动效 |
-| | `ai-code-block` | 代码块语法高亮展示 |
-| | `ai-time` | 趣味时钟与时间展示 |
-| **反馈与导航** | `ai-modal` | 弹窗对话框（全端兼容无 Teleport 依赖） |
-| | `ai-tooltip` | 文字气泡提示 |
-| | `ai-loading` | 岛屿旋转加载动画 |
-| | `ai-footer` | 自然波浪与绿树页脚装饰 |
-| | `ai-cursor` | 个性化鼠标指针（Web/H5 端专享） |
-
----
-
-## 🛠 本地开发与体验
-
-本项目内置了全组件 Demo 演示页面与验证脚手架：
-
-```bash
-# 安装项目依赖
-yarn install # 或 npm install
-
-# 启动 H5 演示端
-yarn dev:h5
-
-# 启动微信小程序端
-yarn dev:mp-weixin
-
-# 构建 H5 产物
-yarn build:h5
+```ts
+import LiModal from '@/uni_modules/leaf-island/components/li-modal/li-modal.vue';
 ```
 
----
+## 组件清单
 
-## 📄 开源许可证
+| 分类 | 组件 | 说明 |
+| --- | --- | --- |
+| 基础组件 | `li-button` | 多类型、多尺寸按钮 |
+|  | `li-icon` | Lucide 图标组件 |
+|  | `li-title` | 层级化标题 |
+|  | `li-divider` | 装饰性分割线 |
+| 数据录入 | `li-input` | 文本输入框 |
+|  | `li-select` | 下拉选择器 |
+|  | `li-switch` | 开关 |
+|  | `li-checkbox` | 复选框 |
+|  | `li-radio` | 单选框 |
+| 数据展示 | `li-card` | 卡片容器 |
+|  | `li-tabs` | 标签页 |
+|  | `li-collapse` | 折叠面板 |
+|  | `li-table` | 表格 |
+|  | `li-time` | 时间展示 |
+|  | `li-typewriter` | 打字机动效 |
+|  | `li-code-block` | 代码块 |
+|  | `li-footer` | 自然风格页脚装饰 |
+| 反馈组件 | `li-modal` | 模态框 |
+|  | `li-tooltip` | 气泡提示 |
+|  | `li-loading` | 加载动画 |
+| Web 体验 | `li-cursor` | 自定义鼠标跟随效果，仅 H5 生效 |
 
-本项目遵循 [MIT License](LICENSE) 许可协议。
+## 本地开发
+
+本仓库同时是组件库的验证与演示工程：
+
+```bash
+yarn install
+yarn dev:h5
+yarn dev:mp-weixin
+```
+
+具体构建命令以 `package.json` 为准。
+
+## 目录结构
+
+```text
+.
+├── README.md
+├── package.json
+├── vite.config.js
+└── src
+    ├── App.vue
+    ├── leaf-island.ts
+    ├── components/
+    ├── pages/
+    ├── pages.json
+    └── uni_modules/leaf-island/
+```
+
+## License
+
+[MIT](./LICENSE)

@@ -8,10 +8,10 @@ const DIVIDER_API = [
   },
 ];
 
-const code = `<ai-divider type="line-brown" />
-<ai-divider type="line-teal" />
-<ai-divider type="wave-yellow" />
-<ai-divider type="dashed-brown" />`;
+const code = `<li-divider type="line-brown" />
+<li-divider type="line-teal" />
+<li-divider type="wave-yellow" />
+<li-divider type="dashed-brown" />`;
 </script>
 
 <template>
@@ -20,26 +20,26 @@ const code = `<ai-divider type="line-brown" />
       <DemoHeader name="divider" />
 
       <view class="demo-label">line-brown</view>
-      <ai-divider type="line-brown" />
+      <li-divider type="line-brown" />
       <view class="demo-label">line-teal</view>
-      <ai-divider type="line-teal" />
+      <li-divider type="line-teal" />
       <view class="demo-label">line-white（深色背景）</view>
-      <view style="background: #333; padding: 20rpx"><ai-divider type="line-white" /></view>
+      <view style="background: #333; padding: 20rpx"><li-divider type="line-white" /></view>
       <view class="demo-label">line-yellow</view>
-      <ai-divider type="line-yellow" />
+      <li-divider type="line-yellow" />
       <view class="demo-label">wave-yellow</view>
-      <ai-divider type="wave-yellow" />
+      <li-divider type="wave-yellow" />
 
       <view class="demo-label">dashed-brown</view>
-      <ai-divider type="dashed-brown" />
+      <li-divider type="dashed-brown" />
       <view class="demo-label">dashed-teal</view>
-      <ai-divider type="dashed-teal" />
+      <li-divider type="dashed-teal" />
       <view class="demo-label">dashed-white（深色背景）</view>
-      <view style="background: #333; padding: 20rpx"><ai-divider type="dashed-white" /></view>
+      <view style="background: #333; padding: 20rpx"><li-divider type="dashed-white" /></view>
       <view class="demo-label">dashed-yellow</view>
-      <ai-divider type="dashed-yellow" />
+      <li-divider type="dashed-yellow" />
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="DIVIDER_API" />
     </view>
   </AppLayout>

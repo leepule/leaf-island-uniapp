@@ -27,7 +27,7 @@ const files = [
   'src/pages/demos/typewriter.vue',
 ];
 
-const base = 'F:/animal-island-uniapp/animal-island-uniapp';
+const base = 'F:/leaf-island-uniapp/leaf-island-uniapp';
 
 for (const f of files) {
   const fp = path.join(base, f);

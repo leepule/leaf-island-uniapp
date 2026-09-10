@@ -55,8 +55,8 @@ onUnmounted(() => {
 <template>
   <view class="left-window-nav">
     <view class="nav-logo" @click="navigate('home')">
-      <text class="nav-logo-emoji">🏝️</text>
-      <text class="nav-logo-text">Animal Island</text>
+      <text class="nav-logo-emoji">🍃</text>
+      <text class="nav-logo-text">Leaf Island</text>
     </view>
 
     <text class="nav-section-label">导航</text>

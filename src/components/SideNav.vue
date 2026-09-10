@@ -23,7 +23,7 @@ const navItems = computed(() => {
 
 const currentLabel = computed(() => {
   const item = navItems.value.find((i) => i.key === current.value);
-  return item ? item.title : 'Animal Island';
+  return item ? item.title : 'Leaf Island';
 });
 
 function syncCurrent() {
@@ -132,14 +132,14 @@ onUnmounted(() => {
       <view class="hamburger-line" />
     </view>
     <text class="mobile-bar-title">{{ currentLabel }}</text>
-    <text class="mobile-bar-logo">🏝️</text>
+    <text class="mobile-bar-logo">🍃</text>
   </view>
 
   <!-- 侧边导航：桌面端常驻，移动端为抽屉 -->
   <view class="side-nav" :class="{ open: drawerOpen, mobile: isMobile }">
     <view class="nav-logo" @click="navigate('home')">
-      <text class="nav-logo-emoji">🏝️</text>
-      <text class="nav-logo-text">Animal Island</text>
+      <text class="nav-logo-emoji">🍃</text>
+      <text class="nav-logo-text">Leaf Island</text>
     </view>
 
     <text class="nav-section-label">导航</text>

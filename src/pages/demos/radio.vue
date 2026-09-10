@@ -39,9 +39,9 @@ const RADIO_API = [
   { prop: 'direction', desc: '排列方向', type: `'horizontal' | 'vertical'`, defaultVal: "'horizontal'" },
 ];
 
-const code = `<ai-radio v-model="value" :options="options" />
-<ai-radio :options="options" direction="vertical" />
-<ai-radio :options="options" disabled />`;
+const code = `<li-radio v-model="value" :options="options" />
+<li-radio :options="options" direction="vertical" />
+<li-radio :options="options" disabled />`;
 </script>
 
 <template>
@@ -55,19 +55,19 @@ const code = `<ai-radio v-model="value" :options="options" />
           seasonOptions.find((o) => o.value === selected1)?.label ?? '无'
         }}</text></view
       >
-      <view class="demo-box"><ai-radio v-model="selected1" :options="seasonOptions" /></view>
+      <view class="demo-box"><li-radio v-model="selected1" :options="seasonOptions" /></view>
 
       <view class="demo-label">垂直排列 + 含禁用选项</view>
-      <view class="demo-box"><ai-radio v-model="selected2" :options="fruitOptions" direction="vertical" /></view>
+      <view class="demo-box"><li-radio v-model="selected2" :options="fruitOptions" direction="vertical" /></view>
 
       <view class="demo-label">小尺寸 / 大尺寸</view>
-      <view class="demo-box"><ai-radio v-model="selected4" :options="timeOptions" size="small" /></view>
-      <view class="demo-box"><ai-radio v-model="selected3" :options="timeOptions" size="large" /></view>
+      <view class="demo-box"><li-radio v-model="selected4" :options="timeOptions" size="small" /></view>
+      <view class="demo-box"><li-radio v-model="selected3" :options="timeOptions" size="large" /></view>
 
       <view class="demo-label">全部禁用</view>
-      <view class="demo-box"><ai-radio v-model="selected5" :options="seasonOptions" disabled /></view>
+      <view class="demo-box"><li-radio v-model="selected5" :options="seasonOptions" disabled /></view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="RADIO_API" />
     </view>
   </AppLayout>

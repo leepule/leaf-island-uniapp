@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TableColumn } from '../../animal-island';
+import type { TableColumn } from '../../leaf-island';
 
 interface Critter extends Record<string, unknown> {
   key: string;
@@ -43,7 +43,7 @@ const data = [
 
 <template>
     <AppLayout>
-    <ai-table :columns="columns" :data-source="data" />
+    <li-table :columns="columns" :data-source="data" />
     </AppLayout>
 </template>`;
 </script>
@@ -57,24 +57,24 @@ const data = [
 
       <view class="demo-label">基础表格</view>
       <view class="demo-box" style="padding: 0; overflow: hidden">
-        <ai-table :columns="columns" :data-source="data" />
+        <li-table :columns="columns" :data-source="data" />
       </view>
 
       <view class="demo-label">关闭斑马纹 + 自定义单元格</view>
       <view class="demo-box" style="padding: 0; overflow: hidden">
-        <ai-table :columns="columns" :data-source="data" :striped="false">
+        <li-table :columns="columns" :data-source="data" :striped="false">
           <template #cell-price="{ value }">
             <text style="color: #e0792b; font-weight: 700">{{ value }} 元</text>
           </template>
-        </ai-table>
+        </li-table>
       </view>
 
       <view class="demo-label">加载态 / 空态</view>
       <view class="demo-box" style="padding: 0; overflow: hidden">
-        <ai-table :columns="columns" :data-source="[]" loading />
+        <li-table :columns="columns" :data-source="[]" loading />
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="TABLE_API" />
     </view>
   </AppLayout>

@@ -11,16 +11,16 @@ const SWITCH_API = [
   { prop: '#checked / #unchecked', desc: '选中文案插槽', type: 'slot', defaultVal: '-' },
 ];
 
-const code = `<ai-switch v-model="checked" />
-<ai-switch default-checked>
+const code = `<li-switch v-model="checked" />
+<li-switch default-checked>
     <template #checked>
     <AppLayout>开    </AppLayout>
 </template>
     <template #unchecked>关</template>
-</ai-switch>
-<ai-switch size="small" default-checked />
-<ai-switch disabled />
-<ai-switch loading default-checked />`;
+</li-switch>
+<li-switch size="small" default-checked />
+<li-switch disabled />
+<li-switch loading default-checked />`;
 </script>
 
 <template>
@@ -30,31 +30,31 @@ const code = `<ai-switch v-model="checked" />
 
       <view class="demo-label">基础用法</view>
       <view class="demo-row">
-        <ai-switch v-model="checked" />
+        <li-switch v-model="checked" />
         <text style="font-size: 26rpx">{{ checked ? 'ON' : 'OFF' }}</text>
       </view>
 
       <view class="demo-label">checked / unchecked 自定义文案</view>
       <view class="demo-row">
-        <ai-switch default-checked>
+        <li-switch default-checked>
           <template #checked>开</template>
           <template #unchecked>关</template>
-        </ai-switch>
+        </li-switch>
       </view>
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-row">
-        <ai-switch default-checked />
-        <ai-switch size="small" default-checked />
+        <li-switch default-checked />
+        <li-switch size="small" default-checked />
       </view>
 
       <view class="demo-label">disabled / loading 状态</view>
       <view class="demo-row">
-        <ai-switch disabled />
-        <ai-switch loading default-checked />
+        <li-switch disabled />
+        <li-switch loading default-checked />
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="SWITCH_API" />
     </view>
   </AppLayout>

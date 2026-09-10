@@ -10,13 +10,13 @@ const LOADING_API = [
 ];
 
 const code = `<!-- 纯图标（默认主题青绿色 #19c8b9） -->
-<ai-loading />
+<li-loading />
 
 <!-- 带文字 -->
-<ai-loading text="拼命加载中" />
+<li-loading text="拼命加载中" />
 
 <!-- 自定义大小和颜色 -->
-<ai-loading text="Loading..." :size="32" color="#725d42" />`;
+<li-loading text="Loading..." :size="32" color="#725d42" />`;
 </script>
 
 <template>
@@ -26,33 +26,33 @@ const code = `<!-- 纯图标（默认主题青绿色 #19c8b9） -->
 
       <view class="demo-label">默认加载</view>
       <view class="demo-box" style="display: flex; justify-content: center; padding: 60rpx">
-        <ai-loading />
+        <li-loading />
       </view>
 
       <view class="demo-label">带提示文字</view>
       <view class="demo-box" style="display: flex; justify-content: center; padding: 60rpx">
-        <ai-loading text="拼命加载中" :size="32" />
+        <li-loading text="拼命加载中" :size="32" />
       </view>
 
       <view class="demo-label">组件库主题色</view>
       <view class="demo-box" style="display: flex; justify-content: center; gap: 48rpx; padding: 60rpx">
-        <ai-loading text="青绿" color="#19c8b9" :size="28" />
-        <ai-loading text="草木绿" color="#7DC395" :size="28" />
-        <ai-loading text="暖棕" color="#725d42" :size="28" />
+        <li-loading text="青绿" color="#19c8b9" :size="28" />
+        <li-loading text="草木绿" color="#7DC395" :size="28" />
+        <li-loading text="暖棕" color="#725d42" :size="28" />
       </view>
 
       <view class="demo-label">通过 active 控制显隐</view>
       <view class="demo-box" style="display: flex; flex-direction: column; align-items: center; gap: 24rpx">
         <view style="min-height: 120rpx; display: flex; align-items: center; justify-content: center">
-          <ai-loading v-if="loading" text="加载中..." />
+          <li-loading v-if="loading" text="加载中..." />
           <text v-else style="color: #19c8b9; font-weight: 700">加载完成！</text>
         </view>
-        <ai-button type="primary" size="small" @click="loading = !loading">
+        <li-button type="primary" size="small" @click="loading = !loading">
           {{ loading ? '停止加载' : '开始加载' }}
-        </ai-button>
+        </li-button>
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="LOADING_API" />
     </view>
   </AppLayout>

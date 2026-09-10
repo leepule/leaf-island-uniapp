@@ -2,7 +2,7 @@
 
 本仓库使用 [Semantic Versioning](https://semver.org/lang/zh-CN/)（SemVer），版本格式为 `MAJOR.MINOR.PATCH`，Git 标签统一添加 `v` 前缀，例如 `v1.0.0`。
 
-根目录演示工程与 `src/uni_modules/animal-island` 组件包始终使用同一个版本号。请勿手动只修改其中一个 `package.json`。
+根目录演示工程与 `src/uni_modules/leaf-island` 组件包始终使用同一个版本号。请勿手动只修改其中一个 `package.json`。
 
 ## 版本号规则
 
@@ -35,19 +35,19 @@
 3. 提交版本变更，然后创建同名标签：
 
    ```bash
-   git add package.json src/uni_modules/animal-island/package.json
+   git add package.json src/uni_modules/leaf-island/package.json
    git commit -m "chore(release): v1.0.0"
    git tag v1.0.0
    git push origin main
    git push origin v1.0.0
    ```
 
-标签推送后，GitHub Actions 会检查标签与包版本是否一致，打包 `src/uni_modules/animal-island`，并自动创建 GitHub Release 和生成发布说明。
+标签推送后，GitHub Actions 会检查标签与包版本是否一致，打包 `src/uni_modules/leaf-island`，并自动创建 GitHub Release 和生成发布说明。
 
 ## 发布产物
 
 每个 GitHub Release 包含：
 
 - GitHub 自动生成的源码压缩包；
-- `animal-island-vX.Y.Z.zip`，解压后可直接获得 `animal-island` uni_modules 目录；
+- `leaf-island-vX.Y.Z.zip`，解压后可直接获得 `leaf-island` uni_modules 目录；
 - 根据提交和 Pull Request 自动生成的 Release Notes。

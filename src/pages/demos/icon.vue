@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ICON_LIST } from '../../animal-island';
+import { ICON_LIST } from '../../leaf-island';
 
 const ICON_API = [
   { prop: 'name', desc: 'Lucide 图标名，支持 icon- 前缀', type: 'IconName', defaultVal: '-', required: true },
@@ -10,8 +10,8 @@ const ICON_API = [
   { prop: 'strokeWidth', desc: '线条宽度', type: 'number | string', defaultVal: '2' },
 ];
 
-const code = `<ai-icon name="icon-ticket" :size="32" />
-<ai-icon name="icon-camera" :size="48" color="#0cc0b5" :stroke-width="1.5" bounce />`;
+const code = `<li-icon name="icon-ticket" :size="32" />
+<li-icon name="icon-camera" :size="48" color="#0cc0b5" :stroke-width="1.5" bounce />`;
 </script>
 
 <template>
@@ -21,26 +21,26 @@ const code = `<ai-icon name="icon-ticket" :size="32" />
 
       <view class="demo-label">基础用法</view>
       <view class="demo-row">
-        <ai-icon name="icon-ticket" :size="32" />
-        <ai-icon name="icon-camera" :size="32" />
-        <ai-icon name="icon-message-circle" :size="32" />
-        <ai-icon name="icon-palette" :size="32" />
-        <ai-icon name="icon-map" :size="32" />
+        <li-icon name="icon-ticket" :size="32" />
+        <li-icon name="icon-camera" :size="32" />
+        <li-icon name="icon-message-circle" :size="32" />
+        <li-icon name="icon-palette" :size="32" />
+        <li-icon name="icon-map" :size="32" />
       </view>
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-row">
-        <ai-icon name="icon-ticket" :size="16" />
-        <ai-icon name="icon-ticket" :size="24" />
-        <ai-icon name="icon-ticket" :size="32" />
-        <ai-icon name="icon-ticket" :size="48" />
+        <li-icon name="icon-ticket" :size="16" />
+        <li-icon name="icon-ticket" :size="24" />
+        <li-icon name="icon-ticket" :size="32" />
+        <li-icon name="icon-ticket" :size="48" />
       </view>
 
       <view class="demo-label">bounce 弹跳动画（H5 悬停查看效果）</view>
       <view class="demo-row">
-        <ai-icon name="icon-ticket" :size="32" bounce />
-        <ai-icon name="icon-camera" :size="32" bounce />
-        <ai-icon name="icon-message-circle" :size="32" bounce />
+        <li-icon name="icon-ticket" :size="32" bounce />
+        <li-icon name="icon-camera" :size="32" bounce />
+        <li-icon name="icon-message-circle" :size="32" bounce />
       </view>
 
       <view class="demo-label">图标列表</view>
@@ -56,7 +56,7 @@ const code = `<ai-icon name="icon-ticket" :size="32" />
             border-bottom: 1px dashed #f0e8d8;
           "
         >
-          <ai-icon :name="icon.name" :size="32" />
+          <li-icon :name="icon.name" :size="32" />
           <text style="font-size: 28rpx; color: #725d42">{{ icon.label }}</text>
           <text
             style="
@@ -73,7 +73,7 @@ const code = `<ai-icon name="icon-ticket" :size="32" />
         </view>
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="ICON_API" />
     </view>
   </AppLayout>

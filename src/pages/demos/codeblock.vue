@@ -11,8 +11,8 @@ const CODE_API = [
 ];
 
 const sample = `<!-- easycom 自动引入，无需 import -->
-<ai-button type="primary">上岛</ai-button>
-<ai-title color="green">欢迎来到无人岛</ai-title>`;
+<li-button type="primary">上岛</li-button>
+<li-title color="green">欢迎来到无人岛</li-title>`;
 </script>
 
 <template>
@@ -21,17 +21,17 @@ const sample = `<!-- easycom 自动引入，无需 import -->
       <DemoHeader name="codeblock" />
 
       <view class="demo-label">基础代码高亮</view>
-      <ai-code-block title="使用示例" :code="sample" />
+      <li-code-block title="使用示例" :code="sample" />
 
       <view class="demo-label">HTML / Vue 片段</view>
-      <ai-code-block
+      <li-code-block
         title="使用示例"
         code='<template>
-    <ai-button type="primary">上岛</ai-button>
+    <li-button type="primary">上岛</li-button>
 </template>'
       />
 
-      <ai-code-block title="使用示例" :code="`<ai-code-block :code=&quot;const a = 1&quot; />`" />
+      <li-code-block title="使用示例" :code="`<li-code-block :code=&quot;const a = 1&quot; />`" />
       <ApiTable :rows="CODE_API" />
     </view>
   </AppLayout>

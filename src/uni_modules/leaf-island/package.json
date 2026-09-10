@@ -1,0 +1,56 @@
+{
+  "id": "leaf-island",
+  "displayName": "Leaf Island UI",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。所有组件及素材均为原创或采用合法开源协议，与任何商业游戏作品无关。",
+  "repository": "https://github.com/leepule/leaf-island-uniapp",
+  "keywords": [
+    "uni-app",
+    "ui",
+    "components",
+    "vue3",
+    "leaf-island",
+    "nature"
+  ],
+  "dcloudext": {
+    "type": "component-vue",
+    "sale": {
+      "regular": {
+        "price": "0"
+      }
+    }
+  },
+  "uni_modules": {
+    "dependencies": [],
+    "encrypt": false,
+    "platforms": {
+      "cloud": false,
+      "spa": true,
+      "app": false,
+      "web": true,
+      "ios": false,
+      "android": false,
+      "mp-weixin": true,
+      "mp-alipay": false,
+      "mp-baidu": false,
+      "mp-toutiao": false,
+      "mp-qq": false,
+      "mp-kuaishou": false,
+      "mp-lark": false,
+      "mp-jd": false,
+      "quickapp": false
+    }
+  },
+  "easycom": {
+    "autoscan": false,
+    "custom": {
+      "^li-(.*)": "uni_modules/leaf-island/components/li-$1/li-$1.vue"
+    }
+  },
+  "peerDependencies": {
+    "@lucide/vue": ">=1.43.0",
+    "lucide-static": ">=1.43.0",
+    "vue": ">=3.4.0"
+  }
+}

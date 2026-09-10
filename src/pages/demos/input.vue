@@ -11,12 +11,12 @@ const INPUT_API = [
   { prop: 'shadow', desc: '是否显示阴影', type: 'boolean', defaultVal: 'false' },
 ];
 
-const code = `<ai-input placeholder="Basic input" />
-<ai-input v-model="value" placeholder="With clear" allow-clear />
-<ai-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
-<ai-input placeholder="Small" size="small" />
-<ai-input placeholder="Large" size="large" />
-<ai-input placeholder="Error" status="error" />`;
+const code = `<li-input placeholder="Basic input" />
+<li-input v-model="value" placeholder="With clear" allow-clear />
+<li-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
+<li-input placeholder="Small" size="small" />
+<li-input placeholder="Large" size="large" />
+<li-input placeholder="Error" status="error" />`;
 </script>
 
 <template>
@@ -26,36 +26,36 @@ const code = `<ai-input placeholder="Basic input" />
 
       <view class="demo-label">shadow 阴影控制</view>
       <view class="demo-col">
-        <ai-input placeholder="No shadow (default)" />
-        <ai-input placeholder="With shadow" :shadow="true" />
+        <li-input placeholder="No shadow (default)" />
+        <li-input placeholder="With shadow" :shadow="true" />
       </view>
 
       <view class="demo-label">基础用法</view>
       <view class="demo-col">
-        <ai-input placeholder="Basic input" />
-        <ai-input v-model="inputValue" placeholder="With clear" allow-clear @clear="inputValue = ''" />
-        <ai-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
+        <li-input placeholder="Basic input" />
+        <li-input v-model="inputValue" placeholder="With clear" allow-clear @clear="inputValue = ''" />
+        <li-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
       </view>
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-col">
-        <ai-input placeholder="Small" size="small" />
-        <ai-input placeholder="Middle (default)" size="middle" />
-        <ai-input placeholder="Large" size="large" />
+        <li-input placeholder="Small" size="small" />
+        <li-input placeholder="Middle (default)" size="middle" />
+        <li-input placeholder="Large" size="large" />
       </view>
 
       <view class="demo-label">status 校验状态</view>
       <view class="demo-col">
-        <ai-input placeholder="Error status" status="error" />
-        <ai-input placeholder="Warning status" status="warning" />
+        <li-input placeholder="Error status" status="error" />
+        <li-input placeholder="Warning status" status="warning" />
       </view>
 
       <view class="demo-label">disabled 禁用</view>
       <view class="demo-col">
-        <ai-input placeholder="Disabled" disabled />
+        <li-input placeholder="Disabled" disabled />
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="INPUT_API" />
     </view>
   </AppLayout>

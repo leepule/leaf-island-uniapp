@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import type { TabItem } from '../../animal-island';
+import type { TabItem } from '../../leaf-island';
 
 const items: TabItem[] = [
   { key: 'tab1', label: '岛屿概况' },
@@ -29,10 +29,10 @@ const active = ref('tab1');
 
 <template>
     <AppLayout>
-    <ai-tabs v-model="active" :items="items">
+    <li-tabs v-model="active" :items="items">
         <template #tab1><text>内容一</text></template>
         <template #tab2><text>内容二</text></template>
-    </ai-tabs>
+    </li-tabs>
     </AppLayout>
 </template>`;
 </script>
@@ -44,23 +44,23 @@ const active = ref('tab1');
 
       <view class="demo-label">基础用法（受控）</view>
       <view class="demo-box">
-        <ai-tabs v-model="activeKey" :items="items">
+        <li-tabs v-model="activeKey" :items="items">
           <template #tab1><text>岛上有 10 位居民，今天天气晴朗，适合钓鱼。</text></template>
           <template #tab2><text>今日市集特惠：手工果篮 99 元。</text></template>
           <template #tab3><text>服务中心可以办理活动登记与物料领取。</text></template>
-        </ai-tabs>
+        </li-tabs>
       </view>
 
       <view class="demo-label">关闭叶子动画</view>
       <view class="demo-box">
-        <ai-tabs v-model="activeKey" :items="items" :leaf-animation="false">
+        <li-tabs v-model="activeKey" :items="items" :leaf-animation="false">
           <template #tab1><text>关闭动画后的标签切换。</text></template>
           <template #tab2><text>关闭动画后的标签切换。</text></template>
           <template #tab3><text>关闭动画后的标签切换。</text></template>
-        </ai-tabs>
+        </li-tabs>
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="TABS_API" />
     </view>
   </AppLayout>

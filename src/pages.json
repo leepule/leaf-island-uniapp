@@ -1,6 +1,6 @@
 {
   "pages": [
-    { "path": "pages/demo/demo", "style": { "navigationBarTitleText": "Animal Island UI" } },
+    { "path": "pages/demo/demo", "style": { "navigationBarTitleText": "Leaf Island UI" } },
     { "path": "pages/demos/button", "style": { "navigationBarTitleText": "Button 按钮" } },
     { "path": "pages/demos/title", "style": { "navigationBarTitleText": "Title 标题" } },
     { "path": "pages/demos/input", "style": { "navigationBarTitleText": "Input 输入框" } },

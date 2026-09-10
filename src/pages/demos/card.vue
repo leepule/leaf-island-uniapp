@@ -22,9 +22,9 @@ const CARD_API = [
   { prop: 'default', desc: '内容（默认 slot）', type: 'slot', defaultVal: '-' },
 ];
 
-const code = `<ai-card color="app-pink">
+const code = `<li-card color="app-pink">
     这是一张自然治愈风格的卡片内容。
-</ai-card>`;
+</li-card>`;
 </script>
 
 <template>
@@ -35,23 +35,23 @@ const code = `<ai-card color="app-pink">
       <view class="demo-label">配色变体</view>
       <view class="demo-row" style="gap: 20rpx">
         <view v-for="[c, label] in colors" :key="c" style="min-width: 280rpx; flex: 1 1 280rpx; max-width: 100%">
-          <ai-card :color="c as any">
+          <li-card :color="c as any">
             <text style="font-size: 24rpx; font-weight: 700">{{ label }}</text>
-          </ai-card>
+          </li-card>
         </view>
       </view>
 
       <view class="demo-label">dashed 类型 + pattern 花纹</view>
       <view class="demo-row" style="gap: 20rpx">
-        <ai-card type="dashed" color="app-blue" pattern="app-blue">
+        <li-card type="dashed" color="app-blue" pattern="app-blue">
           <text style="font-size: 24rpx">蓝色虚线 + 点纹</text>
-        </ai-card>
-        <ai-card type="dashed" color="app-green" pattern="app-green">
+        </li-card>
+        <li-card type="dashed" color="app-green" pattern="app-green">
           <text style="font-size: 24rpx">绿色虚线 + 点纹</text>
-        </ai-card>
+        </li-card>
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="CARD_API" />
     </view>
   </AppLayout>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// 引入一次 animal-island 全局样式（含 CSS 变量 / reset）
+// 引入一次 leaf-island 全局样式（含 CSS 变量 / reset）
 // 注意：H5 端侧边栏由 pages.json 的 leftWindow 配置驱动（响应式布局），
 // 非 H5 端（小程序/App）由各页面内的 AppLayout 组件提供布局。
 </script>
@@ -9,7 +9,7 @@
 </template>
 
 <style lang="less">
-@import './uni_modules/animal-island/index.less';
+@import './uni_modules/leaf-island/index.less';
 
 page,
 .app-root {
@@ -102,7 +102,7 @@ page,
   margin: 16rpx 0 4rpx;
 }
 
-/* 代码块：「使用示例」标签已内置于 AiCodeBlock 的 title prop（见 ai-code-block.vue），此处不再引用库内部 class */
+/* 代码块：「使用示例」标签已内置于 LiCodeBlock 的 title prop（见 li-code-block.vue），此处不再引用库内部 class */
 
 /* ========== H5 leftWindow 布局修复：侧边栏固定 + 内容区独立滚动 ========== */
 /* 框架的 uni-left-window 默认随页面一起滚动，需改为固定布局 */

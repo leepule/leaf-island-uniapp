@@ -15,16 +15,16 @@ const BUTTON_API = [
   { prop: '#icon', desc: '图标插槽', type: 'slot', defaultVal: '-' },
 ];
 
-const code = `<ai-button type="primary">Primary</ai-button>
-<ai-button>Default</ai-button>
-<ai-button type="dashed">Dashed</ai-button>
-<ai-button type="text">Text</ai-button>
-<ai-button type="link">Link</ai-button>
-<ai-button type="primary" danger>Danger</ai-button>
-<ai-button type="primary" ghost>Ghost</ai-button>
-<ai-button type="primary" loading>Loading</ai-button>
-<ai-button type="primary" size="large">Large</ai-button>
-<ai-button type="primary" block>Block</ai-button>`;
+const code = `<li-button type="primary">Primary</li-button>
+<li-button>Default</li-button>
+<li-button type="dashed">Dashed</li-button>
+<li-button type="text">Text</li-button>
+<li-button type="link">Link</li-button>
+<li-button type="primary" danger>Danger</li-button>
+<li-button type="primary" ghost>Ghost</li-button>
+<li-button type="primary" loading>Loading</li-button>
+<li-button type="primary" size="large">Large</li-button>
+<li-button type="primary" block>Block</li-button>`;
 </script>
 
 <template>
@@ -35,50 +35,50 @@ const code = `<ai-button type="primary">Primary</ai-button>
       <view class="demo-label">type 按钮类型</view>
       <view class="demo-box">
         <view class="demo-row">
-          <ai-button type="primary">Primary</ai-button>
-          <ai-button>Default</ai-button>
-          <ai-button type="dashed">Dashed</ai-button>
-          <ai-button type="text">Text</ai-button>
-          <ai-button type="link">Link</ai-button>
+          <li-button type="primary">Primary</li-button>
+          <li-button>Default</li-button>
+          <li-button type="dashed">Dashed</li-button>
+          <li-button type="text">Text</li-button>
+          <li-button type="link">Link</li-button>
         </view>
       </view>
 
       <view class="demo-label">danger / ghost / loading / disabled 状态</view>
       <view class="demo-box">
         <view class="demo-row">
-          <ai-button type="primary" danger>Danger</ai-button>
-          <ai-button type="primary" ghost>Ghost</ai-button>
-          <ai-button type="primary" loading>Loading</ai-button>
-          <ai-button type="primary" disabled>Disabled</ai-button>
+          <li-button type="primary" danger>Danger</li-button>
+          <li-button type="primary" ghost>Ghost</li-button>
+          <li-button type="primary" loading>Loading</li-button>
+          <li-button type="primary" disabled>Disabled</li-button>
         </view>
       </view>
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-box">
         <view class="demo-row">
-          <ai-button type="primary" size="small">Small</ai-button>
-          <ai-button type="primary" size="middle">Middle</ai-button>
-          <ai-button type="primary" size="large">Large</ai-button>
+          <li-button type="primary" size="small">Small</li-button>
+          <li-button type="primary" size="middle">Middle</li-button>
+          <li-button type="primary" size="large">Large</li-button>
         </view>
       </view>
 
       <view class="demo-label">icon 图标按钮</view>
       <view class="demo-box">
         <view class="demo-row">
-          <ai-button type="primary"><template #icon>🔍</template>搜索</ai-button>
-          <ai-button><template #icon>⭐</template>收藏</ai-button>
-          <ai-button type="dashed"><template #icon>＋</template>新增</ai-button>
+          <li-button type="primary"><template #icon>🔍</template>搜索</li-button>
+          <li-button><template #icon>⭐</template>收藏</li-button>
+          <li-button type="dashed"><template #icon>＋</template>新增</li-button>
         </view>
       </view>
 
       <view class="demo-label">block 块级按钮</view>
       <view class="demo-box">
         <view style="max-width: 100%">
-          <ai-button type="primary" block>Block Button</ai-button>
+          <li-button type="primary" block>Block Button</li-button>
         </view>
       </view>
 
-      <ai-code-block title="使用示例" :code="code" />
+      <li-code-block title="使用示例" :code="code" />
       <ApiTable :rows="BUTTON_API" />
     </view>
   </AppLayout>
