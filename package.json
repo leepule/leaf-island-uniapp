@@ -13,7 +13,8 @@
     "release:minor": "node scripts/release.mjs minor",
     "release:major": "node scripts/release.mjs major",
     "release:set": "node scripts/release.mjs",
-    "release:check": "node scripts/release.mjs check"
+    "release:check": "node scripts/release.mjs check",
+    "publish:npm": "npm publish ./src/uni_modules/leaf-island --access public"
   },
   "dependencies": {
     "@lucide/vue": "^1.43.0",
