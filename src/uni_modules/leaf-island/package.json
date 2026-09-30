@@ -1,10 +1,24 @@
 {
+  "name": "leaf-island-uniapp",
   "id": "leaf-island",
   "displayName": "Leaf Island UI",
   "version": "1.0.0",
   "license": "MIT",
   "description": "一款专为 UniApp 打造的自然治愈系 / 卡通风格轻量组件库。所有组件及素材均为原创或采用合法开源协议，与任何商业游戏作品无关。",
-  "repository": "https://github.com/leepule/leaf-island-uniapp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leepule/leaf-island-uniapp.git",
+    "directory": "src/uni_modules/leaf-island"
+  },
+  "files": [
+    "assets/",
+    "components/",
+    "composables/",
+    "styles/",
+    "index.less",
+    "readme.md",
+    "LICENSE"
+  ],
   "keywords": [
     "uni-app",
     "ui",

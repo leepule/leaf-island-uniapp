@@ -23,7 +23,36 @@
 
 ## 📦 安装
 
-本包为 `uni_modules` 格式，直接把整个 `leaf-island` 目录放进你的 uni-app 项目根目录的 `uni_modules/` 下即可：
+### npm 安装
+
+在 uni-app CLI 项目中安装：
+
+```sh
+npm install leaf-island-uniapp
+```
+
+然后在 `pages.json` 中配置 Easycom 路径：
+
+```json
+{
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^li-(.*)": "leaf-island-uniapp/components/li-$1/li-$1.vue"
+    }
+  }
+}
+```
+
+本包将 `vue`、`@lucide/vue` 和 `lucide-static` 声明为 peer dependencies，请确保宿主项目使用 Vue 3，并安装图标依赖：
+
+```sh
+npm install @lucide/vue lucide-static
+```
+
+### uni_modules 安装
+
+也可以把整个 `leaf-island` 目录放进 uni-app 项目根目录的 `uni_modules/` 下：
 
 ```
 your-uni-app-project/
@@ -61,9 +90,11 @@ npm install @lucide/vue lucide-static
 ```vue
 <!-- App.vue -->
 <style lang="less">
-@import '@/uni_modules/leaf-island/index.less';
+@import 'leaf-island-uniapp/index.less';
 </style>
 ```
+
+如果通过 `uni_modules` 目录安装，则使用 `@import '@/uni_modules/leaf-island/index.less';`。
 
 - `:root` 与小程序 `page` 根节点都会注入变量，无需手动声明。
 - **字体**：默认使用系统字体。如需自定义字体，用 `uni.loadFontFace` 注入后覆盖变量 `--animal-font-family`（见 `styles/variables.less`）。
@@ -119,7 +150,7 @@ npm install @lucide/vue lucide-static
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import LiModal from '@/uni_modules/leaf-island/components/li-modal/li-modal.vue';
+import LiModal from 'leaf-island-uniapp/components/li-modal/li-modal.vue';
 
 const showModal = ref(false);
 function sayHi() {
@@ -128,7 +159,7 @@ function sayHi() {
 </script>
 ```
 
-> 由于 `easycom` 已配置，绝大多数组件无需手动 `import`；若 IDE 提示找不到，可显式 `import LiXxx from '@/uni_modules/leaf-island/components/li-xxx/li-xxx.vue';`。
+> 使用 npm 安装时，Easycom 路径指向 `node_modules` 中的包；若 IDE 提示找不到，可按上面的 npm 包路径显式导入。使用 `uni_modules` 安装时，路径改为 `@/uni_modules/leaf-island/...`。
 
 ---
 
