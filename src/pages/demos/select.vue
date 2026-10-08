@@ -35,9 +35,8 @@ const value = ref('option1');
 <\/script>
 
 <template>
-    <AppLayout>
     <li-select v-model="value" :options="options" />
-    </AppLayout>
+    <li-select v-model="value" :options="options" disabled />
 </template>`;
 </script>
 
@@ -59,6 +58,11 @@ const value = ref('option1');
       <view class="demo-label">固定选中项</view>
       <view class="demo-box" style="max-width: 100%">
         <li-select v-model="value3" :options="flowerOptions" />
+      </view>
+
+      <view class="demo-label">禁用状态</view>
+      <view class="demo-box" style="max-width: 100%">
+        <li-select v-model="value3" :options="flowerOptions" disabled />
       </view>
 
       <li-code-block title="使用示例" :code="code" />

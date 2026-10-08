@@ -85,7 +85,7 @@ npm install @lucide/vue lucide-static
 
 ## 🎨 全局样式
 
-组件样式基于一组 CSS 变量（`styles/variables.less`），需在 `App.vue` 中引入一次：
+组件样式使用 Less 设计 token 与 CSS 自定义属性。全局样式需在 `App.vue` 中引入一次：
 
 ```vue
 <!-- App.vue -->
@@ -96,36 +96,64 @@ npm install @lucide/vue lucide-static
 
 如果通过 `uni_modules` 目录安装，则使用 `@import '@/uni_modules/leaf-island/index.less';`。
 
-- `:root` 与小程序 `page` 根节点都会注入变量，无需手动声明。
-- **字体**：默认使用系统字体。如需自定义字体，用 `uni.loadFontFace` 注入后覆盖变量 `--animal-font-family`（见 `styles/variables.less`）。
+- `:root` 与小程序 `page` 根节点会注入默认浅色 CSS 变量。
+- **运行时切换**：用 `<li-theme-provider :theme="theme">...</li-theme-provider>` 包裹内容，并把 `theme` 设为 `light` 或 `dark`。主题值可绑定 Vue 响应式状态；容器内的组件会继承对应主题色。
+- **自定义主题**：可在容器或其祖先覆盖 `--animal-*` CSS 变量。Less token 和组件色值映射见 `styles/variables.less` 与 `styles/themes/`。
+- **字体**：默认使用系统字体。如需自定义字体，用 `uni.loadFontFace` 注入后覆盖变量 `--animal-font-family`。完整示例见仓库 `docs/theming-and-bundle.md`。
 
 ---
 
-## 🧩 组件清单（21 个）
+## 🧩 组件清单（47 个）
 
-| 组件 | 说明 | 强 Web 特性降级说明 |
-| ---- | ---- | ---- |
-| `li-button` | 按钮 | — |
-| `li-icon` | 全量 Lucide 图标（H5 使用 `@lucide/vue`，小程序用 `lucide-static` SVG 生成 data URI） | — |
-| `li-divider` | 分割线 | — |
-| `li-title` | 标题 | — |
-| `li-input` | 输入框 | — |
-| `li-switch` | 开关 | — |
-| `li-checkbox` | 复选框 | — |
-| `li-radio` | 单选框 | — |
-| `li-select` | 下拉选择 | 移除 `getBoundingClientRect` 定位，改用 `position: absolute` + 全屏透明遮罩关闭 |
-| `li-tabs` | 标签页 | — |
-| `li-collapse` | 折叠面板 | — |
-| `li-tooltip` | 文字提示 | — |
-| `li-card` | 卡片 | — |
-| `li-table` | 表格 | — |
-| `li-time` | 时间 | — |
-| `li-typewriter` | 打字机 | — |
-| `li-code-block` | 代码块 | — |
-| `li-footer` | 页脚 | — |
-| `li-cursor` | 跟随光标 | **仅 H5** 生效；小程序 / App 自动隐藏，不影响布局 |
-| `li-loading` | 岛屿加载动画 | 纯 CSS 旋转动画 + opacity/scale 显隐，全平台一致（含 `prefers-reduced-motion` 降级） |
-| `li-modal` | 模态框 | 移除 `Teleport`，改用 `position: fixed` 根容器 + 透明遮罩关闭 |
+| 分类 | 组件 | 说明 | 强 Web 特性降级说明 |
+| ---- | ---- | ---- | ---- |
+| 基础组件 | `li-button` | 按钮 | — |
+|  | `li-card` | 卡片 | — |
+|  | `li-divider` | 分割线 | — |
+|  | `li-icon` | 全量 Lucide 图标（H5 使用 `@lucide/vue`，小程序用 `lucide-static` SVG 生成 data URI） | — |
+|  | `li-title` | 标题 | — |
+|  | `li-theme-provider` | 浅色/暗色主题容器，支持运行时切换 | 通过 CSS 自定义属性继承主题色 |
+| 表单组件 | `li-cascader` | 树形多级选择，支持路径绑定、清除和禁用节点 | PC 下拉面板、移动端底部面板；flex + scroll-view 列，不测量 DOM |
+|  | `li-checkbox` | 复选框 | — |
+|  | `li-date-picker` | 单日期/范围选择，支持禁用日期及月历/周历 | PC 使用日历/年月选择弹层，移动端滚轮选择开始和结束日期 |
+|  | `li-form` | 表单布局与同步规则校验 | 基于 Vue provide/inject 与 UniApp form 提交 |
+|  | `li-form-item` | 表单项、标签和校验反馈 | 基于 Vue provide/inject 与 UniApp form 提交 |
+|  | `li-input` | 输入框 | — |
+|  | `li-radio` | 单选框 | — |
+|  | `li-search` | 搜索输入、清除、提交和历史关键词插槽 | 使用 UniApp input 与原生搜索确认事件 |
+|  | `li-select` | 下拉选择 | 移除 `getBoundingClientRect` 定位，改用 `position: absolute` + 全屏透明遮罩关闭 |
+|  | `li-switch` | 开关 | — |
+|  | `li-upload` | 图片选择、预览与可选上传 | 共享多图预览入口，支持切换和缩放；配置上传地址后展示实时进度，失败可重试，移除前二次确认 |
+| 数据展示 | `li-avatar` | 图片或文字头像 | 使用 UniApp image，失败时回退 initials |
+|  | `li-badge` | 数量/圆点角标 | 普通布局组件 |
+|  | `li-empty` | 空数据状态 | 普通布局组件 |
+|  | `li-image` | 图片展示 | 支持裁剪、懒加载、占位/错误状态及自定义图片组预览 |
+|  | `li-pagination` | 简易分页 | 按页码触发 change，不处理数据切片 |
+|  | `li-progress` | 进度展示 | CSS 动画 |
+|  | `li-rate` | 整星/半星评分与只读展示 | 点击半星区域进行评分 |
+|  | `li-skeleton` | 加载占位 | CSS 渐变动画 |
+|  | `li-table` | 排序、筛选、固定列与横向滚动表格 | 固定列使用 sticky 定位；横向滚动通过 scroll.x 设置 |
+|  | `li-tag` | 状态展示、筛选和可关闭标签 | 普通布局组件 |
+|  | `li-time` | 时间 | — |
+| 导航组件 | `li-action-sheet` | 移动端底部操作菜单，支持取消、禁用项和危险项 | 固定定位遮罩 + 安全区适配 |
+|  | `li-navbar` | 顶部标题、返回入口及左右操作插槽 | 支持固定定位和顶部安全区 |
+|  | `li-tabbar` | 底部一级页面导航、图标和角标 | 支持固定定位及底部安全区 |
+|  | `li-breadcrumb` | 当前页面层级路径 | 由业务响应点击并执行路由跳转 |
+|  | `li-backtop` | 页面滚动后快捷回顶 | H5 自动监听；小程序通过 scrollTop 属性接入 onPageScroll |
+|  | `li-collapse` | 折叠面板 | — |
+|  | `li-drawer` | 抽屉面板 | 固定视图遮罩 + scroll-view 内容区 |
+|  | `li-popover` | 点击气泡 | H5 传送到 body 并限制在视口内；小程序使用组件内定位，需验证父容器裁切 |
+|  | `li-steps` | 流程步骤条，支持横向/纵向和完成/错误状态 | CSS 布局 |
+|  | `li-tabs` | 标签页 | — |
+| 反馈提示 | `li-loading` | 岛屿加载动画 | 纯 CSS 旋转动画 + opacity/scale 显隐，全平台一致（含 `prefers-reduced-motion` 降级） |
+|  | `li-modal` | 模态框 | 移除 `Teleport`，改用 `position: fixed` 根容器 + 透明遮罩关闭 |
+|  | `li-notification` | 持续状态通知 | 普通布局组件 |
+|  | `li-toast` | 自动关闭的轻提示 | 固定定位视图，不依赖原生 Toast API |
+|  | `li-tooltip` | 文字提示 | — |
+| 视觉效果 | `li-code-block` | 代码块 | — |
+|  | `li-cursor` | 跟随光标 | **仅 H5** 生效；小程序 / App 自动隐藏，不影响布局 |
+|  | `li-footer` | 页脚 | — |
+|  | `li-typewriter` | 打字机 | — |
 
 > 图标来源：[Lucide Icons](https://lucide.dev)，ISC License。
 
@@ -167,10 +195,11 @@ function sayHi() {
 
 ```
 leaf-island/
-├── components/        # 21 个组件，目录名 = 组件名（li-xxx）
+├── components/        # 47 个组件，目录名 = 组件名（li-xxx）
 │   └── li-xxx/
 │       ├── li-xxx.vue
 │       └── types.ts   # 组件 props / emits 类型
+├── area-data/         # 内置省、市、区县数据与级联选项工厂
 ├── styles/            # 主题变量、reset、全局样式（:root + page 双根注入）
 ├── assets/            # SVG / PNG / JPG 等静态资源
 ├── index.less         # 全局样式入口（@import 一次）

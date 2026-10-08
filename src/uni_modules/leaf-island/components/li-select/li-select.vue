@@ -98,14 +98,14 @@ function handleSelect(key: string) {
     justify-content: space-between;
     padding: @spacing-sm 13px;
     background: #fff;
-    border: 2px solid #e8dcc8;
+    border: 2px solid var(--animal-border-color-light, #e8dcc8);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s;
 
     &:hover {
-      border-color: #d4c4a8;
-      background: #fffdf7;
+      border-color: var(--animal-border-color, #d4c4a8);
+      background: var(--animal-surface-color, #fffdf7);
     }
 
     &--disabled {
@@ -115,18 +115,18 @@ function handleSelect(key: string) {
 
       &:hover {
         background: #f5f5f0 !important;
-        border-color: #e8dcc8 !important;
+        border-color: var(--animal-border-color-light, #e8dcc8) !important;
       }
     }
   }
 
   &__value {
     font-size: @font-size-base;
-    color: #725d42;
+    color: var(--animal-warm-color-soft, #725d42);
     font-weight: 600;
 
     &--placeholder {
-      color: #a09080;
+      color: var(--animal-text-color-secondary, #a09080);
       font-weight: 400;
     }
   }
@@ -137,7 +137,7 @@ function handleSelect(key: string) {
     box-sizing: border-box;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
-    color: #a09080;
+    color: var(--animal-text-color-secondary, #a09080);
     transform: translateY(-2px) rotate(45deg);
     transition:
       color 0.2s,
@@ -182,7 +182,7 @@ function handleSelect(key: string) {
     padding: 10px 30px 10px 14px;
     font-size: @font-size-base;
     font-weight: 500;
-    color: #725d42;
+    color: var(--animal-warm-color-soft, #725d42);
     cursor: pointer;
     white-space: nowrap;
 

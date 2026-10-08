@@ -5,7 +5,7 @@ import type { LoadingProps } from './types';
 const props = withDefaults(defineProps<LoadingProps>(), {
   active: true,
   text: '',
-  color: '#19c8b9',
+  color: 'var(--animal-primary-color, #19c8b9)',
   size: 24,
 });
 
@@ -21,7 +21,7 @@ const spinnerSize = computed(() => {
 const spinnerStyle = computed(() => ({
   width: spinnerSize.value,
   height: spinnerSize.value,
-  borderColor: 'rgba(0,0,0,0.08)',
+  borderColor: 'var(--animal-border-color-light, rgba(0, 0, 0, 0.08))',
   borderTopColor: props.color,
   borderLeftColor: props.color,
 }));

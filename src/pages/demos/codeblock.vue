@@ -12,7 +12,7 @@ const CODE_API = [
 
 const sample = `<!-- easycom 自动引入，无需 import -->
 <li-button type="primary">上岛</li-button>
-<li-title color="green">欢迎来到无人岛</li-title>`;
+<li-title color="app-green">欢迎来到无人岛</li-title>`;
 </script>
 
 <template>

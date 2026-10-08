@@ -134,13 +134,19 @@ onBeforeUnmount(() => {
 
   &__root {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 1000;
   }
 
   &__mask {
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -154,11 +160,11 @@ onBeforeUnmount(() => {
     height: 100%;
     box-sizing: border-box;
     padding: 48px 48px 32px;
-    background: #f7f3df;
-    border: 4px solid #c4b89e;
+    background: var(--animal-bg-color-input, #f7f3df);
+    border: 4px solid var(--animal-text-color-disabled, #c4b89e);
     border-radius: 32px 28px 36px 30px;
-    box-shadow: 0 16px 48px rgba(76, 60, 51, 0.18);
-    color: rgb(128, 115, 89);
+    box-shadow: var(--animal-shadow-lg, 0 16px 48px rgba(76, 60, 51, 0.18));
+    color: var(--animal-text-color, rgb(128, 115, 89));
     font-family: @font-family;
     display: flex;
     flex-direction: column;

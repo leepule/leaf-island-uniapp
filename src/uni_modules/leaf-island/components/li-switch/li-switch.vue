@@ -1,19 +1,11 @@
 <script setup lang="ts">
 import { useControlled } from '../../composables/useControlled';
-import type { SwitchSize } from './types';
+import type { SwitchProps } from './types';
 
-interface Props {
-  modelValue?: boolean;
-  defaultChecked?: boolean;
-  size?: SwitchSize;
-  disabled?: boolean;
-  loading?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<SwitchProps>(), {
   modelValue: undefined,
   defaultChecked: false,
-  size: 'default',
+  size: 'middle',
   disabled: false,
   loading: false,
 });
@@ -100,7 +92,7 @@ function handleClick() {
     left: 2px;
     width: 21px;
     height: 21px;
-    background: rgb(247, 243, 223);
+    background: var(--animal-bg-color-input, #f7f3df);
     border: 2.5px solid @shadow-soft-hover;
     border-radius: 50%;
     transition: all @motion-duration-base @motion-ease;

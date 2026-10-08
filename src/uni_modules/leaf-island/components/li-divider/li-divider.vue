@@ -45,7 +45,7 @@ withDefaults(defineProps<{ type?: DividerType }>(), {
     background-size: 12px 2px;
   }
   &--dashed-brown {
-    background-image: linear-gradient(to right, #c4b89e 50%, transparent 50%);
+    background-image: linear-gradient(to right, var(--animal-text-color-disabled, #c4b89e) 50%, transparent 50%);
   }
   &--dashed-teal {
     background-image: linear-gradient(to right, #19c8b9 50%, transparent 50%);

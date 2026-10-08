@@ -8,10 +8,17 @@ Leaf Island UI for UniApp 是一套面向 **Vue 3 / UniApp** 的自然治愈系�
 
 - **UniApp 优先**：组件按 `uni_modules` 规范组织，通过 EasyCom 使用，无需逐个手动导入。
 - **Vue 3 + TypeScript**：组件 Props 与 Events 均提供类型定义，开发体验更清晰。
+- **运行时主题切换**：内置浅色、暗色语义主题，可通过 `li-theme-provider` 响应式切换。
 - **治愈系视觉语言**：内置自然主题变量、圆润形态、低饱和暖色与轻量动效。
 - **跨端适配**：使用条件编译处理平台差异；`li-cursor` 等 Web 专属能力会自动降级。
 - **Lucide 图标**：`li-icon` 基于 Lucide 官方图标库，多端渲染策略自动切换。
 - **MIT 协议**：可免费用于个人与商业项目。
+
+组件属性、事件、插槽、受控用法和移动端示例见[组件 API 与示例文档](./docs/component-reference.md)；API 命名约定见[组件 API 约定](./docs/component-api-conventions.md)。
+
+H5 / 微信小程序的静态适配检查与运行验收清单见[跨端检查记录](./docs/platform-compatibility.md)。
+
+图标按需加载评估、主题变量覆盖范围和运行时换肤用法见[包体与主题说明](./docs/theming-and-bundle.md)。
 
 ## 灵感与致谢
 
@@ -124,26 +131,51 @@ import LiModal from '@/uni_modules/leaf-island/components/li-modal/li-modal.vue'
 | 分类 | 组件 | 说明 |
 | --- | --- | --- |
 | 基础组件 | `li-button` | 多类型、多尺寸按钮 |
+|  | `li-card` | 卡片容器 |
+|  | `li-divider` | 装饰性分割线 |
 |  | `li-icon` | Lucide 图标组件 |
 |  | `li-title` | 层级化标题 |
-|  | `li-divider` | 装饰性分割线 |
-| 数据录入 | `li-input` | 文本输入框 |
+|  | `li-theme-provider` | 浅色/暗色主题容器 |
+| 表单组件 | `li-cascader` | 省市区、分类等多级联动选择，内置中国省市区数据 |
+|  | `li-checkbox` | 复选框 |
+|  | `li-date-picker` | 日期选择 |
+|  | `li-form` / `li-form-item` | 表单布局、规则校验与错误提示 |
+|  | `li-input` | 文本输入框 |
+|  | `li-radio` | 单选框 |
+|  | `li-rate` | 整星/半星评分与只读展示 |
+|  | `li-search` | 支持清除、提交搜索和自定义历史关键词 |
 |  | `li-select` | 下拉选择器 |
 |  | `li-switch` | 开关 |
-|  | `li-checkbox` | 复选框 |
-|  | `li-radio` | 单选框 |
-| 数据展示 | `li-card` | 卡片容器 |
-|  | `li-tabs` | 标签页 |
-|  | `li-collapse` | 折叠面板 |
-|  | `li-table` | 表格 |
+|  | `li-upload` | 图片选择，可配置上传地址 |
+| 数据展示 | `li-avatar` | 头像展示 |
+|  | `li-badge` | 数量角标与状态标记 |
+|  | `li-empty` | 空数据状态与操作入口 |
+|  | `li-image` | 图片显示、加载占位与点击预览 |
+|  | `li-pagination` | 简易分页 |
+|  | `li-progress` | 确定与不确定进度条 |
+|  | `li-skeleton` | 加载占位 |
+|  | `li-tag` | 状态展示、筛选和可关闭标签 |
+|  | `li-table` | 支持排序、筛选、固定列和横向滚动的数据表格 |
 |  | `li-time` | 时间展示 |
-|  | `li-typewriter` | 打字机动效 |
-|  | `li-code-block` | 代码块 |
-|  | `li-footer` | 自然风格页脚装饰 |
-| 反馈组件 | `li-modal` | 模态框 |
+| 导航组件 | `li-action-sheet` | 移动端底部操作菜单 |
+|  | `li-navbar` | 页面顶部导航栏 |
+|  | `li-tabbar` | 移动端底部标签导航 |
+|  | `li-breadcrumb` | 页面层级导航 |
+|  | `li-backtop` | 滚动后返回顶部 |
+|  | `li-collapse` | 折叠面板 |
+|  | `li-drawer` | 抽屉面板 |
+|  | `li-popover` | 点击气泡菜单 |
+|  | `li-steps` | 横向或纵向显示流程步骤及完成、错误状态 |
+|  | `li-tabs` | 标签页 |
+| 反馈提示 | `li-loading` | 加载动画 |
+|  | `li-modal` | 模态框 |
+|  | `li-notification` | 持续展示的状态通知 |
+|  | `li-toast` | 自动关闭的轻提示 |
 |  | `li-tooltip` | 气泡提示 |
-|  | `li-loading` | 加载动画 |
-| Web 体验 | `li-cursor` | 自定义鼠标跟随效果，仅 H5 生效 |
+| 视觉效果 | `li-code-block` | 代码块 |
+|  | `li-cursor` | 自定义鼠标跟随效果，仅 H5 生效 |
+|  | `li-footer` | 自然风格页脚装饰 |
+|  | `li-typewriter` | 打字机动效 |
 
 ## 本地开发
 

@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue';
 import { ICON_LIST } from '../../leaf-island';
+
+const iconQuery = ref('');
+const matchingIcons = computed(() => {
+  const query = iconQuery.value.trim().toLowerCase();
+  return query
+    ? ICON_LIST.filter((icon) => icon.name.toLowerCase().includes(query) || icon.label.toLowerCase().includes(query))
+    : ICON_LIST;
+});
+const visibleIcons = computed(() => matchingIcons.value.slice(0, 60));
 
 const ICON_API = [
   { prop: 'name', desc: 'Lucide 图标名，支持 icon- 前缀', type: 'IconName', defaultVal: '-', required: true },
@@ -45,8 +55,12 @@ const code = `<li-icon name="icon-ticket" :size="32" />
 
       <view class="demo-label">图标列表</view>
       <view class="demo-box">
+        <li-input v-model="iconQuery" clearable placeholder="搜索 Lucide 图标名，例如 leaf" />
+        <text style="display: block; margin: 16rpx 0; color: #8b7355">
+          匹配 {{ matchingIcons.length }} 个，当前展示 {{ visibleIcons.length }} 个（最多 60 个）
+        </text>
         <view
-          v-for="(icon, idx) in ICON_LIST"
+          v-for="icon in visibleIcons"
           :key="icon.name"
           style="
             display: flex;

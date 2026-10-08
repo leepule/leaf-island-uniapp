@@ -13,10 +13,10 @@
 
 page,
 .app-root {
-  background: #f6f3e8;
+  background: var(--animal-bg-color, #f6f3e8);
   min-height: 100vh;
   font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  color: #5f5238;
+  color: var(--animal-text-color, #5f5238);
 }
 
 /* ---------- 各 demo 页共享样式（对齐 demo 参考站） ---------- */
@@ -24,8 +24,9 @@ page,
 .demo-page {
   margin: 24rpx;
   padding: 48rpx 40rpx 56rpx;
-  background: #ffffff;
-  border: 1px solid #e8e2d6;
+  background: var(--animal-surface-color, #ffffff);
+  color: var(--animal-text-color, #5f5238);
+  border: 1px solid var(--animal-border-color-light, #e8e2d6);
   border-radius: 24rpx;
   box-sizing: border-box;
 }
@@ -34,7 +35,7 @@ page,
 .demo-title {
   font-size: 36rpx;
   font-weight: 600;
-  color: #725d42;
+  color: var(--animal-warm-color-soft, #725d42);
   display: flex;
   align-items: center;
   gap: 12rpx;
@@ -45,14 +46,14 @@ page,
   font-size: 20rpx;
   padding: 4rpx 16rpx;
   border-radius: 20rpx;
-  background: #f0e8d8;
-  color: #a08060;
+  background: var(--animal-bg-color-secondary, #f0e8d8);
+  color: var(--animal-text-color-secondary, #a08060);
   font-weight: 500;
   vertical-align: middle;
 }
 .demo-desc {
   font-size: 24rpx;
-  color: #a0936e;
+  color: var(--animal-text-color-secondary, #a0936e);
   margin: 16rpx 0 8rpx;
   line-height: 1.6;
 }
@@ -61,23 +62,23 @@ page,
 .demo-label {
   font-size: 28rpx;
   font-weight: 500;
-  color: #a0936e;
+  color: var(--animal-text-color-secondary, #a0936e);
   margin: 40rpx 0 24rpx;
 }
 
 /* 演示内盒：奶油底，对齐 demo 的 demoBoxStyle */
 .demo-box {
-  background: #faf8f3;
-  border: 1px solid #e8e2d6;
+  background: var(--animal-bg-color-secondary, #faf8f3);
+  border: 1px solid var(--animal-border-color-light, #e8e2d6);
   border-radius: 24rpx;
   padding: 32rpx;
   box-sizing: border-box;
 }
 .demo-dashed {
-  border: 1.5px dashed #e0d8c8;
+  border: 1.5px dashed var(--animal-border-color-light, #e0d8c8);
   border-radius: 24rpx;
   padding: 28rpx;
-  background: #faf8f3;
+  background: var(--animal-bg-color-secondary, #faf8f3);
 }
 .demo-row {
   display: flex;
@@ -94,9 +95,9 @@ page,
 .demo-note {
   font-size: 22rpx;
   line-height: 1.6;
-  color: #a0936e;
-  background: #faf8f3;
-  border-left: 4px solid #e0d8c8;
+  color: var(--animal-text-color-secondary, #a0936e);
+  background: var(--animal-bg-color-secondary, #faf8f3);
+  border-left: 4px solid var(--animal-border-color-light, #e0d8c8);
   border-radius: 12rpx;
   padding: 16rpx 20rpx;
   margin: 16rpx 0 4rpx;

@@ -12,6 +12,7 @@
   },
   "files": [
     "assets/",
+    "area-data/",
     "components/",
     "composables/",
     "styles/",

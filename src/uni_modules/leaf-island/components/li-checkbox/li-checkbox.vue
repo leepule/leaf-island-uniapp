@@ -116,7 +116,7 @@ function onKeyDown(e: KeyboardEvent, option: CheckboxOption) {
     justify-content: center;
     flex-shrink: 0;
     border: 2px solid @shadow-soft-hover;
-    background: rgb(247, 243, 223);
+    background: var(--animal-bg-color-input, #f7f3df);
     outline: none;
     transition: all @motion-duration-base @motion-ease;
 
@@ -200,7 +200,7 @@ function onKeyDown(e: KeyboardEvent, option: CheckboxOption) {
     opacity: 0.55;
 
     .animal-checkbox__box {
-      background: #f0ece2;
+      background: var(--animal-bg-color-disabled, #f0ece2);
       border-color: @border-color-light;
     }
     .animal-checkbox__label {

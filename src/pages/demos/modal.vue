@@ -23,11 +23,9 @@ const code = `<li-button type="primary" @click="open = true">打开 Modal</li-bu
 <li-modal v-model:open="open" title="确认">
     内容
     <template #footer>
-    <AppLayout>
         <li-button @click="open = false">再想想</li-button>
         <li-button type="primary" danger @click="open = false">确认</li-button>
-        </AppLayout>
-</template>
+    </template>
 </li-modal>
 
 <li-modal v-model:open="open" :typewriter="false">直接显示全部内容</li-modal>`;

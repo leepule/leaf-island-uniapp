@@ -5,7 +5,7 @@ const checked = ref(false);
 const SWITCH_API = [
   { prop: 'modelValue / v-model', desc: '开关状态；传入时受控，未传时使用内部状态', type: 'boolean', defaultVal: '-' },
   { prop: 'defaultChecked', desc: '非受控默认值', type: 'boolean', defaultVal: 'false' },
-  { prop: 'size', desc: '尺寸', type: `'small' | 'default'`, defaultVal: "'default'" },
+  { prop: 'size', desc: '尺寸（default 为兼容别名，推荐 middle）', type: `'small' | 'middle' | 'default'`, defaultVal: "'middle'" },
   { prop: 'disabled', desc: '禁用', type: 'boolean', defaultVal: 'false' },
   { prop: 'loading', desc: '加载状态', type: 'boolean', defaultVal: 'false' },
   { prop: '#checked / #unchecked', desc: '选中文案插槽', type: 'slot', defaultVal: '-' },
@@ -13,11 +13,10 @@ const SWITCH_API = [
 
 const code = `<li-switch v-model="checked" />
 <li-switch default-checked>
-    <template #checked>
-    <AppLayout>开    </AppLayout>
-</template>
+    <template #checked>开</template>
     <template #unchecked>关</template>
 </li-switch>
+<li-switch size="middle" default-checked />
 <li-switch size="small" default-checked />
 <li-switch disabled />
 <li-switch loading default-checked />`;
@@ -44,7 +43,7 @@ const code = `<li-switch v-model="checked" />
 
       <view class="demo-label">size 尺寸</view>
       <view class="demo-row">
-        <li-switch default-checked />
+        <li-switch size="middle" default-checked />
         <li-switch size="small" default-checked />
       </view>
 

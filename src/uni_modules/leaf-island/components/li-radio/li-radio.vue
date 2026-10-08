@@ -196,8 +196,8 @@ function onClickItem(opt: RadioOption, idx: number) {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: rgb(247, 243, 223);
-    border: 2px solid #c4b89e;
+    background: var(--animal-bg-color-input, #f7f3df);
+    border: 2px solid var(--animal-text-color-disabled, #c4b89e);
     border-radius: 8px;
     outline: none;
     transition: all @motion-duration-base @motion-ease;
@@ -218,7 +218,7 @@ function onClickItem(opt: RadioOption, idx: number) {
   }
 
   &__label {
-    color: #725d42;
+    color: var(--animal-warm-color-soft, #725d42);
     font-weight: 500;
     letter-spacing: 0.01em;
     transition: color @motion-duration-fast;
@@ -275,7 +275,7 @@ function onClickItem(opt: RadioOption, idx: number) {
       border-color: @primary-color-active;
     }
     .animal-radio__label {
-      color: #794f27;
+      color: var(--animal-warm-color, #794f27);
     }
   }
 
@@ -284,13 +284,13 @@ function onClickItem(opt: RadioOption, idx: number) {
     cursor: not-allowed;
     opacity: 0.55;
     .animal-radio__circle {
-      background: #f0ece2;
+      background: var(--animal-bg-color-disabled, #f0ece2);
       border-color: #d4c9b4;
       transform: none !important;
       box-shadow: none !important;
     }
     .animal-radio__label {
-      color: #c4b89e;
+      color: var(--animal-text-color-disabled, #c4b89e);
     }
   }
 }

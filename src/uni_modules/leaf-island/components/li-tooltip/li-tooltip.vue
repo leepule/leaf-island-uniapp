@@ -89,8 +89,8 @@ const isIsland = computed(() => props.variant === 'island');
 <style lang="less" scoped>
 @import '../../styles/variables.less';
 
-@tooltip-bg: rgb(247, 243, 223);
-@tooltip-border: #c4b89e;
+@tooltip-bg: var(--animal-bg-color-input, #f7f3df);
+@tooltip-border: var(--animal-text-color-disabled, #c4b89e);
 @tooltip-gap: 20rpx;
 @tooltip-arrow-size: 16rpx;
 @island-arrow-size: 20rpx;
@@ -115,7 +115,7 @@ const isIsland = computed(() => props.variant === 'island');
   background: @tooltip-bg;
   border-radius: @border-radius-sm;
   box-shadow: @shadow-base;
-  color: #725d42;
+  color: var(--animal-warm-color-soft, #725d42);
   font-size: @font-size-sm;
   font-weight: 500;
   line-height: 1.5;

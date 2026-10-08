@@ -1,51 +1,52 @@
 // ============================================
 // Leaf Island UI Design Tokens (Less Variables)
-// Inspired by natural & pastoral aesthetics
+// Color tokens map to runtime CSS custom properties with fallbacks; geometry
+// and typography tokens remain compile-time values.
 // ============================================
 
 // ---------- Color Palette ----------
-@primary-color: #19c8b9;
-@primary-color-hover: #3dd4c6;
-@primary-color-active: #50b9ab;
-@primary-color-bg: #e6f9f6;
+@primary-color: var(--animal-primary-color, #19c8b9);
+@primary-color-hover: var(--animal-primary-color-hover, #3dd4c6);
+@primary-color-active: var(--animal-primary-color-active, #50b9ab);
+@primary-color-bg: var(--animal-primary-color-bg, #e6f9f6);
 
-@success-color: #6fba2c;
-@success-color-hover: #85cc45;
-@success-color-active: #5a9e1e;
+@success-color: var(--animal-success-color, #6fba2c);
+@success-color-hover: var(--animal-success-color-hover, #85cc45);
+@success-color-active: var(--animal-success-color-active, #5a9e1e);
 
-@warning-color: #f5c31c;
-@warning-color-hover: #f7d04a;
-@warning-color-active: #dba90e;
+@warning-color: var(--animal-warning-color, #f5c31c);
+@warning-color-hover: var(--animal-warning-color-hover, #f7d04a);
+@warning-color-active: var(--animal-warning-color-active, #dba90e);
 
-@error-color: #e05a5a;
-@error-color-hover: #e87878;
-@error-color-active: #c94444;
+@error-color: var(--animal-error-color, #e05a5a);
+@error-color-hover: var(--animal-error-color-hover, #e87878);
+@error-color-active: var(--animal-error-color-active, #c94444);
 
 // ---------- Neutral ----------
-@text-color: #794f27;
-@text-color-secondary: #9f927d;
-@text-color-disabled: #c4b89e;
+@text-color: var(--animal-text-color, #794f27);
+@text-color-secondary: var(--animal-text-color-secondary, #9f927d);
+@text-color-disabled: var(--animal-text-color-disabled, #c4b89e);
 
 @focus-yellow: @warning-color;
 
-@border-color: #aaa69d;
-@border-color-hover: #827157;
-@border-color-light: #e8e2d6;
-@shadow-color-light: rgba(61, 52, 40, 0.08);
+@border-color: var(--animal-border-color, #aaa69d);
+@border-color-hover: var(--animal-border-color-hover, #827157);
+@border-color-light: var(--animal-border-color-light, #e8e2d6);
+@shadow-color-light: var(--animal-shadow-color-light, rgba(61, 52, 40, 0.08));
 
-@bg-color: #f8f8f0;
-@bg-color-secondary: #f0e8d8;
-@bg-color-disabled: #f0ece2;
-@bg-color-input: #f7f3df;
+@bg-color: var(--animal-bg-color, #f8f8f0);
+@bg-color-secondary: var(--animal-bg-color-secondary, #f0e8d8);
+@bg-color-disabled: var(--animal-bg-color-disabled, #f0ece2);
+@bg-color-input: var(--animal-bg-color-input, #f7f3df);
 
 // Cream / warm-brown extras
-@cream-color: #f8f8f0;
-@warm-color: #794f27;
-@warm-color-soft: #725d42;
-@shadow-warm: #bdaea0;
-@shadow-soft: #d4c9b4;
-@shadow-soft-hover: #c4b89e;
-@shadow-soft-strong: #a89878;
+@cream-color: var(--animal-cream-color, #f8f8f0);
+@warm-color: var(--animal-warm-color, #794f27);
+@warm-color-soft: var(--animal-warm-color-soft, #725d42);
+@shadow-warm: var(--animal-shadow-warm, #bdaea0);
+@shadow-soft: var(--animal-shadow-soft, #d4c9b4);
+@shadow-soft-hover: var(--animal-shadow-soft-hover, #c4b89e);
+@shadow-soft-strong: var(--animal-shadow-soft-strong, #a89878);
 
 // ---------- Typography ----------
 @font-family:

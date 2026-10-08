@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { PAGE_INFO } from '../pageInfo';
+import { PAGE_GROUPS, PAGE_INFO } from '../pageInfo';
 
 const emit = defineEmits<{ (e: 'nav', key: string): void }>();
 
@@ -12,18 +12,16 @@ const current = ref('home');
 const statusBarHeight = ref(0);
 // #endif
 
-// 导航项：首页 + 所有组件（顺序与 PAGE_INFO 一致）
-const navItems = computed(() => {
-  const list: { key: string; title: string; sub: string }[] = [{ key: 'home', title: '首页', sub: 'Home' }];
-  for (const [key, info] of Object.entries(PAGE_INFO)) {
-    list.push({ key, title: info.title, sub: info.tag });
-  }
-  return list;
-});
+const homeItem = { key: 'home', title: '首页', sub: 'Home' };
+const navGroups = computed(() => PAGE_GROUPS.map((group) => ({
+  title: group.title,
+  items: group.keys.map((key) => ({ key, ...PAGE_INFO[key] })),
+})));
+const componentCount = Object.keys(PAGE_INFO).length;
 
 const currentLabel = computed(() => {
-  const item = navItems.value.find((i) => i.key === current.value);
-  return item ? item.title : 'Leaf Island';
+  if (current.value === 'home') return homeItem.title;
+  return PAGE_INFO[current.value]?.title ?? 'Leaf Island';
 });
 
 function syncCurrent() {
@@ -144,21 +142,28 @@ onUnmounted(() => {
 
     <text class="nav-section-label">导航</text>
     <view class="nav-list">
-      <view
-        v-for="item in navItems"
-        :key="item.key"
-        class="nav-item"
-        :class="{ active: current === item.key }"
-        @click="navigate(item.key)"
-      >
-        <text v-if="item.key === 'home'" class="nav-emoji">🏠</text>
-        <text v-else class="nav-dot" />
-        <text class="nav-title">{{ item.title }}</text>
-        <text v-if="item.sub" class="nav-sub">{{ item.sub }}</text>
+      <view class="nav-item" :class="{ active: current === homeItem.key }" @click="navigate(homeItem.key)">
+        <text class="nav-emoji">🏠</text>
+        <text class="nav-title">{{ homeItem.title }}</text>
+        <text class="nav-sub">{{ homeItem.sub }}</text>
+      </view>
+      <view v-for="group in navGroups" :key="group.title" class="nav-group">
+        <text class="nav-group-label">{{ group.title }}</text>
+        <view
+          v-for="item in group.items"
+          :key="item.key"
+          class="nav-item"
+          :class="{ active: current === item.key }"
+          @click="navigate(item.key)"
+        >
+          <text class="nav-dot" />
+          <text class="nav-title">{{ item.title }}</text>
+          <text v-if="item.sub" class="nav-sub">{{ item.sub }}</text>
+        </view>
       </view>
     </view>
 
-    <text class="nav-footer">{{ navItems.length - 1 }} 个组件 · Vue 3 + uni-app</text>
+    <text class="nav-footer">{{ componentCount }} 个组件 · Vue 3 + uni-app</text>
   </view>
 
   <!-- 移动端抽屉遮罩 -->
@@ -173,8 +178,8 @@ onUnmounted(() => {
   top: 0;
   align-self: flex-start;
   height: 100vh;
-  background: #fffaf2;
-  border-right: 1px solid #e8e2d6;
+  background: var(--animal-bg-color, #fffaf2);
+  border-right: 1px solid var(--animal-border-color-light, #e8e2d6);
   display: flex;
   flex-direction: column;
   z-index: 50;
@@ -188,7 +193,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 10px;
   padding: 0 20px;
-  border-bottom: 1px solid #efe7d8;
+  border-bottom: 1px solid var(--animal-border-color-light, #efe7d8);
   flex-shrink: 0;
   cursor: pointer;
   user-select: none;
@@ -199,7 +204,7 @@ onUnmounted(() => {
 .nav-logo-text {
   font-size: 18px;
   font-weight: 800;
-  color: #725d42;
+  color: var(--animal-warm-color-soft, #725d42);
   letter-spacing: 0.5px;
 }
 
@@ -207,7 +212,7 @@ onUnmounted(() => {
   padding: 18px 20px 6px;
   font-size: 12px;
   font-weight: 600;
-  color: #b9a986;
+  color: var(--animal-text-color-secondary, #b9a986);
   letter-spacing: 1px;
   text-transform: uppercase;
   flex-shrink: 0;
@@ -226,7 +231,7 @@ onUnmounted(() => {
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 14px;
-  color: #7c5734;
+  color: var(--animal-text-color, #7c5734);
   cursor: pointer;
   border-left: 3px solid transparent;
   margin-bottom: 2px;
@@ -236,12 +241,12 @@ onUnmounted(() => {
   user-select: none;
 }
 .nav-item:hover {
-  background: #f3ede0;
+  background: var(--animal-bg-color-secondary, #f3ede0);
 }
 .nav-item.active {
-  background: #eaf6f1;
-  color: #128a7c;
-  border-left-color: #19c8b9;
+  background: var(--animal-primary-color-bg, #eaf6f1);
+  color: var(--animal-primary-color-active, #128a7c);
+  border-left-color: var(--animal-primary-color, #19c8b9);
   font-weight: 600;
 }
 .nav-emoji {
@@ -252,11 +257,11 @@ onUnmounted(() => {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #cdbfa3;
+  background: var(--animal-border-color, #cdbfa3);
   flex-shrink: 0;
 }
 .nav-item.active .nav-dot {
-  background: #19c8b9;
+  background: var(--animal-primary-color, #19c8b9);
 }
 .nav-title {
   flex: 1;
@@ -266,19 +271,28 @@ onUnmounted(() => {
 }
 .nav-sub {
   font-size: 11px;
-  color: #b9a986;
+  color: var(--animal-text-color-secondary, #b9a986);
   flex-shrink: 0;
 }
 .nav-item.active .nav-sub {
   color: #5fae9d;
 }
 
+.nav-group-label {
+  display: block;
+  padding: 18px 14px 6px;
+  color: var(--animal-text-color-secondary, #b9a986);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
 .nav-footer {
   flex-shrink: 0;
   padding: 14px 20px;
   font-size: 12px;
-  color: #b9a986;
-  border-top: 1px solid #efe7d8;
+  color: var(--animal-text-color-secondary, #b9a986);
+  border-top: 1px solid var(--animal-border-color-light, #efe7d8);
 }
 
 /* ---------- 移动端：顶部栏 + 抽屉 ---------- */
@@ -300,14 +314,14 @@ onUnmounted(() => {
 .hamburger-line {
   width: 100%;
   height: 2px;
-  background-color: #725d42;
+  background-color: var(--animal-warm-color-soft, #725d42);
   border-radius: 2px;
   transition: all 0.2s ease;
 }
 .mobile-bar-title {
   font-size: 16px;
   font-weight: 700;
-  color: #725d42;
+  color: var(--animal-warm-color-soft, #725d42);
   flex: 1;
 }
 .mobile-bar-logo {
@@ -352,8 +366,8 @@ onUnmounted(() => {
   /* paddingTop / height 由内联 style 动态设置（不依赖跨组件 CSS 变量） */
   height: 52px;
   /* #endif */
-  background: #fffaf2;
-  border-bottom: 1px solid #e8e2d6;
+  background: var(--animal-bg-color, #fffaf2);
+  border-bottom: 1px solid var(--animal-border-color-light, #e8e2d6);
   z-index: 99997;
 }
 
@@ -394,8 +408,8 @@ onUnmounted(() => {
     padding: 0 14px;
     padding-top: env(safe-area-inset-top);
     height: calc(52px + env(safe-area-inset-top));
-    background: #fffaf2;
-    border-bottom: 1px solid #e8e2d6;
+    background: var(--animal-bg-color, #fffaf2);
+    border-bottom: 1px solid var(--animal-border-color-light, #e8e2d6);
     z-index: 99997;
   }
 }

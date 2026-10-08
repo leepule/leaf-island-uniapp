@@ -41,8 +41,8 @@ defineSlots<{ default?: () => unknown }>();
   &--default {
     border-radius: 40rpx;
     padding: 32rpx 48rpx;
-    background: rgb(247, 243, 223);
-    color: #725d42;
+    background: var(--animal-bg-color-input, #f7f3df);
+    color: var(--animal-warm-color-soft, #725d42);
 
     &:hover {
       transform: translateY(-4rpx);
@@ -51,12 +51,12 @@ defineSlots<{ default?: () => unknown }>();
   &--dashed {
     border-radius: 40rpx;
     padding: 32rpx 48rpx;
-    border: 2px dashed #e8dcc8;
+    border: 2px dashed var(--animal-border-color-light, #e8dcc8);
     background: rgb(250, 248, 242);
     box-shadow: none;
 
     &:hover {
-      border-color: #d4c4a8;
+      border-color: var(--animal-border-color, #d4c4a8);
       transform: translateY(0);
     }
   }
@@ -77,7 +77,7 @@ defineSlots<{ default?: () => unknown }>();
   }
   &--color-app-yellow {
     background: #f7cd67;
-    color: #725d42;
+    color: var(--animal-warm-color-soft, #725d42);
   }
   &--color-app-orange {
     background: #e59266;
@@ -101,7 +101,7 @@ defineSlots<{ default?: () => unknown }>();
   }
   &--color-yellow-green {
     background: #ecdf52;
-    color: #725d42;
+    color: var(--animal-warm-color-soft, #725d42);
   }
   &--color-brown {
     background: #9a835a;
@@ -116,15 +116,15 @@ defineSlots<{ default?: () => unknown }>();
   &--pattern-default {
     background:
       radial-gradient(circle, rgba(196, 184, 158, 0.15) 3rpx, transparent 3rpx),
-      radial-gradient(circle, rgba(196, 184, 158, 0.1) 2rpx, transparent 2rpx), rgb(247, 243, 223);
+      radial-gradient(circle, rgba(196, 184, 158, 0.1) 2rpx, transparent 2rpx), var(--animal-bg-color-input, #f7f3df);
     background-size:
       56rpx 56rpx,
       28rpx 28rpx;
     background-position:
       0 0,
       14rpx 14rpx;
-    border: 1.5px solid #d4c4a8;
-    color: #725d42;
+    border: 1.5px solid var(--animal-border-color, #d4c4a8);
+    color: var(--animal-warm-color-soft, #725d42);
   }
   &--pattern-app-pink {
     background:

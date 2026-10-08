@@ -1,21 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { InputSize } from './types';
+import type { InputProps } from './types';
 
-interface Props {
-  modelValue?: string;
-  size?: InputSize;
-  allowClear?: boolean;
-  status?: 'error' | 'warning';
-  shadow?: boolean;
-  disabled?: boolean;
-  placeholder?: string;
-  type?: string;
-  readonly?: boolean;
-  maxlength?: number;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<InputProps>(), {
   modelValue: '',
   size: 'middle',
   allowClear: false,
@@ -36,7 +23,7 @@ defineSlots<{
   suffix?: () => unknown;
 }>();
 
-const showClear = computed(() => props.allowClear && !!props.modelValue && !props.disabled);
+const showClear = computed(() => (props.clearable ?? props.allowClear) && !!props.modelValue && !props.disabled);
 
 function handleInput(event: Event) {
   // 跨端取值：小程序 <input> 的 input 事件值在 event.detail.value；
@@ -88,7 +75,7 @@ function handleClear() {
   width: 100%;
   border: 2px solid @shadow-soft-hover;
   border-radius: 50px;
-  background: rgb(247, 243, 223);
+  background: var(--animal-bg-color-input, #f7f3df);
   transition: all @motion-duration-base @motion-ease;
 
   &:hover {
@@ -122,7 +109,7 @@ function handleClear() {
   &__suffix {
     display: inline-flex;
     align-items: center;
-    color: #a0936e;
+    color: var(--animal-text-color-secondary, #a0936e);
     flex-shrink: 0;
   }
   &__prefix {

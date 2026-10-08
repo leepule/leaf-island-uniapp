@@ -4,6 +4,10 @@
     { "path": "pages/demos/button", "style": { "navigationBarTitleText": "Button 按钮" } },
     { "path": "pages/demos/title", "style": { "navigationBarTitleText": "Title 标题" } },
     { "path": "pages/demos/input", "style": { "navigationBarTitleText": "Input 输入框" } },
+    { "path": "pages/demos/search", "style": { "navigationBarTitleText": "Search 搜索框" } },
+    { "path": "pages/demos/steps", "style": { "navigationBarTitleText": "Steps 步骤条" } },
+    { "path": "pages/demos/action-sheet", "style": { "navigationBarTitleText": "ActionSheet 操作菜单" } },
+    { "path": "pages/demos/cascader", "style": { "navigationBarTitleText": "Cascader 级联选择器" } },
     { "path": "pages/demos/switch", "style": { "navigationBarTitleText": "Switch 开关" } },
     { "path": "pages/demos/card", "style": { "navigationBarTitleText": "Card 卡片" } },
     { "path": "pages/demos/collapse", "style": { "navigationBarTitleText": "Collapse 折叠" } },
@@ -21,7 +25,28 @@
     { "path": "pages/demos/codeblock", "style": { "navigationBarTitleText": "CodeBlock 代码" } },
     { "path": "pages/demos/loading", "style": { "navigationBarTitleText": "Loading 加载" } },
     { "path": "pages/demos/table", "style": { "navigationBarTitleText": "Table 表格" } },
-    { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } }
+    { "path": "pages/demos/time", "style": { "navigationBarTitleText": "Time 时间" } },
+    { "path": "pages/demos/toast", "style": { "navigationBarTitleText": "Toast 轻提示" } },
+    { "path": "pages/demos/notification", "style": { "navigationBarTitleText": "Notification 通知" } },
+    { "path": "pages/demos/form", "style": { "navigationBarTitleText": "Form 表单" } },
+    { "path": "pages/demos/form-item", "style": { "navigationBarTitleText": "FormItem 表单项" } },
+    { "path": "pages/demos/empty", "style": { "navigationBarTitleText": "Empty 空状态" } },
+    { "path": "pages/demos/progress", "style": { "navigationBarTitleText": "Progress 进度条" } },
+    { "path": "pages/demos/drawer", "style": { "navigationBarTitleText": "Drawer 抽屉" } },
+    { "path": "pages/demos/popover", "style": { "navigationBarTitleText": "Popover 气泡菜单" } },
+    { "path": "pages/demos/badge", "style": { "navigationBarTitleText": "Badge 角标" } },
+    { "path": "pages/demos/avatar", "style": { "navigationBarTitleText": "Avatar 头像" } },
+    { "path": "pages/demos/skeleton", "style": { "navigationBarTitleText": "Skeleton 骨架屏" } },
+    { "path": "pages/demos/pagination", "style": { "navigationBarTitleText": "Pagination 分页" } },
+    { "path": "pages/demos/date-picker", "style": { "navigationBarTitleText": "DatePicker 日期选择" } },
+    { "path": "pages/demos/upload", "style": { "navigationBarTitleText": "Upload 图片上传" } },
+    { "path": "pages/demos/image", "style": { "navigationBarTitleText": "Image 图片" } },
+    { "path": "pages/demos/navbar", "style": { "navigationBarTitleText": "Navbar 导航栏" } },
+    { "path": "pages/demos/tabbar", "style": { "navigationBarTitleText": "Tabbar 标签栏" } },
+    { "path": "pages/demos/breadcrumb", "style": { "navigationBarTitleText": "Breadcrumb 面包屑" } },
+    { "path": "pages/demos/backtop", "style": { "navigationBarTitleText": "Backtop 返回顶部" } },
+    { "path": "pages/demos/tag", "style": { "navigationBarTitleText": "Tag 标签" } },
+    { "path": "pages/demos/rate", "style": { "navigationBarTitleText": "Rate 评分" } }
   ],
   "leftWindow": {
     "path": "components/SideNav/LeftWindowNav.vue",
@@ -35,6 +60,7 @@
     "custom": {
       "^ApiTable$": "@/components/ApiTable.vue",
       "^DemoHeader$": "@/components/DemoHeader.vue",
+      "^ComponentDemoPage$": "@/components/ComponentDemoPage.vue",
       "^AppLayout$": "@/components/AppLayout/AppLayout.vue"
     }
   },

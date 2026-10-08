@@ -1,83 +1,73 @@
-// ============================================
-// Leaf Island UI Default Theme
-// Maps Less variables → CSS Custom Properties
-// Consumers can override CSS variables at runtime
-// ============================================
-@import '../variables.less';
-
+// Leaf Island light theme. Values are plain CSS literals so Less consumers can
+// continue to use them as CSS custom properties at runtime.
 :root,
-page {
-  // Color
-  --animal-primary-color: @primary-color;
-  --animal-primary-color-hover: @primary-color-hover;
-  --animal-primary-color-active: @primary-color-active;
-  --animal-primary-color-bg: @primary-color-bg;
+page,
+.li-theme-provider {
+  --animal-primary-color: #19c8b9;
+  --animal-primary-color-hover: #3dd4c6;
+  --animal-primary-color-active: #50b9ab;
+  --animal-primary-color-bg: #e6f9f6;
+  --animal-primary-color-12: rgba(25, 200, 185, 0.12);
+  --animal-primary-color-08: rgba(25, 200, 185, 0.08);
+  --animal-primary-color-14: rgba(25, 200, 185, 0.14);
+  --animal-primary-color-25: rgba(25, 200, 185, 0.25);
+  --animal-primary-color-active-35: rgba(80, 185, 171, 0.35);
+  --animal-primary-color-bg-60: rgba(230, 249, 246, 0.6);
 
-  --animal-success-color: @success-color;
-  --animal-success-color-hover: @success-color-hover;
-  --animal-success-color-active: @success-color-active;
+  --animal-success-color: #6fba2c;
+  --animal-success-color-hover: #85cc45;
+  --animal-success-color-active: #5a9e1e;
+  --animal-warning-color: #f5c31c;
+  --animal-warning-color-hover: #f7d04a;
+  --animal-warning-color-active: #dba90e;
+  --animal-error-color: #e05a5a;
+  --animal-error-color-hover: #e87878;
+  --animal-error-color-active: #c94444;
 
-  --animal-warning-color: @warning-color;
-  --animal-warning-color-hover: @warning-color-hover;
-  --animal-warning-color-active: @warning-color-active;
+  --animal-text-color: #794f27;
+  --animal-text-color-secondary: #9f927d;
+  --animal-text-color-disabled: #c4b89e;
+  --animal-border-color: #aaa69d;
+  --animal-border-color-hover: #827157;
+  --animal-border-color-light: #e8e2d6;
+  --animal-bg-color: #f8f8f0;
+  --animal-surface-color: #fffdf7;
+  --animal-bg-color-secondary: #f0e8d8;
+  --animal-bg-color-secondary-hover: #e4dccb;
+  --animal-bg-color-disabled: #f0ece2;
+  --animal-bg-color-input: #f7f3df;
+  --animal-cream-color: #f8f8f0;
+  --animal-warm-color: #794f27;
+  --animal-warm-color-soft: #725d42;
+  --animal-warm-color-soft-12: rgba(114, 93, 66, 0.12);
+  --animal-shadow-color-light: rgba(61, 52, 40, 0.08);
+  --animal-shadow-warm: #bdaea0;
+  --animal-shadow-soft: #d4c9b4;
+  --animal-shadow-soft-hover: #c4b89e;
+  --animal-shadow-soft-strong: #a89878;
 
-  --animal-error-color: @error-color;
-  --animal-error-color-hover: @error-color-hover;
-  --animal-error-color-active: @error-color-active;
-
-  // Neutral
-  --animal-text-color: @text-color;
-  --animal-text-color-secondary: @text-color-secondary;
-  --animal-text-color-disabled: @text-color-disabled;
-
-  --animal-border-color: @border-color;
-  --animal-border-color-hover: @border-color-hover;
-  --animal-border-color-light: @border-color-light;
-
-  --animal-bg-color: @bg-color;
-  --animal-bg-color-secondary: @bg-color-secondary;
-  --animal-bg-color-disabled: @bg-color-disabled;
-  --animal-bg-color-input: @bg-color-input;
-
-  --animal-shadow-color-light: @shadow-color-light;
-  --animal-shadow-warm: @shadow-warm;
-  --animal-shadow-soft: @shadow-soft;
-  --animal-shadow-soft-hover: @shadow-soft-hover;
-  --animal-shadow-soft-strong: @shadow-soft-strong;
-
-  // Typography
-  --animal-font-family: @font-family;
-  --animal-font-size-sm: @font-size-sm;
-  --animal-font-size-base: @font-size-base;
-  --animal-font-size-lg: @font-size-lg;
-  --animal-line-height-base: @line-height-base;
-
-  // Spacing
-  --animal-spacing-xs: @spacing-xs;
-  --animal-spacing-sm: @spacing-sm;
-  --animal-spacing-md: @spacing-md;
-  --animal-spacing-lg: @spacing-lg;
-  --animal-spacing-xl: @spacing-xl;
-
-  // Border
-  --animal-border-radius-sm: @border-radius-sm;
-  --animal-border-radius-base: @border-radius-base;
-  --animal-border-radius-lg: @border-radius-lg;
-  --animal-border-width: @border-width;
-
-  // Shadow
-  --animal-shadow-sm: @shadow-sm;
-  --animal-shadow-base: @shadow-base;
-  --animal-shadow-lg: @shadow-lg;
-
-  // Motion
-  --animal-motion-duration-fast: @motion-duration-fast;
-  --animal-motion-duration-base: @motion-duration-base;
-  --animal-motion-duration-slow: @motion-duration-slow;
-  --animal-motion-ease: @motion-ease;
-
-  // Size
-  --animal-height-sm: @height-sm;
-  --animal-height-base: @height-base;
-  --animal-height-lg: @height-lg;
+  --animal-font-family: Nunito, 'Noto Sans SC', 'Zen Maru Gothic', 'HarmonyOS Sans SC', 'MiSans', -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --animal-font-size-sm: 24rpx;
+  --animal-font-size-base: 28rpx;
+  --animal-font-size-lg: 32rpx;
+  --animal-line-height-base: 1.5715;
+  --animal-spacing-xs: 8rpx;
+  --animal-spacing-sm: 16rpx;
+  --animal-spacing-md: 24rpx;
+  --animal-spacing-lg: 32rpx;
+  --animal-spacing-xl: 48rpx;
+  --animal-border-radius-sm: 32rpx;
+  --animal-border-radius-base: 36rpx;
+  --animal-border-radius-lg: 48rpx;
+  --animal-border-width: 2px;
+  --animal-shadow-sm: 0 4rpx 8rpx 0 rgba(61, 52, 40, 0.06);
+  --animal-shadow-base: 0 6rpx 20rpx 0 rgba(61, 52, 40, 0.1);
+  --animal-shadow-lg: 0 16rpx 48rpx 0 rgba(61, 52, 40, 0.14);
+  --animal-motion-duration-fast: 0.15s;
+  --animal-motion-duration-base: 0.25s;
+  --animal-motion-duration-slow: 0.35s;
+  --animal-motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --animal-height-sm: 64rpx;
+  --animal-height-base: 80rpx;
+  --animal-height-lg: 96rpx;
 }

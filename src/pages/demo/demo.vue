@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
-import { PAGE_INFO } from '../../pageInfo';
+import { PAGE_GROUPS, PAGE_INFO } from '../../pageInfo';
 import { colsForWidth } from './breakpoints';
 
-const items = Object.entries(PAGE_INFO).map(([key, info]) => ({ key, ...info }));
+const groups = PAGE_GROUPS.map((group) => ({
+  title: group.title,
+  items: group.keys.map((key) => ({ key, ...PAGE_INFO[key] })),
+}));
 
 const features = [
   { icon: '🎨', title: '自然风格', desc: 'SVG 有机形状裁切，3D 按压按钮，温暖质朴的自然 UI 质感' },
   {
     icon: '🧩',
-    title: '22 个组件',
-    desc: 'Button / Input / Switch / Modal / Typewriter / Card / Collapse / Cursor / Time / Phone / Footer …',
+    title: '47 个组件',
+    desc: '含导航、标签、评分等常用界面组件',
   },
   { icon: '🎨', title: '主题定制', desc: '基于 Less 变量 + CSS 自定义属性，运行时换肤无需重新构建' },
   { icon: '📦', title: '开箱即用', desc: 'uni-app 跨端输出，H5 / 微信小程序 / App 全平台一致体验' },
@@ -88,17 +91,20 @@ function go(key: string) {
       <view class="section">
         <view class="section-title">组件一览</view>
         <view class="section-desc">点击卡片查看详细文档和在线演示</view>
-        <view class="comp-grid" :class="`comp-grid--cols-${cols}`">
-          <view
-            v-for="item in items"
-            :key="item.key"
-            class="comp-card"
-            hover-class="comp-card--hover"
-            :hover-stay-time="150"
-            @click="go(item.key)"
-          >
-            <view class="comp-name">{{ item.title }}</view>
-            <view class="comp-desc">{{ item.desc }}</view>
+        <view v-for="group in groups" :key="group.title" class="component-group">
+          <view class="component-group-title">{{ group.title }}</view>
+          <view class="comp-grid" :class="`comp-grid--cols-${cols}`">
+            <view
+              v-for="item in group.items"
+              :key="item.key"
+              class="comp-card"
+              hover-class="comp-card--hover"
+              :hover-stay-time="150"
+              @click="go(item.key)"
+            >
+              <view class="comp-name">{{ item.title }}</view>
+              <view class="comp-desc">{{ item.desc }}</view>
+            </view>
           </view>
         </view>
       </view>
@@ -163,14 +169,14 @@ function go(key: string) {
     .section-title {
       font-size: 44rpx;
       font-weight: 700;
-      color: #725d42;
+      color: var(--animal-warm-color-soft, #725d42);
       text-align: center;
       margin-bottom: 12rpx;
     }
 
     .section-desc {
       font-size: 26rpx;
-      color: #7c5734;
+      color: var(--animal-text-color, #7c5734);
       text-align: center;
       margin-bottom: 40rpx;
     }
@@ -183,8 +189,8 @@ function go(key: string) {
     gap: 24rpx;
 
     .feature-card {
-      background: #fff;
-      border: 1px solid #e8e2d6;
+      background: var(--animal-surface-color, #fff);
+      border: 1px solid var(--animal-border-color-light, #e8e2d6);
       border-radius: 24rpx;
       padding: 32rpx;
       box-sizing: border-box;
@@ -197,14 +203,14 @@ function go(key: string) {
       .feature-title {
         font-size: 30rpx;
         font-weight: 700;
-        color: #725d42;
+        color: var(--animal-warm-color-soft, #725d42);
         margin-bottom: 12rpx;
       }
 
       .feature-desc {
         font-size: 24rpx;
         line-height: 1.55;
-        color: #7c5734;
+        color: var(--animal-text-color, #7c5734);
       }
     }
   }
@@ -227,8 +233,8 @@ function go(key: string) {
     }
 
     .comp-card {
-      background: #fff;
-      border: 1px solid #e8e2d6;
+      background: var(--animal-surface-color, #fff);
+      border: 1px solid var(--animal-border-color-light, #e8e2d6);
       border-radius: 24rpx;
       padding: 32rpx 40rpx;
       transition: transform 0.15s ease;
@@ -242,23 +248,34 @@ function go(key: string) {
       .comp-name {
         font-size: 30rpx;
         font-weight: 700;
-        color: #725d42;
+        color: var(--animal-warm-color-soft, #725d42);
         margin-bottom: 12rpx;
       }
 
       .comp-desc {
         font-size: 24rpx;
         line-height: 1.5;
-        color: #7c5734;
+        color: var(--animal-text-color, #7c5734);
       }
     }
+  }
+
+  .component-group {
+    margin-bottom: 36rpx;
+  }
+
+  .component-group-title {
+    margin-bottom: 18rpx;
+    color: var(--animal-text-color-secondary, #8c7658);
+    font-size: 30rpx;
+    font-weight: 700;
   }
 
   /* 页脚 */
   .page-footer {
     text-align: center;
     font-size: 24rpx;
-    color: #7c5734;
+    color: var(--animal-text-color, #7c5734);
     margin-top: 32rpx;
 
     .footer-links {
@@ -269,7 +286,7 @@ function go(key: string) {
 
       .footer-link {
         font-size: 26rpx;
-        color: #7c5734;
+        color: var(--animal-text-color, #7c5734);
       }
     }
   }

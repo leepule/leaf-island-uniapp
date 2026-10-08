@@ -5,15 +5,18 @@ const inputValue = ref('');
 const INPUT_API = [
   { prop: 'modelValue / v-model', desc: '输入框值', type: 'string', defaultVal: '-' },
   { prop: 'size', desc: '输入框尺寸', type: `'small' | 'middle' | 'large'`, defaultVal: "'middle'" },
-  { prop: 'prefix / suffix', desc: '前后缀', type: 'string | slot', defaultVal: '-' },
-  { prop: 'allowClear', desc: '允许清除', type: 'boolean', defaultVal: 'false' },
+  { prop: 'clearable', desc: '显示清除按钮（旧属性 allowClear 仍兼容）', type: 'boolean', defaultVal: 'false' },
   { prop: 'status', desc: '校验状态', type: `'error' | 'warning'`, defaultVal: '-' },
   { prop: 'shadow', desc: '是否显示阴影', type: 'boolean', defaultVal: 'false' },
+  { prop: '#prefix / #suffix', desc: '前缀 / 后缀内容', type: 'slot', defaultVal: '-' },
 ];
 
 const code = `<li-input placeholder="Basic input" />
-<li-input v-model="value" placeholder="With clear" allow-clear />
-<li-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
+<li-input v-model="value" placeholder="With clear" clearable />
+<li-input placeholder="Prefix & Suffix">
+  <template #prefix>🔍</template>
+  <template #suffix>⏎</template>
+</li-input>
 <li-input placeholder="Small" size="small" />
 <li-input placeholder="Large" size="large" />
 <li-input placeholder="Error" status="error" />`;
@@ -33,8 +36,11 @@ const code = `<li-input placeholder="Basic input" />
       <view class="demo-label">基础用法</view>
       <view class="demo-col">
         <li-input placeholder="Basic input" />
-        <li-input v-model="inputValue" placeholder="With clear" allow-clear @clear="inputValue = ''" />
-        <li-input placeholder="Prefix & Suffix" prefix="🔍" suffix="⏎" />
+        <li-input v-model="inputValue" placeholder="With clear" clearable @clear="inputValue = ''" />
+        <li-input placeholder="Prefix & Suffix">
+          <template #prefix>🔍</template>
+          <template #suffix>⏎</template>
+        </li-input>
       </view>
 
       <view class="demo-label">size 尺寸</view>

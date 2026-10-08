@@ -36,7 +36,7 @@ function pad(n: number) {
   padding: 16px 36px;
   border: 3px solid #d4cfc3;
   border-radius: 18px;
-  background: linear-gradient(180deg, #fff 0%, #f8f8f0 100%);
+  background: linear-gradient(180deg, #fff 0%, var(--animal-bg-color, #f8f8f0) 100%);
   animation: animal-time-fade-up 0.5s ease-out;
 
   &__date {
@@ -56,7 +56,7 @@ function pad(n: number) {
   }
 
   &__month-day {
-    color: #8b7355;
+    color: var(--animal-text-color-secondary, #8b7355);
     font-weight: 800;
     font-size: 22px;
   }
@@ -64,7 +64,7 @@ function pad(n: number) {
   &__clock {
     display: flex;
     align-items: center;
-    color: #8b7355;
+    color: var(--animal-text-color-secondary, #8b7355);
     font-weight: 900;
     font-size: 48px;
     letter-spacing: 2px;
@@ -74,7 +74,7 @@ function pad(n: number) {
     position: relative;
     top: -0.08em;
     margin: 0 1px;
-    color: #8b7355;
+    color: var(--animal-text-color-secondary, #8b7355);
     font-size: 48px;
     animation: animal-time-blink 1s step-end infinite;
   }

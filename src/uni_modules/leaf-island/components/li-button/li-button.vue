@@ -243,7 +243,7 @@ const handleClick = (event: any) => {
 
 		&:active:not(:disabled),
 		&.animal-btn--active:not(:disabled) {
-			background: darken(@bg-color-secondary, 5%);
+			background: var(--animal-bg-color-secondary-hover, #e4dccb);
 		}
 	}
 
@@ -328,7 +328,7 @@ const handleClick = (event: any) => {
 		&:hover:not(:disabled) {
 			color: @primary-color-hover;
 			border-color: @primary-color-hover;
-			background: rgba(25, 200, 185, 0.08);
+			background: var(--animal-primary-color-08, rgba(25, 200, 185, 0.08));
 		}
 	}
 

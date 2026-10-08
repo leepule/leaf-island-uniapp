@@ -170,7 +170,7 @@ const fontSize = computed(() => `${SIZE_MAP[props.size]}px`);
   --rf: #f7cd67;
   --rb: #d4a030;
   --rk: #8a6010;
-  --rt: #725d42;
+  --rt: var(--animal-warm-color-soft, #725d42);
 }
 .animal-title__ribbon--app-orange {
   --rf: #e59266;
@@ -206,7 +206,7 @@ const fontSize = computed(() => `${SIZE_MAP[props.size]}px`);
   --rf: #ecdf52;
   --rb: #c0b010;
   --rk: #706800;
-  --rt: #725d42;
+  --rt: var(--animal-warm-color-soft, #725d42);
 }
 .animal-title__ribbon--brown {
   --rf: #9a835a;
